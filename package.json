@@ -4,12 +4,15 @@
   "private": true,
   "dependencies": {
     "create-react-app": "^1.5.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
   },
   "proxy": "https://create-react-app-sample.glitch.me",
   "devDependencies": {
     "react-scripts": "0.9.5"
+  },
+  "engines": {
+    "node": "8.x"
   },
   "scripts": {
     "start": "react-scripts start",

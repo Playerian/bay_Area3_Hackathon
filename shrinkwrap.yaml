@@ -1,7 +1,7 @@
 dependencies:
   create-react-app: 1.5.2
-  react: 16.2.0
-  react-dom: 16.2.0
+  react: 16.3.0
+  react-dom: 16.3.0
 devDependencies:
   react-scripts: 0.9.5
 packages:
@@ -3341,7 +3341,7 @@ packages:
   /isomorphic-fetch/2.2.1:
     dependencies:
       node-fetch: 1.7.3
-      whatwg-fetch: 2.0.3
+      whatwg-fetch: 2.0.4
     dev: false
     resolution:
       integrity: sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=
@@ -4992,7 +4992,7 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-UNC5YtOpS2wujyAR7WRo5BJLxBA=
-  /react-dom/16.2.0:
+  /react-dom/16.3.0:
     dependencies:
       fbjs: 0.8.16
       loose-envify: 1.3.1
@@ -5002,7 +5002,7 @@ packages:
     peerDependencies:
       react: ^16.0.0
     resolution:
-      integrity: sha512-zpGAdwHVn9K0091d+hr+R0qrjoJ84cIBFL2uU60KvWBPfZ7LPSrfqviTxGHWN0sjPZb2hxWzMexwrvJdKePvjg==
+      integrity: sha512-xT/FxawAurL6AV8YtAP7LkdDJFFX2vvv17AqFLQRF81ZtWLXkV/0dcAaiFIy0lmoQEFT931TU9aaH+5dBUxTcw==
   /react-scripts/0.9.5:
     dependencies:
       autoprefixer: 6.7.2
@@ -5050,7 +5050,7 @@ packages:
       fsevents: 1.0.17
     resolution:
       integrity: sha1-6fBchCficTFmKpudepeG0f8Wuz8=
-  /react/16.2.0:
+  /react/16.3.0:
     dependencies:
       fbjs: 0.8.16
       loose-envify: 1.3.1
@@ -5060,7 +5060,7 @@ packages:
     engines:
       node: '>=0.10.0'
     resolution:
-      integrity: sha512-ZmIomM7EE1DvPEnSFAHZn9Vs9zJl5A9H7el0EGTE6ZbW9FKe/14IYAlPbC8iH25YarEQxZL+E8VW7Mi7kfQrDQ==
+      integrity: sha512-Qh35tNbwY8SLFELkN3PCLO16EARV+lgcmNkQnoZXfzAF1ASRpeucZYUwBlBzsRAzTb7KyfBaLQ4/K/DLC6MYeA==
   /read-pkg-up/1.0.1:
     dependencies:
       find-up: 1.1.2
@@ -6372,10 +6372,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-/ilNHYnjbFvosxlQV/LkvHT8mA4=
-  /whatwg-fetch/2.0.3:
+  /whatwg-fetch/2.0.4:
     dev: false
     resolution:
-      integrity: sha1-nITsLc9oGH/wC8ZOEnS0QhduHIQ=
+      integrity: sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
   /whatwg-url/4.8.0:
     dependencies:
       tr46: 0.0.3
@@ -6519,6 +6519,6 @@ shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
   create-react-app: ^1.5.2
-  react: ^16.2.0
-  react-dom: ^16.2.0
+  react: ^16.3.0
+  react-dom: ^16.3.0
   react-scripts: 0.9.5

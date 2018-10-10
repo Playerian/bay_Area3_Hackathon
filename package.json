@@ -7,8 +7,7 @@
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
   },
-  "proxy": "https://create-react-app-sample.glitch.me",
-  "devDependencies": {
+   "devDependencies": {
     "react-scripts": "0.9.5"
   },
   "engines": {

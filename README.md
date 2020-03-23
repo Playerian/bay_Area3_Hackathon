@@ -1,3 +1,8 @@
+Need more power?  
+[Boost your Glitch apps for improved performance!](https://glitch.com/boost)  
+------------
+***
+
 Starter React App on Glitch
 ===========================
 

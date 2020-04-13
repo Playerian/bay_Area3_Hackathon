@@ -5,6 +5,22 @@ const { Map: LeafletMap, TileLayer, Marker, Popup } = window.ReactLeaflet;
 export default class Map extends Component {
   constructor(props){
     super(props);
+    //this.map does not exist yet
+  }
+  componentDidMount(){
+    //this.map exist
+    let map = this.map.leafletElement;
+    console.log(map);
+    //disable zoom
+    map.touchZoom.disable();
+    map.doubleClickZoom.disable();
+    map.scrollWheelZoom.disable();
+    map.keyboard.disable();
+    map.zoomControl.disable();
+    //disable pan
+    map.dragging.disable();
+    
+    //let marker = leafletMap
   }
   handleZoomEnd(e){
     console.log(this.map);

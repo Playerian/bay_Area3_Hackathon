@@ -33,6 +33,7 @@ export default class Map extends Component {
     var lat = coord.lat;
     var lng = coord.lng;
     console.log("Center of the map at latitude: " + lat + " and longitude: " + lng);
+    //longtitude can't be less than -140
   }
   handleClick(e){
     console.log(this.map);

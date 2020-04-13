@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <div className="mapContainer">
           
-          <Map center=""/>
+          <Map center={{x:40.2, y:-95.7129}}/>
           
         </div>
       </div>

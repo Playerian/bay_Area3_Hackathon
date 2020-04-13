@@ -12,15 +12,15 @@ export default class Map extends Component {
     let map = this.map.leafletElement;
     console.log(map);
     //disable zoom
-    map.touchZoom.disable();
-    map.doubleClickZoom.disable();
-    map.scrollWheelZoom.disable();
-    map.keyboard.disable();
-    map.zoomControl.disable();
+    // map.touchZoom.disable();
+    // map.doubleClickZoom.disable();
+    // map.scrollWheelZoom.disable();
+    // map.keyboard.disable();
+    // map.zoomControl.disable();
     //disable pan
-    map.dragging.disable();
+    // map.dragging.disable();
     
-    //let marker = leafletMap
+    //let marker = this.marker([37.7749,-122.4194]).addTo(map)
   }
   handleZoomEnd(e){
     console.log(this.map);
@@ -30,7 +30,7 @@ export default class Map extends Component {
   render() {
     return (
       // center of the US in coordinates: 40.2, -95.7129 (this is not the coordinates of the geographical center)
-      <LeafletMap center={[40.2, -95.7129]} zoom={5} ref={(ref) => { this.map = ref; }} onZoomEnd={(e) => this.handleZoomEnd(e)}>
+      <LeafletMap center={[this.props.center.x, this.props.center.y]} zoom={5} ref={(ref) => { this.map = ref; }} onZoomEnd={(e) => this.handleZoomEnd(e)}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -24,13 +24,28 @@ export default class Map extends Component {
   }
   handleZoomEnd(e){
     console.log(this.map);
-    console.log("X");
+    console.log("Zoom ended");
   }
-  
+  handleMoveEnd(e){
+    console.log(this.map);
+    console.log("Move ended");
+    var coord = e.target.getCenter();
+    var lat = coord.lat;
+    var lng = coord.lng;
+    console.log("Center of the map at latitude: " + lat + " and longitude: " + lng);
+  }
+  handleClick(e){
+    console.log(this.map);
+    console.log("Clicked");
+    var coord = e.latlng;
+    var lat = coord.lat;
+    var lng = coord.lng;
+    console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
+  }
   render() {
     return (
       // center of the US in coordinates: 40.2, -95.7129 (this is not the coordinates of the geographical center)
-      <LeafletMap center={[this.props.center.x, this.props.center.y]} zoom={5} ref={(ref) => { this.map = ref; }} onZoomEnd={(e) => this.handleZoomEnd(e)}>
+      <LeafletMap center={[this.props.center.x, this.props.center.y]} zoom={5} ref={(ref) => { this.map = ref; }} onZoomEnd={(e) => this.handleZoomEnd(e)} onMoveEnd={(e) => this.handleMoveEnd(e)} onClick={(e) => this.handleClick(e)}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

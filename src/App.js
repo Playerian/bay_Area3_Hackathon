@@ -8,6 +8,11 @@ import populationJSON from "./population.json";
 
 class App extends Component {
   render() {
+    /*
+    let test = stateGeoJSON.features[2].properties.NAME;
+    console.log(test);
+    
+    */
     return (
       <div className="App">
         <div className="mapContainer">

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import "https://unpkg.com/leaflet@1.4.0/dist/leaflet.css";
-const { Map: LeafletMap, TileLayer, Marker, Popup } = window.ReactLeaflet;
+const { Map: LeafletMap, TileLayer, Marker, Popup, GeoJSON} = window.ReactLeaflet;
 
 export default class Map extends Component {
   constructor(props){
@@ -78,7 +78,7 @@ export default class Map extends Component {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        <
+        <GeoJSON data={this.props.borderGeoJSON}/>
       </LeafletMap>
     );
   }

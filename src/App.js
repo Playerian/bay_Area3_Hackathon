@@ -17,6 +17,7 @@ class App extends Component {
             stateGeoJSON={stateGeoJSON}
             populationJSON={populationJSON}
           />
+          <div id="test"></div>
         </div>
       </div>
     );

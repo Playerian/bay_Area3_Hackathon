@@ -6,6 +6,7 @@
     ),
     auto;
 }
-#alaska{
-  background-color: red;
+#test{
+  color: red;
+  height: 100vh
 }

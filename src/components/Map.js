@@ -80,14 +80,18 @@ export default class Map extends Component {
       "You clicked the map at latitude: " + lat + " and longitude: " + lng
     );
   }
-  onEachFeature(feature, layer){
+  onEachFeature(feature, layer) {
     //bind click on each layer
     layer.on({
-        click: (e) => this.onFeatureClicked(e, feature)
+      click: e => this.onFeatureClicked(e, feature)
     });
   }
-  onFeatureClicked(event, feature){
-    console.log(`State: ${feature.properties.NAME} with a population of ${this.props.populationJSON[feature.properties.NAME]}`);
+  onFeatureClicked(event, feature) {
+    console.log(
+      `State: ${feature.properties.NAME} with a population of ${
+        this.props.populationJSON[feature.properties.NAME]
+      }`
+    );
   }
   render() {
     return (
@@ -107,7 +111,10 @@ export default class Map extends Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | US Census Bureau'
         />
         <GeoJSON data={this.props.borderGeoJSON} />
-        <GeoJSON data={this.props.stateGeoJSON} onEachFeature={(f, l) => this.onEachFeature(f, l)}/>
+        <GeoJSON
+          data={this.props.stateGeoJSON}
+          onEachFeature={(f, l) => this.onEachFeature(f, l)}
+        />
       </LeafletMap>
     );
   }

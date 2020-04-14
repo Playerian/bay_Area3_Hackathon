@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Map from "./components/Map.js";
 import borderGeoJSON from "./2010USoutline.json";
+import stateGeoJSON from "./USStates.json";
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           <Map
             center={{ x: 40.2, y: -95.7129 }}
             borderGeoJSON={borderGeoJSON}
+            stateGeoJSON={stateGeoJSON}
           />
         </div>
       </div>

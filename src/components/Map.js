@@ -80,6 +80,9 @@ export default class Map extends Component {
       "You clicked the map at latitude: " + lat + " and longitude: " + lng
     );
   }
+  handleFeature(f, l){
+    console.log(f);
+  }
   render() {
     return (
       // center of the US in coordinates: 40.2, -95.7129 (this is not the coordinates of the geographical center)
@@ -98,6 +101,7 @@ export default class Map extends Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         <GeoJSON data={this.props.borderGeoJSON} />
+        <GeoJSON data={this.props.stateGeoJSON} onEachFeature={(f, l) => this.handleFeature(f, l)}/>
       </LeafletMap>
     );
   }

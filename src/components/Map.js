@@ -87,7 +87,7 @@ export default class Map extends Component {
     });
   }
   onFeatureClicked(event, feature){
-    console.log(feature.properties.NAME);
+    console.log(`State: ${feature.properties.NAME} with a population of ${this.props.populationJSON[feature.properties.NAME]}`);
   }
   render() {
     return (

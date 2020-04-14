@@ -15,6 +15,7 @@ class App extends Component {
             center={{ x: 40.2, y: -95.7129 }}
             borderGeoJSON={borderGeoJSON}
             stateGeoJSON={stateGeoJSON}
+            populationJSON={populationJSON}
           />
         </div>
       </div>

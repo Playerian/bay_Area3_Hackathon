@@ -80,8 +80,14 @@ export default class Map extends Component {
       "You clicked the map at latitude: " + lat + " and longitude: " + lng
     );
   }
-  handleFeature(f, l){
-    console.log(f);
+  onEachFeature(feature, layer){
+    //bind click on each layer
+    layer.on({
+        click: (e) => this.onFeatureClicked(e, feature)
+    });
+  }
+  onFeatureClicked(event, feature){
+    console.log(feature.properties.NAME);
   }
   render() {
     return (
@@ -101,7 +107,7 @@ export default class Map extends Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         <GeoJSON data={this.props.borderGeoJSON} />
-        <GeoJSON data={this.props.stateGeoJSON} onEachFeature={(f, l) => this.handleFeature(f, l)}/>
+        <GeoJSON data={this.props.stateGeoJSON} onEachFeature={(f, l) => this.onEachFeature(f, l)}/>
       </LeafletMap>
     );
   }

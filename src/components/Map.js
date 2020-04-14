@@ -6,6 +6,9 @@ export default class Map extends Component {
   constructor(props){
     super(props);
     //this.map does not exist yet
+    this.state = {
+      coord: [this.props.center.x, this.props.center.y]
+    }
   }
   componentDidMount(){
     //this.map exist
@@ -34,6 +37,13 @@ export default class Map extends Component {
     var lng = coord.lng;
     console.log("Center of the map at latitude: " + lat + " and longitude: " + lng);
     //longtitude can't be less than -140
+    if (lng < -140){
+      this.setState({coord: []});
+    }
+    //longtitude can't be greater than -60
+    if (lng > -60){
+      
+    }
   }
   handleClick(e){
     console.log(this.map);
@@ -46,7 +56,7 @@ export default class Map extends Component {
   render() {
     return (
       // center of the US in coordinates: 40.2, -95.7129 (this is not the coordinates of the geographical center)
-      <LeafletMap center={[this.props.center.x, this.props.center.y]} zoom={5} ref={(ref) => { this.map = ref; }} onZoomEnd={(e) => this.handleZoomEnd(e)} onMoveEnd={(e) => this.handleMoveEnd(e)} onClick={(e) => this.handleClick(e)}>
+      <LeafletMap center={this.state.coord} zoom={5} ref={(ref) => { this.map = ref; }} onZoomEnd={(e) => this.handleZoomEnd(e)} onMoveEnd={(e) => this.handleMoveEnd(e)} onClick={(e) => this.handleClick(e)}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

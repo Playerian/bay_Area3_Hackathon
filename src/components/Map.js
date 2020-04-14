@@ -28,7 +28,6 @@ export default class Map extends Component {
     //let marker = this.marker([37.7749,-122.4194]).addTo(map)
   }
   handleZoomEnd(e){
-    console.log(this.map);
     console.log("Zoom ended");
     //set zoom as state
     let map = this.map.leafletElement;
@@ -41,7 +40,6 @@ export default class Map extends Component {
     this.setState({zoom: zoom});
   }
   handleMoveEnd(e){
-    console.log(this.map);
     console.log("Move ended");
     var coord = e.target.getCenter();
     var lat = coord.lat;
@@ -66,7 +64,6 @@ export default class Map extends Component {
     this.setState({coord: [lat, lng]});
   }
   handleClick(e){
-    console.log(this.map);
     console.log("Clicked");
     var coord = e.latlng;
     var lat = coord.lat;

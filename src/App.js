@@ -4,6 +4,7 @@ import "./App.css";
 import Map from "./components/Map.js";
 import borderGeoJSON from "./2010USoutline.json";
 import stateGeoJSON from "./USStates.json";
+import populationJSON from "./population.json";
 
 class App extends Component {
   render() {

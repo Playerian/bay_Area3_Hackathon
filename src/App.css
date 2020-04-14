@@ -1,5 +1,8 @@
-.leaflet-container{
+.leaflet-container {
   height: 100vh;
-/*   width: 100vw */
-  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=105744),auto;
+  /*   width: 100vw */
+  cursor: url(
+      http://www.rw-designer.com/cursor-extern.php?id=105744
+    ),
+    auto;
 }

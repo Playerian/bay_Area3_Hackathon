@@ -116,6 +116,7 @@ export default class Map extends Component {
           onEachFeature={(f, l) => this.onEachFeature(f, l)}
         />
       </LeafletMap>
+      
     );
   }
 }

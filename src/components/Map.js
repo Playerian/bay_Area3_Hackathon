@@ -105,7 +105,7 @@ export default class Map extends Component {
     if (stateData[feature.properties.NAME]) {
       layer.setStyle(stateData[feature.properties.NAME].style);
       layer.setStyle({
-        
+        color: color
       });
     }
   }

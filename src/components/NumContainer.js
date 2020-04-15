@@ -5,10 +5,10 @@ export default class NumContainer extends Component{
     super(props)
     
     this.state = {
-      death:0,
-      recovered:0,
-      infected:0,
-      pplPoint:0,
+      // death:0,
+      // recovered:0,
+      // infected:0,
+      // pplPoint:0,
       
     }
     
@@ -17,7 +17,7 @@ export default class NumContainer extends Component{
   
   render(){
   return(
-    <div className="container">{this.prop.text}<span className="containerNumber">{this.state[this.prop.type]}</span></div> //[pass in a type]
+    <div className="Numcontainer">{this.prop.text}<span className="containerNumber">{this.prop.number}</span></div> //[pass in a type]
       );
 }
 }

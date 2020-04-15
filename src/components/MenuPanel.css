@@ -69,6 +69,8 @@
   box-sizing: border-box;
   padding-left: 10px;
   font-size: 14px;
+    height:100%;
+
   /*padding-top: -5px;*/
 }
 
@@ -76,6 +78,7 @@
   width: 20%;
   box-sizing: border-box;
   text-align: center;
+  height:100%;
 }
 
 .dayDiv {
@@ -101,6 +104,7 @@
 
 .eventDiv {
   width: 20%;
+  height:100%;
   box-sizing: border-box;
   border: grey solid 5px;
   border-radius:2%;
@@ -137,8 +141,9 @@
 .upgradeContainer{
   display:flex;
   flex-wrap:wrap;
-  overflow:scroll;
-  height:50%;
+  overflow-y:scroll;
+  height:70%;
+  margin-top:-10%;
 }
 
 .upgradeTag{

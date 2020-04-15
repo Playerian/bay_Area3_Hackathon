@@ -23,6 +23,12 @@ class App extends Component {
       stateData: stateData
     }
   }
+  onFeatureClicked(stateName){
+    let state = this.state.stateData[stateName];
+    console.log(
+      `State: ${stateName} with a population of ${state.population}`
+    );
+  }
   render() {
     /*
     let test = stateGeoJSON.features[2].properties.NAME;
@@ -39,6 +45,7 @@ class App extends Component {
             stateGeoJSON={stateGeoJSON}
             populationJSON={populationJSON}
             stateData={this.state.stateData}
+            onFeatureClicked={(stateName) => this.onFeatureClicked(stateName)}
           />
         </div>
         

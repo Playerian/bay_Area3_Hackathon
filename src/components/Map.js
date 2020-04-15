@@ -33,6 +33,7 @@ export default class Map extends Component {
 
     //let marker = this.marker([37.7749,-122.4194]).addTo(map)
   }
+  //leaflet handler
   handleZoomEnd(e) {
     console.log("Zoom ended");
     //set zoom as state
@@ -80,6 +81,7 @@ export default class Map extends Component {
       "You clicked the map at latitude: " + lat + " and longitude: " + lng
     );
   }
+  //geoJSON handler
   onEachFeature(feature, layer) {
     //bind click on each layer
     layer.on({
@@ -88,18 +90,12 @@ export default class Map extends Component {
     // grab stateData
     let stateData = this.props.stateData;
     //set style base on stateData
-    // if (feature.properties.NAME === "California") {
-    //   layer.setStyle({
-    //     fillColor: "#3388fe"
-    //   });
-    // }
+    if (stateData[feature.properties.NAME]) {
+      layer.setStyle(stateData.style);
+    }
   }
   onFeatureClicked(event, feature) {
-    console.log(
-      `State: ${feature.properties.NAME} with a population of ${
-        this.props.populationJSON[feature.properties.NAME]
-      }`
-    );
+    this.props.onFeatureClicked(feature.properties.NAME);
   }
   render() {
     // array of fill colors in increasing order of severity

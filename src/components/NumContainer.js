@@ -18,7 +18,7 @@ export default class NumContainer extends Component{
   
   render(){
   return(
-    <div className="Numcontainer">{this.props.text}<span className="containerNumber">{this.props.number}</span></div> 
+    <div className="Numcontainer">{this.props.text}<span className="containerNumber"> {this.props.number}</span></div> 
     );
   }
 }

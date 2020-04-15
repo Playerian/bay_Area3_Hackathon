@@ -108,7 +108,7 @@ export default class Map extends Component {
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | US Census Bureau'
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | Data from US Census Bureau'
         />
         <GeoJSON data={this.props.borderGeoJSON} />
         <GeoJSON

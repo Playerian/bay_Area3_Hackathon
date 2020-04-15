@@ -54,13 +54,13 @@ class App extends Component {
   }
   //time handler
   onSecond(){
+    //check if game has started
     if (this.state.gameStarted){
-      
-    }
-    if (this.state.gameSpeed === 0){
-      
-    }else if (this.state.gameSpeed === 1){
-      this.oneDayPassed();
+      if (this.state.gameSpeed === 0){
+        
+      }else if (this.state.gameSpeed === 1){
+        this.oneDayPassed();
+      }
     }
   }
   //US Data formatting
@@ -92,6 +92,7 @@ class App extends Component {
   onFeatureClicked(stateName){
     //fetch state info
     let state = this.state.stateData[stateName];
+    let stateData = this.state.stateData;
     console.log(
       `State: ${stateName} with a population of ${state.population}`
     );
@@ -99,6 +100,17 @@ class App extends Component {
     this.setState({
       selecting: stateName
     });
+    //check if game has started
+    if (!this.state.gameStarted){
+      //add infected
+      stateData[stateName].infected += 100;
+      //start the game
+      this.setState({
+        stateData: stateData,
+        gameStarted: true,
+        gameSpeed: 1
+      });   
+    }
   }
   //leaflet map handler
   onMapClicked(lat, lng){

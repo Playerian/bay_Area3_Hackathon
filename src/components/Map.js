@@ -139,7 +139,7 @@ export default class Map extends Component {
         color = colors[14];
       }
       layer.setStyle({
-        color: color
+        fillColor: color
       });
     }
   }

@@ -29,7 +29,7 @@ class App extends Component {
             populationJSON={populationJSON}
           />
         </div>
-        <NumContainer text="what is this"/>
+        <NumContainer text="what is this doing here"/>
       </div>
     );
   }
@@ -41,5 +41,10 @@ class State{
   constructor(name, population){
     this.name = name;
     this.population = population;
+    this.style={
+      color: "#3388ff",
+      fillColor: "#3388ff",
+      opacity: 0.5,
+    }
   }
 }

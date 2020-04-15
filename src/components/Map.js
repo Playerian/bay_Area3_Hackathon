@@ -89,7 +89,7 @@ export default class Map extends Component {
     
     if (feature.properties.NAME === "California"){
       layer.setStyle({
-        fillColor: "red"
+        fillColor: "#3388fe"
       })
     }
     

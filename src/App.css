@@ -14,5 +14,10 @@
 .Numcontainer{
   position:absolute;
   z-index:3;
-  top:200px;
+  top:-0.5vh;
+  height:10vh;
+  width:100%;
+  background:darkgrey;
+  border:5px grey solid;
+  border-radius:2%;
 }

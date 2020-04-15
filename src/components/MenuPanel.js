@@ -28,18 +28,13 @@ export default class MenuPanel extends Component{
         <div className="menuPanel">
           <div className="divHolder">
             
-            <div>
+             <div className="subHolderDiv">
               <NumContainer text="Infected:"/>
-              <button></button>
-            </div>
-            
-            <div>
               <NumContainer text="Death:"/>
-              <button></button>
+              <NumContainer text="Recovered:" number="pass in a number here"/>
             </div>
             
-            <div>
-              <NumContainer text="Recovered:" number="pass in a number here"/>
+            <div className="buttonDiv">
               <button></button>
             </div>
             

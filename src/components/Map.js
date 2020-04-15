@@ -73,13 +73,11 @@ export default class Map extends Component {
     this.setState({ coord: [lat, lng] });
   }
   handleClick(e) {
-    console.log("Clicked");
+    //this handler happens after the geoJSON handler
     var coord = e.latlng;
     var lat = coord.lat;
     var lng = coord.lng;
-    console.log(
-      "You clicked the map at latitude: " + lat + " and longitude: " + lng
-    );
+    this.props.onMapClicked(lat, lng);
   }
   //geoJSON handler
   onEachFeature(feature, layer) {

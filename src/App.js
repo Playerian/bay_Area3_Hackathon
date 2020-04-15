@@ -23,10 +23,18 @@ class App extends Component {
       stateData: stateData
     }
   }
+  //geoJSON handler
   onFeatureClicked(stateName){
     let state = this.state.stateData[stateName];
     console.log(
       `State: ${stateName} with a population of ${state.population}`
+    );
+  }
+  //leaflet map handler
+  onMapClicked(lat, lng){
+    //this handler happens after the geoJSON onFeature handler
+    console.log(
+      "You clicked the map at latitude: " + lat + " and longitude: " + lng
     );
   }
   render() {
@@ -40,12 +48,16 @@ class App extends Component {
       <div className="App">
         <div className="mapContainer">
           <Map
+            //static data
             center={{ x: 40.2, y: -95.7129 }}
             borderGeoJSON={borderGeoJSON}
             stateGeoJSON={stateGeoJSON}
             populationJSON={populationJSON}
+            //dynamic data for render
             stateData={this.state.stateData}
+            //handlers
             onFeatureClicked={(stateName) => this.onFeatureClicked(stateName)}
+            onMapClicked={(lat, lng) => this.onMapClicked(lat, lng)}
           />
         </div>
         
@@ -59,13 +71,16 @@ export default App;
 
 class State{
   constructor(name, population, geoJSON){
+    //game data
     this.name = name;
     this.population = population;
-    this.geoJSON = geoJSON;
+    //rendering data
     this.style={
       color: "#3388ff",
       fillColor: "#3388ff",
       opacity: 0.5,
     }
+    //static data
+    this.geoJSON = geoJSON;
   }
 }

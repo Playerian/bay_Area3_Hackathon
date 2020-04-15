@@ -31,6 +31,8 @@
   width:100%;
   background:white;
   z-index:5;
+  display:flex;
+  flex-wrap:wrap;
   
 }
 
@@ -57,4 +59,16 @@
   border-radius:2%;
   text-align:center;
   -webkit-transition: height .3s ease;
+}
+
+.subHolderDiv{
+  width:90%;
+  box-sizing:border-box;
+  justify-content:start;
+}
+
+.buttonDiv{
+  width:10%;
+  box-sizing:border-box;
+  justify-content:end;
 }

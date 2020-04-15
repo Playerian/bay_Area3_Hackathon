@@ -54,6 +54,9 @@ class App extends Component {
   }
   //time handler
   onSecond(){
+    if (this.state.gameStarted){
+      
+    }
     if (this.state.gameSpeed === 0){
       
     }else if (this.state.gameSpeed === 1){

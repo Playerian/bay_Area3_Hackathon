@@ -94,3 +94,7 @@
   z-index:2;
   top:90vh;
 }
+
+body {
+  overflow: hidden; /* Hide scrollbars and stops the 疯狂抖动*/
+}

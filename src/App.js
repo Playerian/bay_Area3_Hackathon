@@ -20,15 +20,21 @@ class App extends Component {
     });
     //initialize state
     this.state = {
-      stateData: stateData
+      stateData: stateData,
+      selecting: "US",
     }
   }
   //geoJSON handler
   onFeatureClicked(stateName){
+    //fetch state info
     let state = this.state.stateData[stateName];
     console.log(
       `State: ${stateName} with a population of ${state.population}`
     );
+    //set as selecting
+    this.setState({
+      selecting: stateName
+    });
   }
   //leaflet map handler
   onMapClicked(lat, lng){
@@ -61,7 +67,7 @@ class App extends Component {
           />
         </div>
         
-        <MenuPanel provenceData = {this.state.stateData}/>{/*buttons and counters goes in here?*/}
+        <MenuPanel selecting = {this.state.selecting} provinceData = {this.state.stateData}/>{/*buttons and counters goes in here?*/}
       </div>
     );
   }

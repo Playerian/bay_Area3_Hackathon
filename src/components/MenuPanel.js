@@ -22,6 +22,7 @@ export default class MenuPanel extends Component{
     //console.log(this.state.showing)
   }
   overviewTab(){
+    
   }
   upgradeTab(){
     
@@ -38,6 +39,7 @@ export default class MenuPanel extends Component{
               <NumContainer text="Infected:"/>
               <NumContainer text="Death:"/>
               <NumContainer text="Recovered:" number="pass in a number here"/>
+               <NumContainer text="Population:" number="pass in a number here"/>
             </div>
             
             <div className="buttonDiv">

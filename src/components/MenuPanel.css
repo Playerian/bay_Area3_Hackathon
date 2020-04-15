@@ -1,3 +1,9 @@
+.panelButton:hover {
+  background-color: #8abc8e;
+}
+
 .panelButton {
-  background-color: cadetblue;
+  background-color: darkgrey;
+  color: black;
+  font-size: large;
 }

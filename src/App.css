@@ -30,7 +30,7 @@
   position:relative;
   height:93%;
   width:100%;
-  background:white;
+  background:#454647;
   z-index:5;
   display:flex;
   flex-wrap:wrap;
@@ -80,6 +80,7 @@
 
 .numcontainer{
   height:25%;
-    width:100%;
+  width:100%;
+  color:white;
 
 }

@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Map from "./components/Map.js";
+import NumContainer from "./components/NumContainer.js"
 import borderGeoJSON from "./2010USoutline.json";
 import stateGeoJSON from "./USStates.json";
 import populationJSON from "./population.json";
 
 class App extends Component {
+
   render() {
     /*
     let test = stateGeoJSON.features[2].properties.NAME;
@@ -24,6 +26,7 @@ class App extends Component {
             populationJSON={populationJSON}
           />
         </div>
+        
       </div>
     );
   }

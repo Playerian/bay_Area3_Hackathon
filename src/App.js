@@ -103,7 +103,7 @@ class App extends Component {
     //check if game has started
     if (!this.state.gameStarted){
       //add infected
-      stateData[stateName].infected += 100;
+      stateData[stateName].infected += 1;
       //start the game
       this.setState({
         stateData: stateData,

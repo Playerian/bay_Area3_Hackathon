@@ -168,7 +168,7 @@ export default class Map extends Component {
     //render layers
     if (Object.keys(this.state.stateLayers).length > 0){
       for (let key in this.state.stateLayers){
-        this.updateLayer(this.state.featureLayers[]);
+        this.updateLayer(this.state.stateFeatures[key], this.state.stateLayers[key]);
       }
     }
     //return function
@@ -188,8 +188,13 @@ export default class Map extends Component {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | Data from US Census Bureau'
         />
-        <GeoJSON data={this.props.borderGeoJSON} />
+        <GeoJSON 
+          //border geoJSON
+          data={this.props.borderGeoJSON} 
+          style={{ color: "cadetblue", opacity: 0.5 }}
+        />
         <GeoJSON
+          //individual state geoJSON
           data={this.props.stateGeoJSON}
           style={{ color: "cadetblue", fillColor: "pink", opacity: 0.5 }}
           onEachFeature={(f, l) => this.onEachFeature(f, l)}

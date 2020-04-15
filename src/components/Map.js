@@ -129,34 +129,51 @@ export default class Map extends Component {
       layer.setStyle(state.style);
       if (infected === 0){
         color = colors[0];
-      }else if (infected >= 1){
+      } 
+      if (infected >= 1){
         color = colors[1];
-      }else if (infected >= 20){
+      } 
+      if (infected >= 20){
         color = colors[2];
-      }else if (infected >= 50){
+      } 
+      if (infected >= 50){
         color = colors[3];
-      }else if (infected >= 100){
+      } 
+      if (infected >= 100){
         color = colors[4];
-      }else if (infected >= population * 0.01){
+      } 
+      if (infected >= population * 0.01){
         color = colors[5];
-      }else if (infected >= population * 0.05){
+      } 
+      if (infected >= population * 0.05){
         color = colors[6];
-      }else if (infected >= population * 0.1){
+      } 
+      if (infected >= population * 0.1){
         color = colors[7];
-      }else if (infected >= population * 0.2){
+      } 
+      if (infected >= population * 0.2){
         color = colors[8];
-      }else if (infected >= population * 0.3){
+      } 
+      if (infected >= population * 0.3){
         color = colors[9];
-      }else if (infected >= population * 0.4){
+      } 
+      if (infected >= population * 0.4){
         color = colors[10];
-      }else if (infected >= population * 0.5){
+      } 
+      if (infected >= population * 0.5){
         color = colors[11];
-      }else if (infected >= population * 0.6){
+      } 
+      if (infected >= population * 0.6){
         color = colors[12];
-      }else if (infected >= population * 0.7){
+      } 
+      if (infected >= population * 0.7){
         color = colors[13];
-      }else if (infected >= population * 0.8){
+      } 
+      if (infected >= population * 0.8){
         color = colors[14];
+      }
+      if (infected > 0){
+        console.log(color);
       }
       layer.setStyle({
         fillColor: color

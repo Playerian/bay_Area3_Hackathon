@@ -69,7 +69,7 @@ class App extends Component {
     //final setState
     this.setState({
       day: day,
-      stateData: stateData,
+      stateData: Math.round(stateData),
       
     }, () => {
       //final set US Data

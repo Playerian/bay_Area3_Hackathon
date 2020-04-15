@@ -30,6 +30,7 @@ class App extends Component {
       selecting: "US",
       day: 0,
       gameStarted: false,
+      //0 pause 1 regular
       gameSpeed: 0,
     }
   }

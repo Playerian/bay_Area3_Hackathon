@@ -33,6 +33,10 @@ class App extends Component {
       //0 pause 1 regular
       gameSpeed: 0,
     }
+    //initialize timer
+    this.timer = setInterval(() => {
+      this.onSecond();
+    }, 1000);
   }
   //most important method NA
   oneDayPassed(){
@@ -47,6 +51,14 @@ class App extends Component {
     this.setState({
       gameSpeed: speed
     });
+  }
+  //time handler
+  onSecond(){
+    if (this.state.gameSpeed === 0){
+      
+    }else if (this.state.gameSpeed === 1){
+      this.oneDayPassed();
+    }
   }
   //US Data formatting
   setUSData(){

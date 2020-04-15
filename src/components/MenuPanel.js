@@ -33,19 +33,20 @@ export default class MenuPanel extends Component {
         <div className="menuPanel">
           <div className="divHolder">
             <div className="subHolderDiv">
+              <h3 classname="view"> currently viewing: {this.props.selecting}</h3>
               <NumContainer text="Infected:" />
               <NumContainer text="Death:" />
               <NumContainer text="Recovered:" number=""/>
               <NumContainer text="Population:" number={population} />
             </div>
 
-            {/*<div ClassName="dayDiv">
-              <p>Today is day {this.state.day}</p>
-            </div>*/}
+            <div className="dayDiv">
+              <p>Today is day {this.props.day}</p>
+            </div>{/**/}
 
             <div className="eventDiv">
               <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>
-              <marquee className="marqueeTag">Some Big event happen today:You all die<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
+              <marquee className="marqueeTag">Some Big event happen today: LOCAL DIV TAG 成精啦！<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}
             <div className="buttonDiv">

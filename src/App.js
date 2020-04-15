@@ -31,7 +31,12 @@ class App extends Component {
   }
   //most important method NA
   oneDayPassed(){
-    this.state.day ++;
+    let day = this.state.day + 1;
+    
+    //final setState
+    this.setState({
+      day: day,
+    })
   }
   //US Data formatting
   setUSData(){
@@ -105,7 +110,7 @@ class App extends Component {
           />
         </div>
         
-        <MenuPanel selecting = {this.state.selecting} provinceData = {this.state.stateData}/>{/*buttons and counters goes in here?*/}
+        <MenuPanel day={this.state.day} selecting = {this.state.selecting} provinceData = {this.state.stateData}/>{/*buttons and counters goes in here?*/}
       </div>
     );
   }

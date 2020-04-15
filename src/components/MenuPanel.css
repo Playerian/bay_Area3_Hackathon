@@ -78,16 +78,22 @@
 }
 
 .dayDiv {
-  width: 10%;
+  width: 15%;
   box-sizing: border-box;
-  border: white solid 2px;
+  border: grey solid 5px;
+  text-align:center;
+  font-size:5vh;
+  color:white;
+  background:darkgrey;
+
 }
 
 .eventDiv {
   width: 20%;
   box-sizing: border-box;
-  border: white solid 2px;
-  display:none;
+  border: grey solid 5px;
+  border-radius:2%;
+  
 }
 
 .numcontainer {

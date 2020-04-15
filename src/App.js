@@ -26,7 +26,7 @@ class App extends Component {
             populationJSON={populationJSON}
           />
         </div>
-        
+        <NumContainer/>
       </div>
     );
   }

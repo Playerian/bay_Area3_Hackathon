@@ -17,8 +17,8 @@ export default class NumContainer extends Component{
   
   render(){
   return(
-    <div className="Numcontainer">{this.prop.text}<span className="containerNumber">{this.prop.number}</span></div> //[pass in a type]
-      );
-}
+    <div>aaa</div>//<div className="Numcontainer">{this.prop.text}<span className="containerNumber">{this.prop.number}</span></div> //[pass in a type]
+    );
+  }
 }
 

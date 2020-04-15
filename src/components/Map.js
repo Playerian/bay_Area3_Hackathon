@@ -85,6 +85,10 @@ export default class Map extends Component {
     layer.on({
       click: e => this.onFeatureClicked(e, feature)
     });
+    //set style on feature
+    
+    console.log(layer)
+    
   }
   onFeatureClicked(event, feature) {
     console.log(
@@ -113,6 +117,12 @@ export default class Map extends Component {
         <GeoJSON data={this.props.borderGeoJSON} />
         <GeoJSON
           data={this.props.stateGeoJSON}
+          style={
+            {color: "cadetblue",
+              fillColor: "pink",
+             opacity: 0.5
+            }
+          }
           onEachFeature={(f, l) => this.onEachFeature(f, l)}
         />
       </LeafletMap>

@@ -71,6 +71,10 @@ class App extends Component {
     console.log(
       "You clicked the map at latitude: " + lat + " and longitude: " + lng
     );
+    this.setUSData();
+    this.setState({
+      selecting: "US"
+    });
   }
   render() {
     /*

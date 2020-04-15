@@ -77,7 +77,12 @@ export default class Map extends Component {
     var coord = e.latlng;
     var lat = coord.lat;
     var lng = coord.lng;
-    this.props.onMapClicked(lat, lng);
+    //check propagation
+    if (this.handlerFired){
+      this.handlerFired = false;
+    }else{
+      this.props.onMapClicked(lat, lng);
+    }
   }
   //geoJSON handler
   onEachFeature(feature, layer) {
@@ -91,15 +96,11 @@ export default class Map extends Component {
     if (stateData[feature.properties.NAME]) {
       layer.setStyle(stateData.style);
     }
-    //stop propagation task
-    this.handlerFired = true;
   }
   onFeatureClicked(event, feature) {
-    //check propagation
-    if (this.handlerFired){
-      this.handlerFired = false;
-      this.props.onFeatureClicked(feature.properties.NAME);
-    }
+    this.props.onFeatureClicked(feature.properties.NAME);
+    //stop propagation task
+    this.handlerFired = true;
   }
   render() {
     // array of fill colors in increasing order of severity

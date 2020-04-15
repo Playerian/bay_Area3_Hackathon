@@ -8,7 +8,7 @@ export default class MenuPanel extends Component {
 
     this.state = {
       showing: true,
-      day: "Today is day NaN"
+      day: "NaN"
     };
   }
 
@@ -24,6 +24,10 @@ export default class MenuPanel extends Component {
   upgradeTab() {}
 
   render() {
+    let selecting = this.props.selecting;
+    let provinceData = this.props.provinceData;
+    let population = provinceData[selecting].population || 0;
+    
     if (this.state.showing === true) {
       return (
         <div className="menuPanel">
@@ -32,14 +36,16 @@ export default class MenuPanel extends Component {
               <NumContainer text="Infected:" />
               <NumContainer text="Death:" />
               <NumContainer text="Recovered:" number=""/>
-              <NumContainer text="Population:" number={this.props.provinceData.totalPopulation} />
+              <NumContainer text="Population:" number={population} />
             </div>
 
-            <div ClassName="dayDiv">{this.state.day}</div>
+            <div ClassName="dayDiv">
+              <p>Today is day {this.state.day}</p>
+            </div>
 
             <div ClassName="eventDiv">
-              <img src=""></img>
-              <marquee>today is day NaN</marquee>
+              <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>
+              <marquee className="marqueeTag">Some Big event happen today:You all die<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}
             <div className="buttonDiv">

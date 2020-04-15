@@ -29,7 +29,7 @@ export default class MenuPanel extends Component {
   upgradeTab() {
     console.log("clicked");
     this.setState({
-      tab: "update"
+      tab: "upgrade"
     });
   }
 
@@ -84,10 +84,24 @@ export default class MenuPanel extends Component {
         <div className="menuPanel">
           <div className="divHolder">
             <div className="subHolderDiv">
-              <div className="menuHide" onClick={() => this.menuUp()}>
-            click to hide
-              </div>
+              <h3 className="view numcontainer2"> currently viewing: {this.props.selecting}</h3>
+              <NumContainer text="Infected:" number={infected}/>
+              <NumContainer text="Death:" number={death}/>
+              <NumContainer text="Recovered:" number={recovered}/>
+              <NumContainer text="Population:" number={population} />
             </div>
+            <div className="buttonDiv">
+              <button className="panelButton" onClick={() => this.overviewTab()}>
+                 Overview
+              </button>
+              <button className="panelButton" onClick={() => this.upgradeTab()}>
+                Upgrades
+              </button>
+              <button className="panelButton"></button>
+            </div>
+          </div>
+          <div className="menuHide" onClick={() => this.menuUp()}>
+            click to hide
           </div>
         </div>
       );

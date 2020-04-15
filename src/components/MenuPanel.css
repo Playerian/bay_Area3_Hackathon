@@ -134,3 +134,14 @@
   color: white;
 }
 
+.upgradeContainer{
+  display:flex;
+  flex-wrap:wrap;
+  overflow:scroll;
+  height:50%;
+}
+
+.upgradeTag{
+  width:100%;
+  box-sizing:border-box;
+}

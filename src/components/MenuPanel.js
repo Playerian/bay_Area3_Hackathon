@@ -142,7 +142,9 @@ export default class MenuPanel extends Component {
               <UpContainer choice={infected}/>
               <UpContainer choice={recovered}/>
               <UpContainer choice={population} /> */}
-              {upgradeDivArray}
+              <div className="upgradeContainer">
+                {upgradeDivArray}
+              </div>
               
             </div>
              <div className="eventDiv">

@@ -114,8 +114,8 @@ class App extends Component {
         
         <MenuPanel day={this.state.day} selecting = {this.state.selecting} provinceData = {this.state.stateData}/>{/*buttons and counters goes in here?*/}
         
-        <div className="pplPointContiner"></div>
-        <div className="researchProgress"></div>
+        {/*<div className="pplPointContiner"></div>
+        <div className="researchProgress"></div>*/}
         
       </div>
     );

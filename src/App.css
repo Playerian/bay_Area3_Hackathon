@@ -11,7 +11,7 @@
   z-index:1;
 }
 
-.Numcontainer{
+.menuPanel{
   position:absolute;
   z-index:3;
   top:-0.5vh;
@@ -20,4 +20,15 @@
   background:darkgrey;
   border:5px grey solid;
   border-radius:2%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.divHolder{
+  height:75%;
+}
+
+.menuHide{
+  height:25%;
 }

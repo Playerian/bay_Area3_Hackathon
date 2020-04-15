@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Map from "./components/Map.js";
-import NumContainer from "./components/NumContainer.js"
+import MenuPanel from "./components/MenuPanel.js"
 import borderGeoJSON from "./2010USoutline.json";
 import stateGeoJSON from "./USStates.json";
 import populationJSON from "./population.json";
@@ -10,7 +10,8 @@ import populationJSON from "./population.json";
 class App extends Component {
   constructor(props){
     super(props);
-    
+    //set up state data
+    console.log()
   }
   render() {
     /*
@@ -29,7 +30,7 @@ class App extends Component {
             populationJSON={populationJSON}
           />
         </div>
-        <NumContainer text="what is this doing here"/>
+        <MenuPanel/>{/*buttons and counters goes in here?*/}
       </div>
     );
   }

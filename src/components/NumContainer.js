@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 export default class NumContainer extends Component{
   constructor(props){
     super(props)
@@ -17,7 +18,7 @@ export default class NumContainer extends Component{
   
   render(){
   return(
-    <div className="Numcontainer">{this.props.text}<span className="containerNumber">{this.props.number}</span></div> //[pass in a type]
+    <div className="Numcontainer">{this.props.text}<span className="containerNumber">{this.props.number}</span></div> 
     );
   }
 }

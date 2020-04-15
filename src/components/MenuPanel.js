@@ -7,7 +7,8 @@ export default class MenuPanel extends Component {
     super(props);
 
     this.state = {
-      showing: true
+      showing: true,
+      day: "Today is day NaN"
     };
   }
 
@@ -31,16 +32,16 @@ export default class MenuPanel extends Component {
               <NumContainer text="Infected:" />
               <NumContainer text="Death:" />
               <NumContainer text="Recovered:" number=""/>
-              <NumContainer text="Population:" number="" />
+              <NumContainer text="Population:" number={this.props.provinceData.totalPopulation} />
             </div>
 
-            <div ClassName="dayDiv"></div>
+            <div ClassName="dayDiv">{this.state.day}</div>
 
-            <div CassName="eventDiv">
-              <img></img>
-              <marquee></marquee>
+            <div ClassName="eventDiv">
+              <img src=""></img>
+              <marquee>today is day NaN</marquee>
             </div>
-
+  {/*-------------------------------------------------------------------------------------------------------------*/}
             <div className="buttonDiv">
               <button
                 className="panelButton"

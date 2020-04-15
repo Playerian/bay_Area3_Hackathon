@@ -91,9 +91,15 @@ export default class Map extends Component {
     if (stateData[feature.properties.NAME]) {
       layer.setStyle(stateData.style);
     }
+    //stop propagation task
+    this.handlerFired = true;
   }
   onFeatureClicked(event, feature) {
-    this.props.onFeatureClicked(feature.properties.NAME);
+    //check propagation
+    if (this.handlerFired){
+      this.handlerFired = false;
+      this.props.onFeatureClicked(feature.properties.NAME);
+    }
   }
   render() {
     // array of fill colors in increasing order of severity

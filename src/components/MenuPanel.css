@@ -20,6 +20,7 @@
   z-index: 5;
   display: flex;
   flex-wrap: wrap;
+  justify-content:space-between;
 }
 
 .menuHide {
@@ -47,6 +48,8 @@
 
 .panelButton:hover {
   background-color: #8abc8e;
+  font-weight: bold;
+  color: white;
 }
 
 .panelButton {
@@ -81,7 +84,7 @@
 }
 
 .eventDiv{
-   width: 20%;
+  width: 20%;
   box-sizing: border-box;
 
 }

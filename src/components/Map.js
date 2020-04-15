@@ -15,7 +15,9 @@ export default class Map extends Component {
     this.state = {
       //coord: [latitude, longtitude]
       coord: [this.props.center.x, this.props.center.y],
-      zoom: 5
+      zoom: 5,
+      stateLayers: {},
+      stateFeatures: {}
     };
   }
   componentDidMount() {
@@ -90,6 +92,24 @@ export default class Map extends Component {
     layer.on({
       click: e => this.onFeatureClicked(e, feature, layer)
     });
+    //set state datas
+    let stateFeatures = this.state.stateFeatures;
+    let stateLayers = this.state.stateLayers;
+    stateFeatures[feature.properties.NAME] = feature;
+    stateLayers[feature.properties.NAME] = layer;
+    this.setState({
+      stateFeatures: stateFeatures,
+      stateLayers: stateLayers
+    });
+  }
+  //geoJSON click handler
+  onFeatureClicked(event, feature, layer) {
+    this.props.onFeatureClicked(feature.properties.NAME);
+    //stop propagation task
+    this.handlerFired = true;
+  }
+  //update individual layer during render
+  updateLayer(feature, layer){
     // grab stateData
     let stateData = this.props.stateData;
     //set color base on stateData
@@ -143,13 +163,15 @@ export default class Map extends Component {
       });
     }
   }
-  //geoJSON click handler
-  onFeatureClicked(event, feature, layer) {
-    this.props.onFeatureClicked(feature.properties.NAME);
-    //stop propagation task
-    this.handlerFired = true;
-  }
+  //render funciton
   render() {
+    //render layers
+    if (Object.keys(this.state.stateLayers).length > 0){
+      for (let key in this.state.stateLayers){
+        this.updateLayer(this.state.featureLayers[]);
+      }
+    }
+    //return function
     return (
       // center of the US in coordinates: 40.2, -95.7129 (this is not the coordinates of the geographical center)
       <LeafletMap

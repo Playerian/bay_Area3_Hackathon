@@ -79,7 +79,8 @@ export default class MenuPanel extends Component {
       
     ]
     
-    let upgradeDivArray = [];
+    let upgradeDivArray = upgrades.map();
+    
     
     
     

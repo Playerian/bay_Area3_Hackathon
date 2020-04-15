@@ -102,6 +102,7 @@ export default class Map extends Component {
     //set style base on stateData
     if (stateData[feature.properties.NAME]) {
       let state = stateData[feature.properties.NAME];
+      let infected = state.infected;
       let color;
       //setting default style listed in stateData
       layer.setStyle(state.style);

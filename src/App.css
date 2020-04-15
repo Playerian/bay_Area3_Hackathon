@@ -15,7 +15,7 @@
   position:absolute;
   z-index:3;
   top:-0.5vh;
-  height:10vh;
+  height:25vh;
   width:100%;
   background:darkgrey;
   border:5px grey solid;
@@ -26,9 +26,21 @@
 }
 
 .divHolder{
-  height:75%;
+  position:relative;
+  height:93%;
+  width:100%;
+  background:white;
+  z-index:5;
+  
 }
 
 .menuHide{
-  height:25%;
+  position:relative;
+  height:7%;
+  width:100%;
+  background:darkgrey;
+  border:5px grey solid;
+  z-index:5;
+  text-align:center;
+  margin:-5px;
 }

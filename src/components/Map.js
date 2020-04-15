@@ -102,6 +102,7 @@ export default class Map extends Component {
     );
   }
   render() {
+    // let colors = ["#730000", "#aa0000", "#de0000", "#ff0000", "#ff4600", "#ff6200", "#ff9300", "#ffb900", "#"];
     return (
       // center of the US in coordinates: 40.2, -95.7129 (this is not the coordinates of the geographical center)
       <LeafletMap

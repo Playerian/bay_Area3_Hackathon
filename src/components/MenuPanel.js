@@ -20,10 +20,10 @@ export default class MenuPanel extends Component{
   return(
     <div className="menuPanel">
       <div className="divHolder">
-      
+      bbbbb
       
       </div>
-      <div className="menuHide" onClick={()=>this.scrollMenuUp}>click to hide</div>
+      <div className="menuHide" onClick={()=>this.scrollMenuUp()}>click to hide</div>
     </div> 
     );
   }

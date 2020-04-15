@@ -9,8 +9,7 @@ export default class MenuPanel extends Component {
     this.state = {
       showing: true,
       day: "NaN",
-      overviewClick: true,
-      upgradeClick: false
+      tab: "overview"
     };
   }
 
@@ -24,13 +23,13 @@ export default class MenuPanel extends Component {
   }
   overviewTab() {
     this.setState({
-      overviewClick: true
+      tab: "overview"
     });
   }
   upgradeTab() {
+    console.log("clicked");
     this.setState({
-      overviewClick: false,
-    upgradeClick: true
+      tab: "update"
     });
   }
 
@@ -41,7 +40,7 @@ export default class MenuPanel extends Component {
     let infected = provinceData[selecting].infected || 0;
     let death = provinceData[selecting].death || 0;
     let recovered = provinceData[selecting].recovered || 0;
-    if (this.state.showing === true) {
+    if (this.state.showing === true && this.state.tab === "overview") {
       return (
         <div className="menuPanel">
           <div className="divHolder">
@@ -77,6 +76,18 @@ export default class MenuPanel extends Component {
           </div>
           <div className="menuHide" onClick={() => this.menuUp()}>
             click to hide
+          </div>
+        </div>
+      );
+    } else if(this.state.showing === true && this.state.tab === "upgrade"){ 
+      return(
+        <div className="menuPanel">
+          <div className="divHolder">
+            <div className="subHolderDiv">
+              <div className="menuHide" onClick={() => this.menuUp()}>
+            click to hide
+              </div>
+            </div>
           </div>
         </div>
       );

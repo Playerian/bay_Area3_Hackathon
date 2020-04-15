@@ -11,7 +11,17 @@ class App extends Component {
   constructor(props){
     super(props);
     //set up state data
-    console.log(stateGeoJSON)
+    let stateData = {};
+    stateGeoJSON.features.forEach((v, i) => {
+      if (v.properties.NAME !== "District of Columbia"){
+        let newState = new State(v.properties.NAME, populationJSON[v.properties.NAME], v);
+        stateData[v.properties.NAME] = newState;
+      }
+    });
+    //initialize state
+    this.state = {
+      stateData: stateData
+    }
   }
   render() {
     /*
@@ -28,8 +38,10 @@ class App extends Component {
             borderGeoJSON={borderGeoJSON}
             stateGeoJSON={stateGeoJSON}
             populationJSON={populationJSON}
+            stateData={this.state.stateData}
           />
         </div>
+        
         <MenuPanel/>{/*buttons and counters goes in here?*/}
       </div>
     );
@@ -39,9 +51,10 @@ class App extends Component {
 export default App;
 
 class State{
-  constructor(name, population){
+  constructor(name, population, geoJSON){
     this.name = name;
     this.population = population;
+    this.geoJSON = geoJSON;
     this.style={
       color: "#3388ff",
       fillColor: "#3388ff",

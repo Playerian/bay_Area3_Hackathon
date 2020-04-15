@@ -85,14 +85,14 @@ export default class Map extends Component {
     layer.on({
       click: e => this.onFeatureClicked(e, feature)
     });
-    //set style on feature
-    
-    if (feature.properties.NAME === "California"){
-      layer.setStyle({
-        fillColor: "#3388fe"
-      })
-    }
-    
+    // grab stateData
+    let stateData = this.props.stateData;
+    //set style base on stateData
+    // if (feature.properties.NAME === "California") {
+    //   layer.setStyle({
+    //     fillColor: "#3388fe"
+    //   });
+    // }
   }
   onFeatureClicked(event, feature) {
     console.log(
@@ -102,7 +102,12 @@ export default class Map extends Component {
     );
   }
   render() {
-    // let colors = ["#730000", "#aa0000", "#de0000", "#ff0000", "#ff4600", "#ff6200", "#ff9300", "#ffb900", "#"];
+    // array of fill colors in increasing order of severity
+    let colors = [
+      "#3388ff", "#74adad", "#8abc8e", "#c5de46", "fbff00",
+      "#fde800", "#fed200", "#ffb900", "#ff9300", "#ff6200",
+      "#ff4600", "#ff0000", "#de0000", "#aa0000", "#730000",
+    ]
     return (
       // center of the US in coordinates: 40.2, -95.7129 (this is not the coordinates of the geographical center)
       <LeafletMap
@@ -122,16 +127,10 @@ export default class Map extends Component {
         <GeoJSON data={this.props.borderGeoJSON} />
         <GeoJSON
           data={this.props.stateGeoJSON}
-          style={
-            {color: "cadetblue",
-              fillColor: "pink",
-             opacity: 0.5
-            }
-          }
+          style={{ color: "cadetblue", fillColor: "pink", opacity: 0.5 }}
           onEachFeature={(f, l) => this.onEachFeature(f, l)}
         />
       </LeafletMap>
-      
     );
   }
 }

@@ -6,26 +6,42 @@ export default class MenuPanel extends Component{
     super(props)
     
     this.state = {
-     
+     showing:true,
     }
     
   }
   
-  scrollMenuUp(){
-    console.log("scroll up code goes under here")
+  menuUp(){
     
+    if (this.state.showing === true){
+      this.setState({"showing":false})
+    }else{
+      this.setState({"showing":true});
+    }
+    //console.log(this.state.showing)
   }
   
   render(){
-  return(
-    <div className="menuPanel">
-      <div className="divHolder">
-      bbbbb
+    
+    if(this.state.showing === true){
+      return(
+        <div className="menuPanel">
+          <div className="divHolder">
+          bbbbb
+
+          </div>
+          <div className="menuHide" onClick={()=>this.menuUp()}>click to hide</div>
+        </div> )
+      ;
+    }else{
+      return(
       
-      </div>
-      <div className="menuHide" onClick={()=>this.scrollMenuUp()}>click to hide</div>
-    </div> 
-    );
+          <div className="menuShow" onClick={()=>this.menuUp()}>click to show</div>
+        
+      )
+    }
+  
+    
   }
 }
 

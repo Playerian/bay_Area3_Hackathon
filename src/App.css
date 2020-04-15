@@ -43,4 +43,18 @@
   z-index:5;
   text-align:center;
   margin:-5px;
+  -webkit-transition: height .3s ease;
+}
+
+.menuShow{
+  position:absolute;
+  z-index:3;
+  top:-0.5vh;
+  height:3vh;
+  width:100%;
+  background:darkgrey;
+  border:5px grey solid;
+  border-radius:2%;
+  text-align:center;
+  -webkit-transition: height .3s ease;
 }

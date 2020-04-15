@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import NumContainer from "./NumContainer.js";
 import UpContainer from "./UpContainer.js";
+import UpgradeTag from "./UpgradeTag.js";
+
 import "./MenuPanel.css";
 
 export default class MenuPanel extends Component {
@@ -50,6 +52,24 @@ export default class MenuPanel extends Component {
     let infected = provinceData[selecting].infected || 0;
     let death = provinceData[selecting].death || 0;
     let recovered = provinceData[selecting].recovered || 0;
+    
+    //making an array of upgrade DIVs
+    const upgrades = [
+      {
+        purchased:false,
+        cost:0,
+        text:"some text here",
+        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+        resilience:0,
+        spread:0,
+        lethal:0,
+        
+      }
+      
+    ]
+    
+    
+    
     if (this.state.showing === true && this.state.tab === "overview") {
       //overview tab
       return (
@@ -101,10 +121,11 @@ export default class MenuPanel extends Component {
           <div className="divHolder">
             <div className="subHolderDiv">
               <h3 className="view numcontainer"> Upgrades: </h3>
-              <UpContainer choice={death}/>
+              {/*<UpContainer choice={death}/>
               <UpContainer choice={infected}/>
               <UpContainer choice={recovered}/>
-              <UpContainer choice={population} />
+              <UpContainer choice={population} /> */}
+              
             </div>
              <div className="eventDiv">
                <p className="view numcontainer">Resilience:</p>

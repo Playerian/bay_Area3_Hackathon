@@ -42,6 +42,7 @@ export default class MenuPanel extends Component {
     let death = provinceData[selecting].death || 0;
     let recovered = provinceData[selecting].recovered || 0;
     if (this.state.showing === true && this.state.tab === "overview") {
+      //overview tab
       return (
         <div className="menuPanel">
           <div className="divHolder">
@@ -80,7 +81,8 @@ export default class MenuPanel extends Component {
           </div>
         </div>
       );
-    } else if(this.state.showing === true && this.state.tab === "upgrade"){ 
+    } else if(this.state.showing === true && this.state.tab === "upgrade"){
+      //upgrade tab
       return(
         <div className="menuPanel">
           <div className="divHolder">

@@ -27,16 +27,18 @@ export default class MenuPanel extends Component {
     let selecting = this.props.selecting;
     let provinceData = this.props.provinceData;
     let population = provinceData[selecting].population || 0;
-    
+    let infected = provinceData[selecting].infected || 0;
+    let death = provinceData[selecting].death || 0;
+    let recovered = provinceData[selecting].recovered || 0;
     if (this.state.showing === true) {
       return (
         <div className="menuPanel">
           <div className="divHolder">
             <div className="subHolderDiv">
-              <h3 classname="view"> currently viewing: {this.props.selecting}</h3>
-              <NumContainer text="Infected:" />
-              <NumContainer text="Death:" />
-              <NumContainer text="Recovered:" number=""/>
+              <h3 className="view"> currently viewing: {this.props.selecting}</h3>
+              <NumContainer text="Infected:" number={infected}/>
+              <NumContainer text="Death:" number={death}/>
+              <NumContainer text="Recovered:" number={recovered}/>
               <NumContainer text="Population:" number={population} />
             </div>
 

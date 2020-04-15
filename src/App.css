@@ -11,7 +11,7 @@
   z-index:1;
 }
 
-.menuPanel{
+/* .menuPanel{
   position:absolute;
   z-index:3;
   top:-0.5vh;
@@ -59,9 +59,9 @@
   border:5px grey solid;
   border-radius:2%;
   text-align:center;
-}
+} */
 
-.subHolderDiv{
+/* .subHolderDiv{
   display:flex;
   flex-wrap:wrap;
   width:90%;
@@ -83,4 +83,4 @@
   width:100%;
   color:white;
 
-}
+} */

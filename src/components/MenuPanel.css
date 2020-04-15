@@ -1,9 +1,93 @@
+.menuPanel {
+  position: absolute;
+  z-index: 3;
+  top: -0.5vh;
+  height: 25vh;
+  width: 100%;
+  background: darkgrey;
+  border: 5px grey solid;
+  border-radius: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.divHolder {
+  position: relative;
+  height: 93%;
+  width: 100%;
+  background: #454647;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menuHide {
+  position: relative;
+  height: 7%;
+  width: 100%;
+  background: darkgrey;
+  border: 5px grey solid;
+  z-index: 5;
+  text-align: center;
+  padding: 5px;
+}
+
+.menuShow {
+  position: absolute;
+  z-index: 3;
+  top: -0.5vh;
+  height: 3vh;
+  width: 100%;
+  background: darkgrey;
+  border: 5px grey solid;
+  border-radius: 2%;
+  text-align: center;
+}
+
 .panelButton:hover {
   background-color: #8abc8e;
 }
 
 .panelButton {
+  width: 100%;
+  height: 33%;
   background-color: darkgrey;
   color: black;
   font-size: large;
+  text-align: center;
+}
+
+.subHolderDiv {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.buttonDiv {
+  width: 20%;
+  box-sizing: border-box;
+}
+
+
+
+.dayDiv{
+    width: 20%;
+    box-sizing: border-box;
+
+}
+
+.eventDiv{
+   width: 20%;
+  box-sizing: border-box;
+
+}
+
+.numcontainer {
+  height: 25%;
+  width: 100%;
+  color: white;
 }

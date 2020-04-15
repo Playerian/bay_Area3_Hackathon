@@ -12,17 +12,46 @@ class App extends Component {
     super(props);
     //set up state data
     let stateData = {};
+    let totalPopulation = 0;
     stateGeoJSON.features.forEach((v, i) => {
       if (v.properties.NAME !== "District of Columbia"){
         let newState = new State(v.properties.NAME, populationJSON[v.properties.NAME], v);
         stateData[v.properties.NAME] = newState;
+        totalPopulation += populationJSON[v.properties.NAME];
       }
     });
+    //set up the us data
+    stateData.US = new State("US", totalPopulation);
     //initialize state
     this.state = {
       stateData: stateData,
       selecting: "US",
     }
+  }
+  //US Data formatting
+  setUSData(){
+    let stateData = this.state.stateData;
+    let totalPopulation = 0;
+    let totalInfected = 0;
+    let totalRecovered = 0;
+    let totalDeath = 0;
+    for (let key in stateData){
+      //ignore if it's us
+      if (key !== "US"){
+        let state = stateData[key];
+        totalPopulation += state.population;
+        totalInfected += state.infected;
+        totalRecovered += state.recovered;
+        totalDeath += state.death;
+      }
+    }
+    stateData.US.population = totalPopulation;
+    stateData.US.infected = totalInfected;
+    stateData.US.recovered = totalRecovered;
+    stateData.US.death = totalDeath;
+    this.setState({
+      stateData: stateData
+    });
   }
   //geoJSON handler
   onFeatureClicked(stateName){

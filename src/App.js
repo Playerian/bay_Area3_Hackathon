@@ -63,13 +63,14 @@ class App extends Component {
         }
         //add newInfected to state infected population
         state.infected += newInfected;
+        state.infected = Math.round(state.infected);
       }
     }
     //calling setUSData
     //final setState
     this.setState({
       day: day,
-      stateData: Math.round(stateData),
+      stateData: stateData,
       
     }, () => {
       //final set US Data

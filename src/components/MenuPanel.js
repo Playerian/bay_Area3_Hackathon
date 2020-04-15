@@ -80,7 +80,8 @@ export default class MenuPanel extends Component {
     ]
     
     let upgradeDivArray = upgrades.map((v,i)=>{
-      let div =  <UpgradeTag text={v.text} ppp={v.cost} img={v.imgSrc}/>
+      
+          return <UpgradeTag text={v.text} ppp={v.cost} img={v.imgSrc} key={i}/>
         });
     
     
@@ -141,9 +142,7 @@ export default class MenuPanel extends Component {
               <UpContainer choice={infected}/>
               <UpContainer choice={recovered}/>
               <UpContainer choice={population} /> */}
-              {this.upgradeDivArray}
-              <p>aaaaaa</p>
-              
+              {upgradeDivArray}
               
             </div>
              <div className="eventDiv">

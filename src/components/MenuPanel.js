@@ -8,7 +8,9 @@ export default class MenuPanel extends Component {
 
     this.state = {
       showing: true,
-      day: "NaN"
+      day: "NaN",
+      overviewClick: true,
+      upgradeClick: false
     };
   }
 
@@ -21,9 +23,15 @@ export default class MenuPanel extends Component {
     //console.log(this.state.showing)
   }
   overviewTab() {
-    
+    this.setState({
+      overviewClick: true
+    });
   }
   upgradeTab() {
+    this.setState({
+      overviewClick: false,
+    upgradeClick: true
+    });
   }
 
   render() {

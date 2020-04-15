@@ -6,24 +6,26 @@ export default class UpgradeTag extends Component{
     super(props)
     
     this.state = {
-      // death:0,
-      // recovered:0,
-      // infected:0,
-      // pplPoint:0,
-      
+      purchased:false
     }
     
   }
   
   
   render(){
-  return(
-    <div className="upgradeTag">{this.props.text}
+    
+    const thing = <div></div>
+    
+  return
+    
+    {/*s*/}
+    {/*<div className="upgradeTag">{this.props.text}
       <span className="upgradeTagText"> {this.props.number}</span>
-      <img className="upgradeTagImg" src=""></img>
-      
-    </div> 
-    );
+      <img className="upgradeTagImg" src={this.props.image}></img>
+      <button className="upgradeButton">{this.statepurchased? this.props.ppp:"mutated."}</button>
+    </div> */}
+    
+    
   }
 }
 

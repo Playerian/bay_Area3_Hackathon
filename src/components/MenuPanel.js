@@ -35,7 +35,7 @@ export default class MenuPanel extends Component {
         <div className="menuPanel">
           <div className="divHolder">
             <div className="subHolderDiv">
-              <h3 className="view"> currently viewing: {this.props.selecting}</h3>
+              <h3 className="view numcontainer"> currently viewing: {this.props.selecting}</h3>
               <NumContainer text="Infected:" number={infected}/>
               <NumContainer text="Death:" number={death}/>
               <NumContainer text="Recovered:" number={recovered}/>
@@ -48,7 +48,7 @@ export default class MenuPanel extends Component {
 
             <div className="eventDiv">
               <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>
-              <marquee className="marqueeTag">Some Big event happen today: LOCAL DIV TAG 成精啦！<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
+              <marquee className="marqueeTag">Some Big event happen today: LOCAL DIV TAG (终于)成精啦！<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}
             <div className="buttonDiv">

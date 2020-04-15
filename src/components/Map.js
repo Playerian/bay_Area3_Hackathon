@@ -84,31 +84,33 @@ export default class Map extends Component {
       this.props.onMapClicked(lat, lng);
     }
   }
-  //geoJSON handler
+  //geoJSON on each state
   onEachFeature(feature, layer) {
     //bind click on each layer
     layer.on({
-      click: e => this.onFeatureClicked(e, feature)
+      click: e => this.onFeatureClicked(e, feature, layer)
     });
     // grab stateData
     let stateData = this.props.stateData;
-    //set style base on stateData
-    if (stateData[feature.properties.NAME]) {
-      layer.setStyle(stateData.style);
-    }
-  }
-  onFeatureClicked(event, feature) {
-    this.props.onFeatureClicked(feature.properties.NAME);
-    //stop propagation task
-    this.handlerFired = true;
-  }
-  render() {
+    //set color base on stateData
     // array of fill colors in increasing order of severity
     let colors = [
       "#3388ff", "#74adad", "#8abc8e", "#c5de46", "fbff00",
       "#fde800", "#fed200", "#ffb900", "#ff9300", "#ff6200",
       "#ff4600", "#ff0000", "#de0000", "#aa0000", "#730000",
     ]
+    //set style base on stateData
+    if (stateData[feature.properties.NAME]) {
+      layer.setStyle(stateData[feature.properties.NAME].style);
+    }
+  }
+  //geoJSON click handler
+  onFeatureClicked(event, feature, layer) {
+    this.props.onFeatureClicked(feature.properties.NAME);
+    //stop propagation task
+    this.handlerFired = true;
+  }
+  render() {
     return (
       // center of the US in coordinates: 40.2, -95.7129 (this is not the coordinates of the geographical center)
       <LeafletMap

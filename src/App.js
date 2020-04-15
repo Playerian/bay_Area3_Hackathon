@@ -134,7 +134,7 @@ class State{
     this.recovered = 0;
     //rendering data
     this.style={
-      color: "#3388ff",
+      color: "cadetblue",
       fillColor: "#3388ff",
       opacity: 0.5,
     }

@@ -87,7 +87,11 @@ export default class Map extends Component {
     });
     //set style on feature
     
-    console.log(layer)
+    if (feature.properties.NAME === "California"){
+      layer.setStyle({
+        fillColor: "red"
+      })
+    }
     
   }
   onFeatureClicked(event, feature) {

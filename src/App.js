@@ -8,7 +8,10 @@ import stateGeoJSON from "./USStates.json";
 import populationJSON from "./population.json";
 
 class App extends Component {
-
+  constructor(props){
+    super(props);
+    
+  }
   render() {
     /*
     let test = stateGeoJSON.features[2].properties.NAME;
@@ -26,10 +29,17 @@ class App extends Component {
             populationJSON={populationJSON}
           />
         </div>
-        <NumContainer/>
+        <NumContainer text="what is this"/>
       </div>
     );
   }
 }
 
 export default App;
+
+class State{
+  constructor(name, population){
+    this.name = name;
+    this.population = population;
+  }
+}

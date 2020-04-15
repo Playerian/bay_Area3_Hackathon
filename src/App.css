@@ -7,7 +7,12 @@
     auto;
 }
 
+.leaflet-container{
+  z-index:1;
+}
+
 .Numcontainer{
   position:absolute;
-  
+  z-index:3;
+  top:200px;
 }

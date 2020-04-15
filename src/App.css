@@ -23,6 +23,7 @@
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
+  
 }
 
 .divHolder{
@@ -45,7 +46,7 @@
   z-index:5;
   text-align:center;
   margin:-5px;
-  -webkit-transition: height .3s ease;
+  
 }
 
 .menuShow{
@@ -58,17 +59,27 @@
   border:5px grey solid;
   border-radius:2%;
   text-align:center;
-  -webkit-transition: height .3s ease;
 }
 
 .subHolderDiv{
+  display:flex;
+  flex-wrap:wrap;
   width:90%;
   box-sizing:border-box;
-  justify-content:start;
 }
 
 .buttonDiv{
   width:10%;
   box-sizing:border-box;
-  justify-content:end;
+}
+
+.panelButton{
+  width:100%;
+  height:33%;
+}
+
+.numcontainer{
+  height:25%;
+    width:100%;
+
 }

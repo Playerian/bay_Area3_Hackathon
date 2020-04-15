@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import NumContainer from "./NumContainer.js"
+import NumContainer from "./NumContainer.js";
+import "./MenuPanel.css";
 
 export default class MenuPanel extends Component{
   constructor(props){
@@ -20,6 +21,11 @@ export default class MenuPanel extends Component{
     }
     //console.log(this.state.showing)
   }
+  overviewTab(){
+  }
+  upgradeTab(){
+    
+  }
   
   render(){
     
@@ -35,7 +41,9 @@ export default class MenuPanel extends Component{
             </div>
             
             <div className="buttonDiv">
-              <button></button>
+              <button className="panelButton" onClick={()=>this.overviewTab()}>Overview</button>
+              <button className="panelButton" onClick={()=>this.upgradeTab()}>Upgrades</button>
+              <button className="panelButton"></button>
             </div>
             
           </div>

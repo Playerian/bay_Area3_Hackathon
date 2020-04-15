@@ -61,7 +61,7 @@ class App extends Component {
           />
         </div>
         
-        <MenuPanel/>{/*buttons and counters goes in here?*/}
+        <MenuPanel provenceData = {this.state.stateData}/>{/*buttons and counters goes in here?*/}
       </div>
     );
   }
@@ -74,6 +74,9 @@ class State{
     //game data
     this.name = name;
     this.population = population;
+    this.infected = 0;
+    this.death = 0;
+    this.recovered = 0;
     //rendering data
     this.style={
       color: "#3388ff",

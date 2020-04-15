@@ -26,7 +26,12 @@ class App extends Component {
     this.state = {
       stateData: stateData,
       selecting: "US",
+      day: 0,
     }
+  }
+  //most important method NA
+  oneDayPassed(){
+    this.state.day ++;
   }
   //US Data formatting
   setUSData(){

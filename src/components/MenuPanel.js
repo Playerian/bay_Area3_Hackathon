@@ -79,7 +79,16 @@ export default class MenuPanel extends Component {
       
     ]
     
-    let upgradeDivArray = upgrades.map();
+    let upgradeDivArray = upgrades.map((v,i)=>{
+      let div =  <upgradeTag 
+        text={v.text}
+        ppp={v.cost}
+        img={v.imgSrc}
+        
+        />
+          console.log(div)
+        return div
+    });
     
     
     
@@ -139,6 +148,7 @@ export default class MenuPanel extends Component {
               <UpContainer choice={infected}/>
               <UpContainer choice={recovered}/>
               <UpContainer choice={population} /> */}
+              {this.upgradeDivArray}
               
             </div>
              <div className="eventDiv">
@@ -162,6 +172,7 @@ export default class MenuPanel extends Component {
         </div>
       );
     } else {
+      // hides menu
       return (
         <div className="menuShow" onClick={() => this.menuUp()}>
           click to show

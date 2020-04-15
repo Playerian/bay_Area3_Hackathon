@@ -3,6 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import Map from "./components/Map.js";
 import MenuPanel from "./components/MenuPanel.js"
+import NumContainer from "./components/NumContainer.js"
+
 import borderGeoJSON from "./2010USoutline.json";
 import stateGeoJSON from "./USStates.json";
 import populationJSON from "./population.json";
@@ -111,6 +113,7 @@ class App extends Component {
         </div>
         
         <MenuPanel day={this.state.day} selecting = {this.state.selecting} provinceData = {this.state.stateData}/>{/*buttons and counters goes in here?*/}
+        
       </div>
     );
   }

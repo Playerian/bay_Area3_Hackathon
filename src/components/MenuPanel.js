@@ -55,7 +55,11 @@ export default class MenuPanel extends Component {
             </div>
 
             <div className="dayDiv">
-              <p>Today is day {this.props.day}</p>
+              <div className="dayDivText">Today is day {this.props.day}</div>
+              <div className="dayDivButtonWrapper">
+                <button className="pauseButton">||</button>
+                <button className="playButton">&#9658;</button>
+              </div>
             </div>{/**/}
 
             <div className="eventDiv">

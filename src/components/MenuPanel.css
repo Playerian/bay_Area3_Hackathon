@@ -89,6 +89,14 @@
   height: 100%;
 }
 
+.dayDivText{
+  height: 80%;
+}
+
+.dayDivButtonWrapper{
+  height: 20%;
+}
+
 .eventDiv {
   width: 20%;
   box-sizing: border-box;

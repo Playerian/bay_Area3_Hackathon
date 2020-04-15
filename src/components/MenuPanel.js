@@ -14,6 +14,15 @@ export default class MenuPanel extends Component {
     };
   }
 
+  //click handlers
+  onPauseClick(){
+    this.props.setSpeed(0);
+  }
+  onPlayClick(){
+    this.props.setSpeed(1);
+  }
+  
+  //changing menu
   menuUp() {
     if (this.state.showing === true) {
       this.setState({ showing: false });
@@ -57,8 +66,8 @@ export default class MenuPanel extends Component {
             <div className="dayDiv">
               <div className="dayDivText">Today is day {this.props.day}</div>
               <div className="dayDivButtonWrapper">
-                <button className="pauseButton">||</button>
-                <button className="playButton">&#9658;</button>
+                <button className="pauseButton" onClick={(e) => this.onPauseClick(e)}>||</button>
+                <button className="playButton" onClick={(e) => this.onPlayClick(e)}>&#9658;</button>
               </div>
             </div>{/**/}
 

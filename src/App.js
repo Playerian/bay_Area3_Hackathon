@@ -43,6 +43,11 @@ class App extends Component {
       day: day,
     })
   }
+  setSpeed(speed){
+    this.setState({
+      gameSpeed: speed
+    });
+  }
   //US Data formatting
   setUSData(){
     let stateData = this.state.stateData;
@@ -115,7 +120,12 @@ class App extends Component {
           />
         </div>
         
-        <MenuPanel day={this.state.day} selecting = {this.state.selecting} provinceData = {this.state.stateData}/>{/*buttons and counters goes in here?*/}
+        <MenuPanel 
+          day={this.state.day} 
+          selecting = {this.state.selecting} 
+          provinceData = {this.state.stateData}
+          setSpeed = {(s) => this.setSpeed(s)}
+        />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>
         <div className="researchProgress"></div>*/}

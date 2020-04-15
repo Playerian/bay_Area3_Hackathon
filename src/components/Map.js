@@ -122,21 +122,21 @@ export default class Map extends Component {
       }else if (infected >= population * 0.05){
         color = colors[6];
       }else if (infected >= population * 0.1){
-        color = colors[6];
-      }else if (infected >= population * 0.2){
         color = colors[7];
-      }else if (infected >= population * 0.3){
+      }else if (infected >= population * 0.2){
         color = colors[8];
-      }else if (infected >= population * 0.4){
+      }else if (infected >= population * 0.3){
         color = colors[9];
-      }else if (infected >= population * 0.5){
+      }else if (infected >= population * 0.4){
         color = colors[10];
-      }else if (infected >= population * 0.6){
+      }else if (infected >= population * 0.5){
         color = colors[11];
-      }else if (infected >= population * 0.7){
+      }else if (infected >= population * 0.6){
         color = colors[12];
-      }else if (infected >= population * 0.8){
+      }else if (infected >= population * 0.7){
         color = colors[13];
+      }else if (infected >= population * 0.8){
+        color = colors[14];
       }
       layer.setStyle({
         color: color

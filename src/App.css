@@ -84,3 +84,13 @@
   color:white;
 
 } */
+
+.researchProgress{
+  position:absolute;
+  border:grey solid 1px;
+  box-sizing:border-box;
+  width:10vh;
+  height:10vh;
+  z-index:2;
+  top:90vh;
+}

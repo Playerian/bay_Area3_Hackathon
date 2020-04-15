@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Container extends Component{
+export default class NumContainer extends Component{
   constructor(props){
     super(props)
     

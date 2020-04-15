@@ -99,11 +99,13 @@ export default class Map extends Component {
       "#fde800", "#fed200", "#ffb900", "#ff9300", "#ff6200",
       "#ff4600", "#ff0000", "#de0000", "#aa0000", "#730000",
     ]
-    let color;
-    
     //set style base on stateData
     if (stateData[feature.properties.NAME]) {
-      layer.setStyle(stateData[feature.properties.NAME].style);
+      let state = stateData[feature.properties.NAME];
+      let color;
+      //setting default style listed in stateData
+      layer.setStyle(state.style);
+      
       layer.setStyle({
         color: color
       });

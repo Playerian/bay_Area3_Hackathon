@@ -40,11 +40,40 @@ class App extends Component {
   }
   //most important method NA
   oneDayPassed(){
+    //increase the day
     let day = this.state.day + 1;
-    
+    //infecting people
+    let stateData = this.state.stateData;
+    for (let key in stateData){
+      //exclude us
+      if (key === "US"){
+        
+      }else{
+        let state = stateData[key];
+        state.currentInfectionCount += state.infectionRate;
+        //if count exceeds 1, double infected amount
+        let newInfected = state.infected;
+        //if new infected amount exceeds 10% of population
+        if (newInfected > state.population * 0.1){
+          newInfected = state.population * 0.1;
+        }
+        //if new infected amount exceeds population
+        if (newInfected + state.infected > state.population){
+          newInfected = state.population - state.infected;
+        }
+        //add newInfected to state infected population
+        state.infected += newInfected;
+      }
+    }
+    //calling setUSData
     //final setState
     this.setState({
       day: day,
+      stateData: stateData,
+      
+    }, () => {
+      //final set US Data
+      this.setUSData();
     })
   }
   setSpeed(speed){
@@ -169,6 +198,8 @@ class State{
     //game data
     this.name = name;
     this.population = population;
+    this.infectionRate = 0.2;
+    this.currentInfectionCount = 0;
     this.infected = 0;
     this.death = 0;
     this.recovered = 0;

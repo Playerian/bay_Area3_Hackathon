@@ -29,6 +29,8 @@ class App extends Component {
       stateData: stateData,
       selecting: "US",
       day: 0,
+      gameStarted: false,
+      gameSpeed: 0,
     }
   }
   //most important method NA

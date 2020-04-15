@@ -14,9 +14,10 @@ export default class UpgradeTag extends Component{
   
   render(){
   return(
-    <div className="upgradeTag">{this.props.text}
+    <div className="upgradeTag">
+      <p className="upgradeTagP">{this.props.text}</p>
       <img className="upgradeTagImg" src={this.props.image}></img>
-      <button className="upgradeButton">{this.statepurchased? this.props.cost:"mutated."}</button>
+      <button className="upgradeButton">{this.state.purchased}? mutated.": {this.props.ppp} PPL Point required</button>
     </div> 
     );
   }

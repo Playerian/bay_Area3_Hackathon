@@ -81,7 +81,7 @@ export default class MenuPanel extends Component {
     
     let upgradeDivArray = upgrades.map((v,i)=>{
       
-          return <UpgradeTag text={v.text} ppp={v.cost} img={v.imgSrc} key={i}/>
+          return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i}/>
         });
     
     

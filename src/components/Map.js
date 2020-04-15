@@ -115,7 +115,7 @@ export default class Map extends Component {
     //set color base on stateData
     // array of fill colors in increasing order of severity
     let colors = [
-      "#3388ff", "#74adad", "#8abc8e", "#c5de46", "fbff00",
+      "#3388ff", "#74adad", "#8abc8e", "#c5de46", "#fbff00",
       "#fde800", "#fed200", "#ffb900", "#ff9300", "#ff6200",
       "#ff4600", "#ff0000", "#de0000", "#aa0000", "#730000",
     ]
@@ -171,9 +171,6 @@ export default class Map extends Component {
       } 
       if (infected >= population * 0.8){
         color = colors[14];
-      }
-      if (infected > 0){
-        console.log(color);
       }
       layer.setStyle({
         fillColor: color

@@ -50,7 +50,6 @@ class App extends Component {
         
       }else{
         let state = stateData[key];
-        state.currentInfectionCount += state.infectionRate;
         //if count exceeds 1, double infected amount
         let newInfected = state.infected;
         //if new infected amount exceeds 10% of population
@@ -200,7 +199,6 @@ class State{
     this.name = name;
     this.population = population;
     this.infectionRate = 0.2;
-    this.currentInfectionCount = 0;
     this.infected = 0;
     this.death = 0;
     this.recovered = 0;

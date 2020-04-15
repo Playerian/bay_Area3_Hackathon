@@ -13,7 +13,7 @@ export default class UpContainer extends Component{
   
   render(){
   return(
-    <div className="upcontainer">{this.props.text}<span className="containerUpgrade"> {this.props.upgrades}</span></div> 
+    <button className="upcontainer">{this.props.text}</button> 
     );
   }
 }

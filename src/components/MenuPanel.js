@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NumContainer from "./NumContainer.js";
+import UpContainer from "./UpContainer.js";
 import "./MenuPanel.css";
 
 export default class MenuPanel extends Component {
@@ -45,7 +46,7 @@ export default class MenuPanel extends Component {
         <div className="menuPanel">
           <div className="divHolder">
             <div className="subHolderDiv">
-              <h3 className="view numcontainer"> currently viewing: {this.props.selecting}</h3>
+              <h3 className="view numcontainer"> Currently Viewing: {this.props.selecting}</h3>
               <NumContainer text="Infected:" number={infected}/>
               <NumContainer text="Death:" number={death}/>
               <NumContainer text="Recovered:" number={recovered}/>
@@ -84,11 +85,11 @@ export default class MenuPanel extends Component {
         <div className="menuPanel">
           <div className="divHolder">
             <div className="subHolderDiv">
-              <h3 className="view numcontainer2"> currently viewing: {this.props.selecting}</h3>
-              <NumContainer text="Infected:" number={infected}/>
-              <NumContainer text="Death:" number={death}/>
-              <NumContainer text="Recovered:" number={recovered}/>
-              <NumContainer text="Population:" number={population} />
+              <h3 className="view numcontainer"> Upgrades: </h3>
+              <UpContainer choice={death}/>
+              <UpContainer choice={infected}/>
+              <UpContainer choice={recovered}/>
+              <UpContainer choice={population} />
             </div>
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>

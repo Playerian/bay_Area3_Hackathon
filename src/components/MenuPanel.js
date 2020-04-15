@@ -20,8 +20,11 @@ export default class MenuPanel extends Component {
     }
     //console.log(this.state.showing)
   }
-  overviewTab() {}
-  upgradeTab() {}
+  overviewTab() {
+    
+  }
+  upgradeTab() {
+  }
 
   render() {
     let selecting = this.props.selecting;

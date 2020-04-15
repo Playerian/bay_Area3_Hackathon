@@ -83,7 +83,7 @@
   box-sizing: border-box;
   border: grey solid 5px;
   text-align:center;
-  font-size:5vh;
+  font-size:3vw;
   color:white;
   background:darkgrey;
   height: 100%;
@@ -111,5 +111,5 @@
 .view{
   color: white;
   margin-top: 5px;
-  margin-bottom
+  margin-bottom: 5px;
 }

@@ -86,6 +86,7 @@ export default class MenuPanel extends Component {
         img={v.imgSrc}
         
         />
+      
           console.log(div)
         return div
     });
@@ -149,6 +150,7 @@ export default class MenuPanel extends Component {
               <UpContainer choice={recovered}/>
               <UpContainer choice={population} /> */}
               {this.upgradeDivArray}
+              {console.log("aaaaaaaaa")}
               
             </div>
              <div className="eventDiv">

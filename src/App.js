@@ -81,23 +81,23 @@ class App extends Component {
           //check if the state has plane going out
           if (state.planeExit.length > 0){
             //don't send out plane
-          }{
+          }else{
             //send out plane (with a probability)
             let airport = state.airport;
             //randomly selects another airport
             let keyList = Object.keys(airportJSON);
             //destination
-            let airport2 = keyList[Math.floor(Math.random() * keyList.length)];
+            let airport2Name = keyList[Math.floor(Math.random() * keyList.length)];
             //check if flying to urself
-            if (airport !== airport2){
+            if (airport.name !== airport2Name){
               //send a plane out 33% chance
               if (Math.floor(Math.random() * 3) === 0){
                 let key = String(Math.random()).substring(2);
-                let plane = new Plane(airport.name, airport2.name, key, (c) => this.flightFinished(c));
+                let plane = new Plane(airport.name, airport2Name, key, (c) => this.flightFinished(c));
                 //push plane to start state
                 state.planeExit.push(plane);
                 //push plane to end state
-                stateData[airport2.state].planeEnter.push(plane);
+                stateData[airportJSON[airport2Name].state].planeEnter.push(plane);
                 //push plane to react state
                 this.state.airlines.push(plane);
               }
@@ -219,7 +219,37 @@ class App extends Component {
   //airline Data formatting
   flightFinished(plane){
     console.log(`Flight finished`);
-    //remove the plane from list
+    let startState = stateData[plane.startState];
+    let endState = stateData[plane.endState];
+    //remove the plane from startState
+    for (let i = 0; i < startState.planeExit.length; i ++){
+      let currentPlane = startState.planeExit[i]
+      if (currentPlane === plane){
+        startState.planeExit.splice(i, 1);
+        break;
+      }
+    }
+    //remove the plane from endState
+    for (let i = 0; i < endState.planeEnter.length; i ++){
+      let currentPlane = endState.planeEnter[i]
+      if (currentPlane === plane){
+        endState.planeEnter.splice(i, 1);
+        break;
+      }
+    }
+    //remove the plane from airlines
+    for (let i = 0; i < this.state.airlines.length; i ++){
+      let currentPlane = this.state.airlines[i];
+      if (currentPlane === plane){
+        this.state.airlines.splice(i, 1);
+        break;
+      }
+    }
+    //call setState for rerender
+    this.setState({
+      airlines: this.state.airlines,
+      stateData: this.state.stateData
+    });
   }
   //geoJSON handler
   onFeatureClicked(stateName){

@@ -126,15 +126,15 @@ export default class MenuPanel extends Component {
         downgrade: 0
       },
     ]
-    
-
+  
+    let randomEvent = Math.floor(Math.random() * events.length);
     
     let upgradeDivArray = upgrades.map((v,i)=>{
       
           return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
         });
 
-    
+
     if (this.state.showing === true && this.state.tab === "overview") {
       //overview tab
       return (
@@ -158,7 +158,7 @@ export default class MenuPanel extends Component {
 
             <div className="eventDiv">
               <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>
-              <marquee className="marqueeTag">Some Big event happen today: LOCAL DIV TAG (终于)成精啦！<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
+              <marquee className="marqueeTag">Some Big event happen today: LOCAL DIV TAG (终于)成精啦！{event[]}<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}
             <div className="buttonDiv">

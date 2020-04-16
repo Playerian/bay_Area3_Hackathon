@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import L from "leaflet";
 // import "https://raw.githubusercontent.com/IvanSanchez/Leaflet.ImageOverlay.Rotated/gh-pages/Leaflet.ImageOverlay.Rotated.js"
-import LeafletImageOverLay from "./src/plugin/LeafletImageOverlay.js"
+import LeafletImageOverLay from "../plugin/LeafletImageOverlay.js"
 
 const {
   Map: LeafletMap,
@@ -37,7 +37,7 @@ export default class Map extends Component {
     //disable pan
     // map.dragging.disable();
     // let marker = Map.marker([37.7749,-122.4194]).addTo(map)
-      console.log()
+      console.log(LeafletImageOverLay)
 
   }
     
@@ -197,7 +197,7 @@ export default class Map extends Component {
   }
   
   sentAirplane(plane){
-    let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
+    let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fairplane_2708.png?v=1587071842507"
     let JsxPlane = 
       <ImageOverlay
           bounds = {plane.bound}

@@ -8,6 +8,7 @@ import NumContainer from "./components/NumContainer.js"
 import borderGeoJSON from "./2010USoutline.json";
 import stateGeoJSON from "./USStates.json";
 import populationJSON from "./population.json";
+import neighborJSON from "./neighbor.json";
 
 class App extends Component {
   constructor(props){
@@ -75,8 +76,18 @@ class App extends Component {
         state.infected += Math.round(newInfected);
         state.infectedDecimal = decimal;
         //separation--------------------------------------------------------
-        //spreading to neighbor
-        
+        //spreading to neighbor probability
+        let chance = state.infected / state.population;
+        let neighbors = neighborJSON[key];
+        for (let v of neighbors){
+          if (stateData[v].infected === 0){
+            //dice roll
+            let random = Math.random();
+            if (chance > random){
+              stateData[v].infected ++;
+            }
+          }
+        }
       }
     }
     //calling setUSData
@@ -222,6 +233,10 @@ class State{
     this.infectedDecimal = 0.0;
     this.death = 0;
     this.recovered = 0;
+    //event data
+    this.landLocked = false;
+    this.airportLocked = false;
+    this.maskedWearing = false;
     //rendering data
     this.style={
       color: "cadetblue",

@@ -34,5 +34,17 @@
     "state" : "New York",
     "Latitude": 40.6413,
     "Longitude": -73.7781
+  },
+  "HNL" : {
+    "name": "HNL",
+    "state": "Hawaii",
+    "Latitude": 21.3245,
+    "Longitude": -157.9251
+  },
+  "JNU" : {
+    "name": "JNU",
+    "state": "Alaska",
+    "Latitude": 58.3580,
+    "Longitude": -134.5832
   }
 }

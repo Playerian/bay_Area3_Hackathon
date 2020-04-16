@@ -205,11 +205,15 @@ export default class Map extends Component {
           bounds = {plane.bound}
           url={imgUrl}
           key={plane.planeKey}
-          Rotated
+          
       />
     return JsxPlane
      
   }
+  
+  //create a custom element so is possible to use plugin rotated
+  // class MapOverLayRotated extends MapOverland(){}
+  
   
   //render funciton
   render() {

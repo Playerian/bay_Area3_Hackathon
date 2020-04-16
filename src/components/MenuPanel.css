@@ -35,6 +35,10 @@
   margin: -5px;
 }
 
+.menuHide:hover {
+  background-color: #3388ff;
+}
+
 .menuShow {
   position: absolute;
   z-index: 3;

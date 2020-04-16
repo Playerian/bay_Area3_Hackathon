@@ -75,6 +75,8 @@ class App extends Component {
         state.infected += Math.round(newInfected);
         state.infectedDecimal = decimal;
         //separation--------------------------------------------------------
+        //spreading to neighbor
+        
       }
     }
     //calling setUSData

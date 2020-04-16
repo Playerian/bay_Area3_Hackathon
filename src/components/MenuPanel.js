@@ -49,8 +49,15 @@ export default class MenuPanel extends Component {
     });
     
   }
-  onClick(){
-
+  onUpgradeClick(){
+    //callback setState points,
+    //callback setState ppl
+    this.setState({
+      resPts: 0,
+      spreadPts:0,
+      lethalPts: 0
+    })
+    
   }
 
   render() {
@@ -164,7 +171,7 @@ export default class MenuPanel extends Component {
                 {upgradeDivArray}
               </div>
             </div>
-            <UpContainer resPts={this.props.resPts} spreadPts={this.props.spreadPts} lethatPts={this.props.lethalPts}/>
+            <UpContainer resPts={this.state.resPts} spreadPts={this.state.spreadPts} lethalPts={this.state.lethalPts}/>
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>
                  Overview

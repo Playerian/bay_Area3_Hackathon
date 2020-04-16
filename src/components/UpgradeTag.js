@@ -21,6 +21,9 @@ export default class UpgradeTag extends Component{
    }
  
  }
+ onUpgradeClick(){
+    
+ }
   
   render(){
   return(

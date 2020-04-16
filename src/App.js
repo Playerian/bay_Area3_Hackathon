@@ -53,7 +53,7 @@ class App extends Component {
     }
     //initialize timer
     this.timer = setInterval(() => {
-      this.onSecond();
+      this.onTick();
     }, this.state.gameTimerSpeed);
   }
   //most important method NA
@@ -139,7 +139,7 @@ class App extends Component {
     });
   }
   //time handler
-  onSecond(){
+  onTick(){
     //check if game has started
     if (this.state.gameStarted){
       if (this.state.gameSpeed === 0){
@@ -148,7 +148,7 @@ class App extends Component {
         this.oneDayPassed();
         
         this.state.airlines.forEach((v,i)=>{
-          v.next()
+          v.next(i)
         });
       }
     }
@@ -177,6 +177,10 @@ class App extends Component {
     this.setState({
       stateData: stateData
     });
+  }
+  //airline Data formatting
+  flightFinished(plane){
+    
   }
   //geoJSON handler
   onFeatureClicked(stateName){
@@ -290,11 +294,13 @@ class State{
 }
 
 class Plane{
-  constructor(startPortName, endPortName,planeKey){
+  constructor(startPortName, endPortName, planeKey, callback){
     let startPort = airportJSON[startPortName];
     let startlatlon = [startPort.Latitude, startPort.Longitude];
     let endPort = airportJSON[endPortName];
     let endlatlon = [endPort.Latitude, endPort.Longitude];
+    //final
+    this.callback = callback;
     //dynamic
     this.currentlat = startlatlon[0];
     this.currentlon = startlatlon[1];
@@ -318,7 +324,10 @@ class Plane{
       this.intervalList.push([this.startlatlon[0] + i * this.slope[0] / Math.floor(this.distance), this.startlatlon[1] + i * this.slope[1] / Math.floor(this.distance)]);
     }
   }
-  next(){
+  next(i){ //i is the plane's index in this.state.airlines
+    if(this.currentIndex === this.intervalList.length){
+      this.callback(this);
+    }
     this.currentIndex ++;
     this.currentlat = this.intervalList[this.currentIndex][0];
     this.currentlon = this.intervalList[this.currentIndex][1];

@@ -50,6 +50,11 @@ class App extends Component {
         
       }else{
         let state = stateData[key];
+        //avoid random spontaenous generation
+        if (state.infected === 0){
+          continue;
+        }
+        //increasing self state infect count ------------------------------
         let newInfected = state.infected + state.infectedDecimal;
         //multiply by infection rate
         newInfected *= (1 + state.infectionRate);
@@ -69,6 +74,7 @@ class App extends Component {
         //add newInfected to state infected population
         state.infected += Math.round(newInfected);
         state.infectedDecimal = decimal;
+        //separation--------------------------------------------------------
       }
     }
     //calling setUSData

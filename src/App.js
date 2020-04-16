@@ -44,11 +44,12 @@ class App extends Component {
       gameStarted: false,
       //0 pause 1 regular
       gameSpeed: 0,
+      gameTimerSpeed: 1000,
     }
     //initialize timer
     this.timer = setInterval(() => {
       this.onSecond();
-    }, 1000);
+    }, this.state.gameTimerSpeed);
   }
   //most important method NA
   oneDayPassed(){
@@ -142,6 +143,10 @@ class App extends Component {
         this.oneDayPassed();
       }
     }
+  }
+  //handy method
+  distanceTwoPoints(latlon1, latlon2){
+    return Math.sqrt( Math.pow(latlon1[0] - latlon2[0], 2) + Math.pow(latlon1[1] - latlon2[1], 2) );
   }
   //US Data formatting
   setUSData(){

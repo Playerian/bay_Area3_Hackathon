@@ -153,19 +153,11 @@ export default class MenuPanel extends Component {
           <div className="divHolder">
             <div className="subHolderDiv">
               <h3 className="view numcontainer"> Upgrades: </h3>
-              {/*<UpContainer choice={death}/>
-              <UpContainer choice={infected}/>
-              <UpContainer choice={recovered}/>
-              <UpContainer choice={population} /> */}
               <div className="upgradeContainer">
                 {upgradeDivArray}
               </div>
             </div>
-            <div className="statsDiv">
-              <p className="view statscontainer">Resilience:{this.props.resPts}</p>
-              <p className="view statscontainer">Spread:</p>
-              <p className="view statscontainer">Lethality:</p>
-            </div>
+            <UpContainer/>
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>
                  Overview

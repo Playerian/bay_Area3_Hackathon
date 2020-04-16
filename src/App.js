@@ -295,6 +295,7 @@ class Plane{
     this.currentlat = startlatlon[0];
     this.currentlon = startlatlon[1];
     this.currentIndex = 0;
+    this.bound = [[this.currentlat,this.currentlon], [this.currentlat+1,this.currentlon+1]];
     //static
     this.startlatlon = startlatlon;
     this.endlatlon = endlatlon;
@@ -317,6 +318,7 @@ class Plane{
     this.currentIndex ++;
     this.currentlat = this.intervalList[this.currentIndex][0];
     this.currentlon = this.intervalList[this.currentIndex][1];
+    this.bound = [[this.currentlat,this.currentlon], [this.currentlat+1,this.currentlon+1]];
   }
 }
 

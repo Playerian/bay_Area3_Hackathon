@@ -194,7 +194,7 @@ export default class Map extends Component {
     let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
     let JsxPlane = 
       <ImageOverlay
-          bounds = {[[plane.currentlat,plane.currentlon],[plane.currentlat+1,plane.currentlon+1]]}
+          bounds = {plane.bound}
           url={imgUrl}
           key={plane.planeKey}
       />

@@ -153,4 +153,10 @@
   display:flex;
   flex-wrap:wrap;
   justify-content:space-between;
+  color:white;
+}
+
+
+.upgradeTag:hover{
+  background-image:linear-gradient(to right, red , grey)
 }

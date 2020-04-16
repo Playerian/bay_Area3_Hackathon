@@ -24,7 +24,7 @@ export default class UpgradeTag extends Component{
       
       <img className="upgradeTagImg" src={this.props.image}></img>
       <p className="upgradeTagP">{this.props.text}</p>
-      <button className="upgradeButton" onClick={()=>this.checkppp()}>{this.state.purchased? "mutated.": this.props.ppp + " PPL Point required" }</button>
+      <button className="upgradeButton" onClick={()=>this.checkppp()}>{this.state.purchased? "mutated.": "PPL point require to evolve: "+this.props.ppp }</button>
       
     </div> 
     );

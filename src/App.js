@@ -54,7 +54,8 @@ class App extends Component {
         //multiply by infection rate
         newInfected *= (1 + state.infectionRate);
         //get a 20% random flow in the increase
-        
+        let randomNumber = (Math.random() * 2 - 1) / 5;
+        newInfected += randomNumber;
         //get decimal of new infected
         let decimal = newInfected - Math.round(newInfected);
         //if new infected amount exceeds 10% of population

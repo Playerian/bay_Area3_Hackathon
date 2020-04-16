@@ -1,7 +1,27 @@
 {
   "ATL" : {
     "state" : "Georgia",
-    "Latitude": -84.4277,
-    "Longitude": 33.6407
+    "Latitude": 33.6407,
+    "Longitude": -84.4277
+  },
+  "LAX" : {
+    "state": "California",
+    "Latitude": 33.9416,
+    "Longitude" : -118.4085
+  },
+  "ORD" : {
+    "state": "Illinois",
+    "Latitude": 41.9742,
+    "Longitude" : -87.9073
+  },
+  "DFW" : {
+    "state": "Texas",
+    "Latitude": 32.7079,
+    "Longitude" : -96.9209
+  },
+  "DEN" : {
+    "state": "Colorado",
+    "Latitude": 39.8561,
+    "Longitude" : -104.6737
   }
 }

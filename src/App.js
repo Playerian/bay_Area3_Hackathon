@@ -200,6 +200,7 @@ class State{
     this.population = population;
     this.infectionRate = 0.2;
     this.infected = 0;
+    this.infectedDecimal = 0.0;
     this.death = 0;
     this.recovered = 0;
     //rendering data

@@ -30,6 +30,7 @@ class App extends Component {
       stateData: stateData,
       selecting: "US",
       day: 0,
+      pplPoint: 0,
       gameStarted: false,
       //0 pause 1 regular
       gameSpeed: 0,
@@ -78,6 +79,9 @@ class App extends Component {
         //separation--------------------------------------------------------
         //spreading to neighbor probability
         let chance = state.infected / state.population;
+        //every million infected increase the chance by 1%
+        let extraChance = Math.floor(state.infected / 1000000) / 100;
+        chance += extraChance;
         let neighbors = neighborJSON[key];
         for (let v of neighbors){
           if (stateData[v].infected === 0){
@@ -237,6 +241,7 @@ class State{
     this.landLocked = false;
     this.airportLocked = false;
     this.maskedWearing = false;
+    this.quarantinePatient = false;
     //rendering data
     this.style={
       color: "cadetblue",

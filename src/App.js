@@ -302,7 +302,9 @@ class Plane{
     //calculated
     this.distance = distanceTwoPoints(startlatlon, endlatlon);
     this.angle = angleTwoPoints(startlatlon, endlatlon);
+    this.slope = slope(startlatlon, endlatlon);
     let intervalLength = this.distance / Math.floor(this.distance);
+    let intervalList = [];
     //cutting
     for (let i = 0; i < this.distance; i += intervalLength){
       
@@ -324,4 +326,7 @@ function angleTwoPoints(latlon1, latlon2){
         r += 360;
     }
     return r;
+}
+function slope(latlon1, latlon2){
+  return (latlon2[1] - latlon1[1]) / (latlon2[0] - latlon1[0]);
 }

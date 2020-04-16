@@ -17,7 +17,11 @@ export default class UpgradeTag extends Component{
   
  checkppp(){
    if(this.props.pplPoint >= this.props.ppp){ 
-     this.setState({"purchased":true})
+     this.setState({
+       "purchased":true,
+        "resPts": this.state.resPts + this.props.resPts,
+       
+     })
    }
    
  }

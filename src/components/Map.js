@@ -196,14 +196,14 @@ export default class Map extends Component {
     //                 [this.props.airportJSON[startport].Latitude,this.props.airportJSON[startport].Longitude],
     //                 [this.props.airportJSON[endport].Latitude,this.props.airportJSON[endport].Longitude]
     //                ]
-    let takeOff = setInterval(()=>{
+    let JsxPlane = 
       <ImageOverlay
           bounds = {[plane.currentlat,plane.currentlon],[plane.currentlat+1,plane.currentlon+1]}
-          url="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
+          url={imgUrl}
           />
     
-      
-    },100) 
+    return JsxPlane
+     
   }
   
   //render funciton
@@ -218,8 +218,11 @@ export default class Map extends Component {
       }
     }
     
-    this.props.airlines.forEach((v,i)=>{
+  let planeArray = []
+  this.props.airlines.forEach((v,i)=>{
       this.sentAirplane(v)
+      console.log(v)
+      planeArray.push(v)
     })
 
     
@@ -276,6 +279,8 @@ export default class Map extends Component {
           onEachFeature={(f, l) => this.onEachFeature(f, l)}
         />
         {airportIcons}
+        
+        
         
         {/*<ImageOverlay
           bounds ={ [

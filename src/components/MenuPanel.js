@@ -61,7 +61,7 @@ export default class MenuPanel extends Component {
         cost:0,
         text:"some text here",
         imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-        resilience:0,
+        resilience:1,
         spread:0,
         lethal:0,
         
@@ -93,7 +93,7 @@ export default class MenuPanel extends Component {
     
     let upgradeDivArray = upgrades.map((v,i)=>{
       
-          return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint}/>
+          return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={this.props.resPts}/>
         });
   
     
@@ -158,8 +158,8 @@ export default class MenuPanel extends Component {
                 {upgradeDivArray}
               </div>
             </div>
-            <div className="eventDiv">
-              <p className="view numcontainer">Resilience:</p>
+            <div className="statsDiv">
+              <p className="view numcontainer">Resilience:{this.props.resPts}</p>
               <p className="view numcontainer">Spread:</p>
               <p className="view numcontainer">Lethality:</p>
             </div>

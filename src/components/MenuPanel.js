@@ -17,7 +17,7 @@ export default class MenuPanel extends Component {
       resPts: 0,
       spreadPts:0,
       lethalPts: 0,
-      
+      winShow: false
     };
   }
 
@@ -144,11 +144,15 @@ export default class MenuPanel extends Component {
 
 
     if (this.state.showing === true && this.state.tab === "overview") {
-      /*
+      
         if(infected < population){
-          console.log("You've infected everyone.");
-        }*/
+          this.setState=({
+            winShow: true
+          })
+          
+        }
       //overview tab
+     // {this.state.winShow ? : null }
       return (
         <div className="menuPanel">
           <div className="divHolder">
@@ -189,9 +193,8 @@ export default class MenuPanel extends Component {
           <div className="menuHide" onClick={() => this.menuUp()}>
             click to hide
           </div>
-          <div>
-            <p>Test</p>
-          </div>
+          
+          
         </div>
       
       );

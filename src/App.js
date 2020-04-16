@@ -49,6 +49,9 @@ class App extends Component {
       researchCompleted: 0,
       researchRate: 0,
       usSeverity: 0,
+      usAction: {
+        
+      },
       //game system state
       gameStarted: false,
       //0 pause 1 regular

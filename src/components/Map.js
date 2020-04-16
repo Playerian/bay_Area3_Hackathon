@@ -188,6 +188,13 @@ export default class Map extends Component {
       });
     }
   }
+  
+  sentAirline(startport,endPort){
+    let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
+    let imgBound = [startport,[startport.x]
+    L.imageOverlay(imgUrl,startport)
+  }
+  
   //render funciton
   render() {
     //render layers

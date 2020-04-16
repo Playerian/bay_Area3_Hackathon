@@ -148,6 +148,9 @@ class App extends Component {
   distanceTwoPoints(latlon1, latlon2){
     return Math.sqrt( Math.pow(latlon1[0] - latlon2[0], 2) + Math.pow(latlon1[1] - latlon2[1], 2) );
   }
+  angleTwoPoints(latlon1, latlon2){
+    
+  }
   //US Data formatting
   setUSData(){
     let stateData = this.state.stateData;

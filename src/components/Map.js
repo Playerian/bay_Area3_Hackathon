@@ -184,6 +184,22 @@ export default class Map extends Component {
         this.updateLayer(this.state.stateFeatures[key], this.state.stateLayers[key]);
       }
     }
+    //airport overlay collection
+    let airportIcons = [];
+    for (let key in this.props.airportJSON){
+      let airport = this.props.airportJSON[key];
+      let lat = airport.Latitude;
+      let lon = airport.Longitude;
+      airportIcons.push(
+        <Marker
+          //airport icon
+          position={[lat, lon]}
+          icon={
+            url: "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fairport.png?v=1587008448453"
+          }
+        />
+      );
+    }
     //return function
     return (
       // center of the US in coordinates: 40.2, -95.7129 (this is not the coordinates of the geographical center)
@@ -212,6 +228,7 @@ export default class Map extends Component {
           style={{ color: "cadetblue", fillColor: "pink", opacity: 0.5 }}
           onEachFeature={(f, l) => this.onEachFeature(f, l)}
         />
+        {airportIcons}
       </LeafletMap>
     );
   }

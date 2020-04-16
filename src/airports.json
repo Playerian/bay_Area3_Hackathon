@@ -23,5 +23,10 @@
     "state": "Colorado",
     "Latitude": 39.8561,
     "Longitude" : -104.6737
+  },
+  "JFK" : {
+    "state" : "New York",
+    "Latitude": 40.6413,
+    "Longitude": -73.7781
   }
 }

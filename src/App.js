@@ -258,6 +258,9 @@ class State{
     this.pplPointMilestone = 1;
     this.hasAirport = false;
     this.airport = {};
+    //airline info
+    this.planeExit = [];
+    this.planeEnter = [];
     //event data
     this.landLocked = false;
     this.airportLocked = false;
@@ -271,5 +274,18 @@ class State{
     }
     //static data
     this.geoJSON = geoJSON;
+  }
+}
+
+class Plane{
+  constructor(startState, endState, startlatlon, endlatlon){
+    //dynamic
+    this.currentlat = startlatlon[0];
+    this.currentlon = startlatlon[1];
+    //static
+    this.startlatlon = startlatlon;
+    this.endlatlon = endlatlon;
+    this.startState = startState;
+    this.endState = endState;
   }
 }

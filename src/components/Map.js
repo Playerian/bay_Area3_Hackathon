@@ -192,11 +192,28 @@ export default class Map extends Component {
   
   sentAirplane(startport,endport){
     let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
-    let imgBounds = [
+    // let imgBounds = [
+    //                 [this.props.airportJSON[startport].Latitude,this.props.airportJSON[startport].Longitude],
+    //                 [this.props.airportJSON[endport].Latitude,this.props.airportJSON[endport].Longitude]
+    //                ]
+    let takeOff = setInterval(()=>{
+      <ImageOverlay
+          bounds ={ [
                     [this.props.airportJSON[startport].Latitude,this.props.airportJSON[startport].Longitude],
-                    [this.props.airportJSON[endport].Latitude,this.props.airportJSON[endport].Longitude]
-                   ]
-        
+                    [this.props.airportJSON[startport].Latitude+0.1,this.props.airportJSON[startport].Longitude+0.1]
+                   ]}
+          url="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
+          />
+      
+      //if(arrived){
+      //clearInterval(takeOff)
+      
+      //}
+      
+    },100)
+    //Math.sin()
+    
+    
     
   }
   
@@ -275,7 +292,7 @@ export default class Map extends Component {
                     [this.props.airportJSON["JFK"].Latitude,this.props.airportJSON["JFK"].Longitude]
                    ]}
           url="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
-          />*/0}
+          />*/}
 
         
       </LeafletMap>

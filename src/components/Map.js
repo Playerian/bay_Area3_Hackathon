@@ -190,8 +190,7 @@ export default class Map extends Component {
     }
   }
   
-  sentAirplane(startport,endport,dx,dy){
-    //use appjs hand formula to calculate
+  sentAirplane(plane){
     let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
     // let imgBounds = [
     //                 [this.props.airportJSON[startport].Latitude,this.props.airportJSON[startport].Longitude],
@@ -199,23 +198,12 @@ export default class Map extends Component {
     //                ]
     let takeOff = setInterval(()=>{
       <ImageOverlay
-          bounds ={ [
-                    [this.props.airportJSON[startport].Latitude,this.props.airportJSON[startport].Longitude],
-                    [this.props.airportJSON[startport].Latitude+0.1,this.props.airportJSON[startport].Longitude+0.1]
-                   ]}
+          bounds = {[plane.currentlat,plane.currentlon],[plane.currentlat+1,plane.currentlon+1]}
           url="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
           />
-      
-      //if(arrived){
-      //clearInterval(takeOff)
-      
-      //}
-      
-    },100)
-    //Math.sin()
     
-    
-    
+      
+    },100) 
   }
   
   //render funciton
@@ -230,7 +218,9 @@ export default class Map extends Component {
       }
     }
     
-    
+    this.props.airlines.forEach((v,i)=>{
+      this.sentAirplane(v)
+    })
 
     
     //airport overlay collection

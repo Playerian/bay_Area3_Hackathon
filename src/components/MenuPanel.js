@@ -52,6 +52,7 @@ export default class MenuPanel extends Component {
     let infected = provinceData[selecting].infected || 0;
     let death = provinceData[selecting].death || 0;
     let recovered = provinceData[selecting].recovered || 0;
+   
     
     //making an array of upgrade DIVs
     const upgrades = [
@@ -94,7 +95,7 @@ export default class MenuPanel extends Component {
       
           return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint}/>
         });
-    
+  
     
     
     
@@ -156,7 +157,11 @@ export default class MenuPanel extends Component {
               <div className="upgradeContainer">
                 {upgradeDivArray}
               </div>
-              
+            </div>
+            <div className="eventDiv">
+              <p className="view numcontainer">Resilience:</p>
+              <p className="view numcontainer">Spread:</p>
+              <p className="view numcontainer">Lethality:</p>
             </div>
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>

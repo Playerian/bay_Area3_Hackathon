@@ -43,6 +43,7 @@ class App extends Component {
       airlines: [
         //remove after debugging finishes
         new Plane("LAX", "JFK"),
+        
       ],
       gameStarted: false,
       //0 pause 1 regular
@@ -225,6 +226,7 @@ class App extends Component {
             airportJSON={airportJSON}
             //dynamic data for render
             stateData={this.state.stateData}
+            airlines={this.state.airlines}
             //handlers
             onFeatureClicked={(stateName) => this.onFeatureClicked(stateName)}
             onMapClicked={(lat, lng) => this.onMapClicked(lat, lng)}
@@ -300,6 +302,11 @@ class Plane{
     //calculated
     this.distance = distanceTwoPoints(startlatlon, endlatlon);
     this.angle = angleTwoPoints(startlatlon, endlatlon);
+    let intervalLength = this.distance / Math.floor(this.distance);
+    //cutting
+    for (let i = 0; i < this.distance; i += intervalLength){
+      
+    }
   }
 }
 

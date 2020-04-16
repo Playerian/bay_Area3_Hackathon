@@ -9,6 +9,7 @@ export default class UpgradeTag extends Component{
       purchased:false,
       resPts: 0,
       spreadPts: 0,
+      lethalPts: 0
     }
    
     

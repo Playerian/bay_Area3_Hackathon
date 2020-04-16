@@ -125,9 +125,13 @@ export default class MenuPanel extends Component {
         upgrade: 100,
         downgrade: 0
       },
+       {
+        text: "Government requires all people to wear masks",
+        type: "spread",
+        upgrade: 0,
+        downgrade: 200
+      },
     ]
-  
-    let randomEvent = Math.floor(Math.random() * (events.length + 1));
     
     let upgradeDivArray = upgrades.map((v,i)=>{
       
@@ -158,7 +162,7 @@ export default class MenuPanel extends Component {
 
             <div className="eventDiv">
               <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>
-              <marquee className="marqueeTag">{events[randomEvent].text}, LOCAL DIV TAG (终于)成精啦！<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
+              <marquee className="marqueeTag">{}, LOCAL DIV TAG (终于)成精啦！<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}
             <div className="buttonDiv">

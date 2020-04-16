@@ -5,7 +5,8 @@ const {
   TileLayer,
   Marker,
   Popup,
-  GeoJSON
+  GeoJSON,
+  ImageOverlay
 } = window.ReactLeaflet;
 
 export default class Map extends Component {
@@ -197,7 +198,7 @@ export default class Map extends Component {
                    ]
     
     // let layer = L.imageOverlay(imgUrl, imgBounds);
-    layer.addTo(this.map)
+    //layer.addTo(this.map)
 
     //console.log()
       //this.map.addLayer(img)

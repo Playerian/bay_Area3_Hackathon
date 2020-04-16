@@ -149,7 +149,13 @@ class App extends Component {
     return Math.sqrt( Math.pow(latlon1[0] - latlon2[0], 2) + Math.pow(latlon1[1] - latlon2[1], 2) );
   }
   angleTwoPoints(latlon1, latlon2){
-    return Math.atan((latlon1[0] - latlon2[0]) / (latlon1[1] - latlon2[1])) * 180 / Math.PI;
+    //zone 2
+    //if (latlon1[0] > latlon2[0] && latlon1[1] < latlon2[1]){
+      
+    //}else{
+      return Math.atan(Math.abs((latlon1[0] - latlon2[0]) / (latlon1[1] - latlon2[1]))) * 180 / Math.PI;
+    //}
+
   }
   //US Data formatting
   setUSData(){

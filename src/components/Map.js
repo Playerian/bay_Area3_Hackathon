@@ -192,15 +192,11 @@ export default class Map extends Component {
   
   sentAirplane(plane){
     let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
-    // let imgBounds = [
-    //                 [this.props.airportJSON[startport].Latitude,this.props.airportJSON[startport].Longitude],
-    //                 [this.props.airportJSON[endport].Latitude,this.props.airportJSON[endport].Longitude]
-    //                ]
     let JsxPlane = 
       <ImageOverlay
-        key= {this.props.key}
-          bounds = {[plane.currentlat,plane.currentlon],[plane.currentlat+1,plane.currentlon+1]}
+          bounds = {[[plane.currentlat,plane.currentlon],[plane.currentlat+1,plane.currentlon+1]]}
           url={imgUrl}
+          key=plane}
       />
     console.log(JsxPlane)
     return JsxPlane
@@ -219,12 +215,13 @@ export default class Map extends Component {
       }
     }
     
-  let planeArray = []
-  this.props.airlines.forEach((v,i)=>{ 
-      planeArray.push(this.sentAirplane(v))
-      console.log(v)
-    })
-  console.log(planeArray)
+    //airplanes creates a list of air plane JSX ImageOVerlay
+    let planeArray = []
+    this.props.airlines.forEach((v,i)=>{ 
+        planeArray.push(this.sentAirplane(v))
+        console.log(v)
+      })
+    console.log(planeArray)
     
     //airport overlay collection
     //custom icon
@@ -279,7 +276,6 @@ export default class Map extends Component {
           onEachFeature={(f, l) => this.onEachFeature(f, l)}
         />
         {airportIcons}
-        
         {planeArray}
         
         {/*<ImageOverlay

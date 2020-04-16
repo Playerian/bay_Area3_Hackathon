@@ -43,6 +43,7 @@ class App extends Component {
       airlines: [
         //remove after debugging finishes
         new Plane("LAX", "JFK"),
+        new Plane("JFK", "LAX"),
         
       ],
       gameStarted: false,

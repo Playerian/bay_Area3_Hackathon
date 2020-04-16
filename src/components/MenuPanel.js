@@ -12,7 +12,8 @@ export default class MenuPanel extends Component {
     this.state = {
       showing: true,
       day: "NaN",
-      tab: "overview"
+      tab: "overview",
+      
     };
   }
 
@@ -95,9 +96,11 @@ export default class MenuPanel extends Component {
       
           return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
         });
-  
+
     
-    
+//       callbackFunction = (childData) => {
+//       this.setState({: childData})
+// }
     
     if (this.state.showing === true && this.state.tab === "overview") {
       //overview tab

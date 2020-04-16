@@ -93,7 +93,7 @@ export default class MenuPanel extends Component {
     
     let upgradeDivArray = upgrades.map((v,i)=>{
       
-          return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={this.props.resPts}/>
+          return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
         });
   
     
@@ -159,9 +159,9 @@ export default class MenuPanel extends Component {
               </div>
             </div>
             <div className="statsDiv">
-              <p className="view numcontainer">Resilience:{this.props.resPts}</p>
-              <p className="view numcontainer">Spread:</p>
-              <p className="view numcontainer">Lethality:</p>
+              <p className="view statscontainer">Resilience:{this.props.resPts}</p>
+              <p className="view statscontainer">Spread:</p>
+              <p className="view statscontainer">Lethality:</p>
             </div>
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>

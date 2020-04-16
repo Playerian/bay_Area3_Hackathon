@@ -7,9 +7,7 @@ export default class UpgradeTag extends Component{
     
     this.state = {
       purchased:false,
-      resPts: 0,
-      spreadPts: 0,
-      lethalPts: 0
+
     }
    
     
@@ -19,8 +17,6 @@ export default class UpgradeTag extends Component{
    if(this.props.pplPoint >= this.props.ppp){ 
      this.setState({
        "purchased":true,
-        "resPts": this.state.resPts + this.props.resPts,
-       
      })
    }
    

@@ -293,6 +293,7 @@ class Plane{
     //dynamic
     this.currentlat = startlatlon[0];
     this.currentlon = startlatlon[1];
+    this.currentIndex = 0;
     //static
     this.startlatlon = startlatlon;
     this.endlatlon = endlatlon;
@@ -303,12 +304,17 @@ class Plane{
     this.distance = distanceTwoPoints(startlatlon, endlatlon);
     this.angle = angleTwoPoints(startlatlon, endlatlon);
     this.slope = slope(startlatlon, endlatlon);
-    let intervalLength = this.distance / Math.floor(this.distance);
-    let intervalList = [];
+    this.intervalLength = this.distance / Math.floor(this.distance);
+    this.intervalList = [];
     //cutting
-    for (let i = 0; i < this.distance; i += intervalLength){
-      
+    for (let i = 0; i < this.distance; i += this.intervalLength){
+      this.intervalList.push([this.startlatlon[0] + i * this.slope[0], this.startlatlon[1] + i * this.slope[1]]);
     }
+  }
+  next(){
+    this.currentIndex ++;
+    this.currentlat = this.intervalList[this.currentIndex][0];
+    this.currentlon = this.intervalList[this.currentIndex][1];
   }
 }
 
@@ -328,5 +334,5 @@ function angleTwoPoints(latlon1, latlon2){
     return r;
 }
 function slope(latlon1, latlon2){
-  return (latlon2[1] - latlon1[1]) / (latlon2[0] - latlon1[0]);
+  return [latlon2[0] - latlon1[0], latlon2[1] - latlon1[1]];
 }

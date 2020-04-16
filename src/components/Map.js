@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import L from "leaflet";
+//import "https://raw.githubusercontent.com/IvanSanchez/Leaflet.ImageOverlay.Rotated/gh-pages/Leaflet.ImageOverlay.Rotated.js"
 const {
   Map: LeafletMap,
   TileLayer,

@@ -13,7 +13,10 @@ export default class MenuPanel extends Component {
       showing: true,
       day: "NaN",
       tab: "overview",
-      pplPoint: this.props.pplPoint
+      pplPoint: this.props.pplPoint,
+      resPts: 0,
+      spreadPts:0,
+      lethalPts: 0
     };
   }
 
@@ -42,8 +45,12 @@ export default class MenuPanel extends Component {
   upgradeTab() {
     console.log("clicked");
     this.setState({
-      tab: "upgrade"
+      tab: "upgrade",
     });
+    
+  }
+  onClick(){
+
   }
 
   render() {
@@ -157,7 +164,7 @@ export default class MenuPanel extends Component {
                 {upgradeDivArray}
               </div>
             </div>
-            <UpContainer/>
+            <UpContainer resPts={this.props.resPts} spreadPts={this.props.spreadPts} lethatPts={this.props.lethalPts}/>
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>
                  Overview

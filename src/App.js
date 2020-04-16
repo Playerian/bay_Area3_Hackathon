@@ -146,6 +146,10 @@ class App extends Component {
         
       }else if (this.state.gameSpeed === 1){
         this.oneDayPassed();
+        
+        this.state.airlines.forEach((v,i)=>{
+          v.next()
+        });
       }
     }
   }

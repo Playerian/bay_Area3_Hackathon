@@ -92,7 +92,7 @@ export default class MenuPanel extends Component {
     
     let upgradeDivArray = upgrades.map((v,i)=>{
       
-          return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i}/>
+          return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint}/>
         });
     
     
@@ -132,7 +132,7 @@ export default class MenuPanel extends Component {
                 Overview
               </button>
               <button className="panelButton" onClick={() => this.upgradeTab()}>
-                Upgrades
+                Upgrades (ppl Points:{this.props.pplPoint})
               </button>
               <button className="panelButton"></button>
             </div>
@@ -168,7 +168,7 @@ export default class MenuPanel extends Component {
                  Overview
               </button>
               <button className="panelButton" onClick={() => this.upgradeTab()}>
-                Upgrades
+                Upgrades (ppl Points:{this.props.pplPoint})
               </button>
               <button className="panelButton"></button>
             </div>

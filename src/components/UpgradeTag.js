@@ -13,8 +13,9 @@ export default class UpgradeTag extends Component{
   }
   
  checkppp(){
-   console.log("aaaaappppppppppp")
-   this.setState({"purchased":true})
+   this.props.pplPoint >= this.props.cost ?
+   this.setState({"purchased":true})   : return;
+   
    
  }
   
@@ -24,7 +25,7 @@ export default class UpgradeTag extends Component{
       
       <img className="upgradeTagImg" src={this.props.image}></img>
       <p className="upgradeTagP">{this.props.text}</p>
-      <button className="upgradeButton" onClick={()=>this.checkppp()}>{this.state.purchased? "mutated.": "PPL point require to evolve: "+this.props.ppp }</button>
+      <button className="upgradeButton" onClick={()=>this.checkppp()}>{this.state.purchased? "mutated.": "PPL point required to mutate: "+this.props.ppp }</button>
       
     </div> 
     );

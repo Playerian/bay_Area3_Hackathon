@@ -79,6 +79,13 @@ class App extends Component {
         //add newInfected to state infected population
         state.infected += Math.round(newInfected);
         state.infectedDecimal = decimal;
+        //increase ppl point
+        if (state.infected > state.pplPointMilestone){
+          //increase ppl point by 1
+          this.state.pplPoint += 1
+          //increase miletone by *10
+          state.pplPointMilestone *= 10;
+        }
         //separation--------------------------------------------------------
         //spreading to neighbor probability
         let chance = state.infected / state.population;
@@ -218,10 +225,11 @@ class App extends Component {
           selecting = {this.state.selecting} 
           provinceData = {this.state.stateData}
           setSpeed = {(s) => this.setSpeed(s)}
+          pplPoint = {this.state.pplPoint}
         />{/*buttons and counters goes in here?*/}
         
-        {/*<div className="pplPointContiner"></div>*/}
-        <div className="researchProgress"></div>
+        {/*<div className="pplPointContiner"></div>
+        <div className="researchProgress"></div>*/}
         
       </div>
     );
@@ -240,6 +248,7 @@ class State{
     this.infectedDecimal = 0.0;
     this.death = 0;
     this.recovered = 0;
+    this.pplPointMilestone = 1;
     //event data
     this.landLocked = false;
     this.airportLocked = false;

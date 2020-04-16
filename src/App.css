@@ -87,12 +87,14 @@
 
 .researchProgress{
   position:absolute;
-  border:grey solid 1px;
+  border:darkgrey solid 2px;
   box-sizing:border-box;
   width:15vw;
   height:10vh;
   z-index:2;
   top:90vh;
+  background:grey;
+  
 }
 
 body {

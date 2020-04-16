@@ -42,8 +42,8 @@ class App extends Component {
       pplPoint: 0,
       airlines: [
         //remove after debugging finishes
-        new Plane("LAX", "JFK"),
-        new Plane("JFK", "LAX"),
+        new Plane("LAX", "JFK","aaaaa"),
+        new Plane("JFK", "LAX","bbbb"),
         
       ],
       gameStarted: false,
@@ -286,7 +286,7 @@ class State{
 }
 
 class Plane{
-  constructor(startPortName, endPortName){
+  constructor(startPortName, endPortName,planeKey){
     let startPort = airportJSON[startPortName];
     let startlatlon = [startPort.Latitude, startPort.Longitude];
     let endPort = airportJSON[endPortName];
@@ -301,6 +301,7 @@ class Plane{
     this.startState = startPort.state;
     this.endState = endPort.state;
     this.hasVirus = false;
+    this.planeKey = planeKey
     //calculated
     this.distance = distanceTwoPoints(startlatlon, endlatlon);
     this.angle = angleTwoPoints(startlatlon, endlatlon);

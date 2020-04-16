@@ -196,7 +196,7 @@ export default class Map extends Component {
       <ImageOverlay
           bounds = {[[plane.currentlat,plane.currentlon],[plane.currentlat+1,plane.currentlon+1]]}
           url={imgUrl}
-          key=plane}
+          key={plane.planeKey}
       />
     console.log(JsxPlane)
     return JsxPlane

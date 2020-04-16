@@ -13,7 +13,7 @@ export default class MenuPanel extends Component {
       showing: true,
       day: "NaN",
       tab: "overview",
-      
+      pplPoint: this.props.pplPoint
     };
   }
 

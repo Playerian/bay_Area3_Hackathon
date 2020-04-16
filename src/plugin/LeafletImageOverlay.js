@@ -195,4 +195,4 @@ L.imageOverlay.rotated = function(imgSrc, topleft, topright, bottomleft, options
 
 
 
-          console.log("hareghegahr")
+          console.log("overlayRotated")

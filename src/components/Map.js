@@ -9,7 +9,7 @@ const {
   Marker,
   Popup,
   GeoJSON,
-  ImageOverlay
+  ImageOverlay,
 } = window.ReactLeaflet;
 
 export default class Map extends Component {
@@ -205,6 +205,7 @@ export default class Map extends Component {
           bounds = {plane.bound}
           url={imgUrl}
           key={plane.planeKey}
+          Rotated
       />
     return JsxPlane
      
@@ -213,6 +214,8 @@ export default class Map extends Component {
   //render funciton
   render() {
           console.log("---------------------------------------")
+          console.log(L)//.ImageOverlay.Rotated)
+
 
 
     //render layers

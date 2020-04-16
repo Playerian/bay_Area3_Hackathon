@@ -36,15 +36,17 @@ class App extends Component {
     stateData.US = new State("US", totalPopulation);
     //initialize state
     this.state = {
+      //datas
       stateData: stateData,
-      selecting: "US",
-      day: 0,
-      pplPoint: 0,
       airlines: [
         //comment out after debugging finishes, template
         //new Plane("LAX", "JFK", "key",(c) => this.flightFinished(c)),
-        
       ],
+      //in game variables
+      selecting: "US",
+      day: 0,
+      pplPoint: 0,
+      //game system state
       gameStarted: false,
       //0 pause 1 regular
       gameSpeed: 0,
@@ -211,6 +213,10 @@ class App extends Component {
     for (let key in stateData){
       //ignore if it's us
       if (key !== "US"){
+        //remove alaska and hawaii from existence
+        if (key === "Hawaii" || key === "Alaska"){
+          continue;
+        }
         let state = stateData[key];
         totalPopulation += state.population;
         totalInfected += state.infected;

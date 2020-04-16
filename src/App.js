@@ -42,14 +42,18 @@ class App extends Component {
       pplPoint: 0,
       airlines: [
         //remove after debugging finishes
-        new Plane("LAX", "JFK","aaaaa"),
-        new Plane("JFK", "LAX","bbbb"),
+        new Plane("LAX", "JFK", "key",(c) => this.flightFinished(c)),
         
       ],
       gameStarted: false,
       //0 pause 1 regular
       gameSpeed: 0,
-      gameTimerSpeed: 1000,
+      //just the speed of the timer
+      gameTimerSpeed: 200,
+      //accumulation += timerSpeed everytime timer is ticked
+      gameTimerAccumulation: 0,
+      //accumulation >= oneday then run oneDayPassed()
+      gameOneDay: 1000,
     }
     //initialize timer
     this.timer = setInterval(() => {
@@ -145,10 +149,17 @@ class App extends Component {
       if (this.state.gameSpeed === 0){
         
       }else if (this.state.gameSpeed === 1){
-        this.oneDayPassed();
-        
+        this.state.gameTimerAccumulation += this.state.gameTimerSpeed;
+        if (this.state.gameTimerAccumulation >= this.state.gameOneDay){
+          this.oneDayPassed();
+          this.state.gameTimerAccumulation -= this.state.gameOneDay;
+        }
         this.state.airlines.forEach((v,i)=>{
           v.next(i)
+        });
+        this.setState({
+          airlines: this.state.airlines,
+          gameTimerAccumulation: this.state.gameTimerAccumulation,
         });
       }
     }
@@ -180,7 +191,7 @@ class App extends Component {
   }
   //airline Data formatting
   flightFinished(plane){
-    
+    console.log(`Flight finished`);
   }
   //geoJSON handler
   onFeatureClicked(stateName){
@@ -325,8 +336,8 @@ class Plane{
     }
   }
   next(i){ //i is the plane's index in this.state.airlines
-    if(this.currentIndex === this.intervalList.length){
-      this.callback(this);
+    if(this.currentIndex >= this.intervalList.length){
+      return this.callback(this);
     }
     this.currentIndex ++;
     this.currentlat = this.intervalList[this.currentIndex][0];

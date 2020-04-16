@@ -19,12 +19,7 @@ export default class UpgradeTag extends Component{
        "purchased":true,
      })
    }
- 
  }
- onUpgradeClick(){
-    
- }
-  
   render(){
   return(
     <div className="upgradeTag">

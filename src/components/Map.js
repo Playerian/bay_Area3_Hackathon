@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import L from 'leaflet';
 //import "https://unpkg.com/leaflet@1.4.0/dist/leaflet.css";
 const {
   Map: LeafletMap,
@@ -185,6 +186,11 @@ export default class Map extends Component {
       }
     }
     //airport overlay collection
+    //custom icon
+    var myIcon = L.icon({
+      iconUrl: 'https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fairport.png?v=1587008448453',
+      iconAnchor: [22, 94],
+    });
     let airportIcons = [];
     for (let key in this.props.airportJSON){
       let airport = this.props.airportJSON[key];
@@ -193,10 +199,9 @@ export default class Map extends Component {
       airportIcons.push(
         <Marker
           //airport icon
+          key={key}
           position={[lat, lon]}
-          icon={
-            url: "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fairport.png?v=1587008448453"
-          }
+          icon={myIcon}
         />
       );
     }

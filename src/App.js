@@ -213,10 +213,6 @@ class App extends Component {
     for (let key in stateData){
       //ignore if it's us
       if (key !== "US"){
-        //remove alaska and hawaii from existence
-        if (key === "Hawaii" || key === "Alaska"){
-          continue;
-        }
         let state = stateData[key];
         totalPopulation += state.population;
         totalInfected += state.infected;

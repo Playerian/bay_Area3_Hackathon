@@ -189,10 +189,15 @@ export default class Map extends Component {
     }
   }
   
-  sentAirline(startport,endPort){
+  sentAirplane(startport,endport){
     let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
-    let imgBound = [startport,[startport.x]
-    L.imageOverlay(imgUrl,startport)
+    let imgBound = [
+                    [this.props.airportJSON[startport].Latitude,this.props.airportJSON[startport].Longitude],
+                    [this.props.airportJSON[endport].Latitude,this.props.airportJSON[endport].Longitude]
+                   ]
+    
+    L.ImageOverlay(imgUrl,imgBound).addTo(this.map)
+    //console.log(this.map)
   }
   
   //render funciton
@@ -206,6 +211,9 @@ export default class Map extends Component {
         );
       }
     }
+    
+    this.sentAirplane("LAX","JFK")
+    
     //airport overlay collection
     //custom icon
     var myIcon = L.icon({

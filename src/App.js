@@ -308,7 +308,7 @@ class Plane{
     this.intervalList = [];
     //cutting
     for (let i = 0; i < this.distance; i += this.intervalLength){
-      this.intervalList.push([this.startlatlon[0] + i * this.slope[0], this.startlatlon[1] + i * this.slope[1]]);
+      this.intervalList.push([this.startlatlon[0] + i * this.slope[0] / Math.floor(this.distance), this.startlatlon[1] + i * this.slope[1] / Math.floor(this.distance)]);
     }
   }
   next(){

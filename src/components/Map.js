@@ -198,10 +198,11 @@ export default class Map extends Component {
     //                ]
     let JsxPlane = 
       <ImageOverlay
+        key= {this.props.key}
           bounds = {[plane.currentlat,plane.currentlon],[plane.currentlat+1,plane.currentlon+1]}
           url={imgUrl}
-          />
-    
+      />
+    console.log(JsxPlane)
     return JsxPlane
      
   }
@@ -219,12 +220,11 @@ export default class Map extends Component {
     }
     
   let planeArray = []
-  this.props.airlines.forEach((v,i)=>{
-      this.sentAirplane(v)
+  this.props.airlines.forEach((v,i)=>{ 
+      planeArray.push(this.sentAirplane(v))
       console.log(v)
-      planeArray.push(v)
     })
-
+  console.log(planeArray)
     
     //airport overlay collection
     //custom icon
@@ -280,7 +280,7 @@ export default class Map extends Component {
         />
         {airportIcons}
         
-        
+        {planeArray}
         
         {/*<ImageOverlay
           bounds ={ [

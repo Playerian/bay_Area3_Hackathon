@@ -69,7 +69,7 @@ export default class MenuPanel extends Component {
       
       {
         purchased:false,
-        cost:999,
+        cost:5,
         text:"some text here",
         imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
         resilience:999,

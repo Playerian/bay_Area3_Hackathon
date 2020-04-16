@@ -50,6 +50,9 @@ class App extends Component {
       //exclude us
       if (key === "US"){
         
+      }else if (key === undefined){
+        //exclude undefined
+        debugger;
       }else{
         let state = stateData[key];
         //avoid random spontaenous generation
@@ -217,8 +220,8 @@ class App extends Component {
           setSpeed = {(s) => this.setSpeed(s)}
         />{/*buttons and counters goes in here?*/}
         
-        {/*<div className="pplPointContiner"></div>
-        <div className="researchProgress"></div>*/}
+        {/*<div className="pplPointContiner"></div>*/}
+        <div className="researchProgress"></div>
         
       </div>
     );

@@ -145,12 +145,7 @@ export default class MenuPanel extends Component {
 
     if (this.state.showing === true && this.state.tab === "overview") {
       
-        if(infected < population){
-          this.setState=({
-            winShow: true
-          })
           
-        }
       //overview tab
      // {this.state.winShow ? : null }
       return (

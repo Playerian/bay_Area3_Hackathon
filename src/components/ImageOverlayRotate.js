@@ -20,7 +20,5 @@ export default class ImageOverlayRotate extends ImageOverlay{
     }).addTo(Map);
     
   }
-  
-  }
 }
 

@@ -32,8 +32,7 @@ export default class Map extends Component {
     // map.zoomControl.disable();
     //disable pan
     // map.dragging.disable();
-
-    // let marker = Map.marker([lat,lng]).addTo(map)
+    // let marker = Map.marker([37.7749,-122.4194]).addTo(map)
   }
   //leaflet handler
   handleZoomEnd(e) {

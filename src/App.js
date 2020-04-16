@@ -28,6 +28,9 @@ class App extends Component {
     for (let key in airportJSON){
       let airport = airportJSON[key];
       let stateName = airport.state;
+      let state = stateData[stateName];
+      state.hasAirport = true;
+      state.airport = airport;
     }
     //set up the us data
     stateData.US = new State("US", totalPopulation);
@@ -212,6 +215,7 @@ class App extends Component {
             borderGeoJSON={borderGeoJSON}
             stateGeoJSON={stateGeoJSON}
             populationJSON={populationJSON}
+            airportJSON={airportJSON}
             //dynamic data for render
             stateData={this.state.stateData}
             //handlers

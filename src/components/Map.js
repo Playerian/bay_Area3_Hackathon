@@ -191,17 +191,16 @@ export default class Map extends Component {
   
   sentAirplane(startport,endport){
     let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
-    let imgBound = [
+    let imgBounds = [
                     [this.props.airportJSON[startport].Latitude,this.props.airportJSON[startport].Longitude],
                     [this.props.airportJSON[endport].Latitude,this.props.airportJSON[endport].Longitude]
                    ]
     
-      let img = new L.ImageOverLay(imgUrl,imgBound,{
-      
-      })
-    //L.imageOverlay(imgUrl,imgBound).addTo(this.map)
-    //console.log(L.ImageOverlay())
-      this.map.addLayer(img)
+    // let layer = L.imageOverlay(imgUrl, imgBounds);
+    layer.addTo(this.map)
+
+    //console.log()
+      //this.map.addLayer(img)
   }
   
   //render funciton

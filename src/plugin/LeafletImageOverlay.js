@@ -1,31 +1,8 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
+import L from "leaflet";
  
-@hohe1 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
 
-
-IvanSanchez
-/
-Leaflet.ImageOverlay.Rotated
-17
-3
-5923
- Code Issues 2 Pull requests 1 Actions Projects 0 Security Insights
-Leaflet.ImageOverlay.Rotated/Leaflet.ImageOverlay.Rotated.js /
-@IvanSanchez IvanSanchez Switch from skew calcs to transformation matrix; fixes #13
-d275c69 on Jul 23, 2019
-@IvanSanchez@KarloX2@magnudae
-189 lines (145 sloc)  5.35 KB
-  
-Code navigation is available!
-Navigate your code with ease. Click on function and method calls to jump to their definitions or references in the same repository. Learn more
+//IvanSanchez
+//Leaflet.ImageOverlay.Rotated
 
 
 /*
@@ -216,3 +193,4 @@ L.ImageOverlay.Rotated = L.ImageOverlay.extend({
 L.imageOverlay.rotated = function(imgSrc, topleft, topright, bottomleft, options) {
 	return new L.ImageOverlay.Rotated(imgSrc, topleft, topright, bottomleft, options);
 };
+

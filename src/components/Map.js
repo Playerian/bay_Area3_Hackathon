@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import L from "leaflet";
-//import "https://raw.githubusercontent.com/IvanSanchez/Leaflet.ImageOverlay.Rotated/gh-pages/Leaflet.ImageOverlay.Rotated.js"
+// import "https://raw.githubusercontent.com/IvanSanchez/Leaflet.ImageOverlay.Rotated/gh-pages/Leaflet.ImageOverlay.Rotated.js"
+import LeafletImageOverLay from "./src/plugin/LeafletImageOverlay.js"
+
 const {
   Map: LeafletMap,
   TileLayer,
@@ -35,7 +37,10 @@ export default class Map extends Component {
     //disable pan
     // map.dragging.disable();
     // let marker = Map.marker([37.7749,-122.4194]).addTo(map)
+      console.log()
+
   }
+    
   //leaflet handler
   handleZoomEnd(e) {
     console.log("Zoom ended");

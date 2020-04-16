@@ -76,13 +76,33 @@ class App extends Component {
       }else{
         let state = stateData[key];
         //airlines!
-        //check if airline exist
+        //check if airport exist
         if (state.hasAirport){
-          let airport = state.airport;
-          //randomly selects another airport
-          let keyList = Object.keys(airportJSON);
-          //destination
-          let airport2 = keyList[Math.floor(Math.random() * keyList.length)];
+          //check if the state has plane going out
+          if (state.planeExit.length > 0){
+            //don't send out plane
+          }{
+            //send out plane (with a probability)
+            let airport = state.airport;
+            //randomly selects another airport
+            let keyList = Object.keys(airportJSON);
+            //destination
+            let airport2 = keyList[Math.floor(Math.random() * keyList.length)];
+            //check if flying to urself
+            if (airport !== airport2){
+              //send a plane out 33% chance
+              if (Math.floor(Math.random() * 3) === 0){
+                let key = String(Math.random()).substring(2);
+                let plane = new Plane(airport.name, airport2.name, key, (c) => this.flightFinished(c));
+                //push plane to start state
+                state.planeExit.push(plane);
+                //push plane to end state
+                stateData[airport2.state].planeEnter.push(plane);
+                //push plane to react state
+                this.state.airlines.push(plane);
+              }
+            }
+          }
         }
         //avoid random spontaenous generation
         if (state.infected === 0){
@@ -138,7 +158,7 @@ class App extends Component {
     this.setState({
       day: day,
       stateData: stateData,
-      
+      airlines: this.state.airlines
     }, () => {
       //final set US Data
       this.setUSData();

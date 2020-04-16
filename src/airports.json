@@ -1,30 +1,36 @@
 {
   "ATL" : {
+    "name" : "ATL",
     "state" : "Georgia",
     "Latitude": 33.6407,
     "Longitude": -84.4277
   },
   "LAX" : {
+    "name" : "LAX",
     "state": "California",
     "Latitude": 33.9416,
     "Longitude" : -118.4085
   },
   "ORD" : {
+    "name" : "ORD",
     "state": "Illinois",
     "Latitude": 41.9742,
     "Longitude" : -87.9073
   },
   "DFW" : {
+    "name" : "DFW",
     "state": "Texas",
     "Latitude": 32.7079,
     "Longitude" : -96.9209
   },
   "DEN" : {
+    "name" : "DEN",
     "state": "Colorado",
     "Latitude": 39.8561,
     "Longitude" : -104.6737
   },
   "JFK" : {
+    "name" : "JFK",
     "state" : "New York",
     "Latitude": 40.6413,
     "Longitude": -73.7781

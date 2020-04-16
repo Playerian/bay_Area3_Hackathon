@@ -104,52 +104,36 @@ export default class MenuPanel extends Component {
         
       },
       
-    
-      const events = [
-      {
-        purchased:false,
-        cost:0,
-        text:"some text here",
-        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-        resilience:1,
-        spread:0,
-        lethal:0,
-        
-      },
-      
-      {
-        purchased:false,
-        cost:5,
-        text:"some text here",
-        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-        resilience:999,
-        spread:999,
-        lethal:999,
-        
-      },
-      
-      {
-        purchased:false,
-        cost:999,
-        text:"test test text",
-        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-        resilience:999,
-        spread:999,
-        lethal:999,
-        
-      },
-      
     ]
+    
+    const events = [
+      {
+        text: "New medication is in progress",
+        type: "resilience",
+        upgrade: 0,
+        downgrade: 200
+      },
+      {
+        text: "Government orders a shelter in place",
+        type: "spread",
+        upgrade: 0,
+        downgrade: 300
+      },
+      {
+        text: "New mutation: those infected now have severe cough",
+        type: "lethality",
+        upgrade: 100,
+        downgrade: 0
+      },
+    ]
+    
+
     
     let upgradeDivArray = upgrades.map((v,i)=>{
       
           return <UpgradeTag text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
         });
 
-    
-//       callbackFunction = (childData) => {
-//       this.setState({: childData})
-// }
     
     if (this.state.showing === true && this.state.tab === "overview") {
       //overview tab

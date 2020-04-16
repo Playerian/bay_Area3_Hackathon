@@ -50,8 +50,13 @@ class App extends Component {
         
       }else{
         let state = stateData[key];
-        //if count exceeds 1, double infected amount
-        let newInfected = state.infected;
+        let newInfected = state.infected + state.infectedDecimal;
+        //multiply by infection rate
+        newInfected *= (1 + state.infectionRate);
+        //get a 20% random flow in the increase
+        
+        //get decimal of new infected
+        let decimal = newInfected - Math.round(newInfected);
         //if new infected amount exceeds 10% of population
         if (newInfected > state.population * 0.1){
           newInfected = state.population * 0.1;
@@ -61,8 +66,8 @@ class App extends Component {
           newInfected = state.population - state.infected;
         }
         //add newInfected to state infected population
-        state.infected += newInfected;
-        state.infected = Math.round(state.infected);
+        state.infected += Math.round(newInfected);
+        state.infectedDecimal = decimal;
       }
     }
     //calling setUSData

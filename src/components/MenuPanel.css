@@ -149,4 +149,8 @@
 .upgradeTag{
   width:100%;
   box-sizing:border-box;
+  border:1px solid lightgrey;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
 }

@@ -8,16 +8,24 @@ export default class UpgradeTag extends Component{
     this.state = {
       purchased:false
     }
+   
     
   }
   
+ checkppp(){
+   console.log("aaaaappppppppppp")
+   this.setState({"purchased":true})
+   
+ }
   
   render(){
   return(
     <div className="upgradeTag">
-      <p className="upgradeTagP">{this.props.text}</p>
+      
       <img className="upgradeTagImg" src={this.props.image}></img>
-      <button className="upgradeButton">{this.state.purchased? "mutated.": this.props.ppp + " PPL Point required"}</button>
+      <p className="upgradeTagP">{this.props.text}</p>
+      <button className="upgradeButton" onClick={()=>this.checkppp()}>{this.state.purchased? "mutated.": this.props.ppp + " PPL Point required" }</button>
+      
     </div> 
     );
   }

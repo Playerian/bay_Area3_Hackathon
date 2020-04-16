@@ -104,6 +104,41 @@ export default class MenuPanel extends Component {
         
       },
       
+    
+      const events = [
+      {
+        purchased:false,
+        cost:0,
+        text:"some text here",
+        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+        resilience:1,
+        spread:0,
+        lethal:0,
+        
+      },
+      
+      {
+        purchased:false,
+        cost:5,
+        text:"some text here",
+        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+        resilience:999,
+        spread:999,
+        lethal:999,
+        
+      },
+      
+      {
+        purchased:false,
+        cost:999,
+        text:"test test text",
+        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+        resilience:999,
+        spread:999,
+        lethal:999,
+        
+      },
+      
     ]
     
     let upgradeDivArray = upgrades.map((v,i)=>{

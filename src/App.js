@@ -41,7 +41,7 @@ class App extends Component {
       day: 0,
       pplPoint: 0,
       airlines: [
-        //remove after debugging finishes
+        //comment out after debugging finishes, template
         new Plane("LAX", "JFK", "key",(c) => this.flightFinished(c)),
         
       ],
@@ -49,7 +49,7 @@ class App extends Component {
       //0 pause 1 regular
       gameSpeed: 0,
       //just the speed of the timer
-      gameTimerSpeed: 200,
+      gameTimerSpeed: 1000 / 30,
       //accumulation += timerSpeed everytime timer is ticked
       gameTimerAccumulation: 0,
       //accumulation >= oneday then run oneDayPassed()
@@ -76,7 +76,14 @@ class App extends Component {
       }else{
         let state = stateData[key];
         //airlines!
-        
+        //check if airline exist
+        if (state.hasAirport){
+          let airport = state.airport;
+          //randomly selects another airport
+          let keyList = Object.keys(airportJSON);
+          //destination
+          let airport2 = keyList[Math.floor(Math.random() * keyList.length)];
+        }
         //avoid random spontaenous generation
         if (state.infected === 0){
           continue;
@@ -192,6 +199,7 @@ class App extends Component {
   //airline Data formatting
   flightFinished(plane){
     console.log(`Flight finished`);
+    //remove the plane from list
   }
   //geoJSON handler
   onFeatureClicked(stateName){

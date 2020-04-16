@@ -134,7 +134,7 @@ export default class MenuPanel extends Component {
     ]
   
     let randomEvent = Math.floor(Math.random() * (events.length + 1));
-  //  console.log(events[randomEvent]);
+  //  console.log(events[randomEvent].text);
     
     let upgradeDivArray = upgrades.map((v,i)=>{
       

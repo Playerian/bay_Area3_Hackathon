@@ -197,6 +197,9 @@ export default class Map extends Component {
   
   sentAirplane(plane){
     let imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fairplane_2708.png?v=1587071842507"
+    if (plane.hasVirus){
+      imgUrl = "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2FairplaneRed.png?v=1587075165909";
+    }
     let JsxPlane = 
       <ImageOverlay
           bounds = {plane.bound}
@@ -211,7 +214,6 @@ export default class Map extends Component {
   render() {
           console.log("---------------------------------------")
 
-          console.log(LeafletImageOverLay)
 
     //render layers
     if (Object.keys(this.state.stateLayers).length > 0) {

@@ -90,8 +90,8 @@ class App extends Component {
             let airport2Name = keyList[Math.floor(Math.random() * keyList.length)];
             //check if flying to urself
             if (airport.name !== airport2Name){
-              //send a plane out 33% chance
-              if (Math.floor(Math.random() * 3) === 0){
+              //send a plane out 50% chance
+              if (Math.floor(Math.random() * 2) === 0){
                 let key = String(Math.random()).substring(2);
                 let plane = new Plane(airport.name, airport2Name, key, (c) => this.flightFinished(c));
                 //check if plane carries the virus

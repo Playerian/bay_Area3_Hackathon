@@ -27,7 +27,6 @@ import L from "leaflet";
  * ```
  *
  */
-
 L.ImageOverlay.Rotated = L.ImageOverlay.extend({
 
 	initialize: function (image, topleft, topright, bottomleft, options) {
@@ -194,3 +193,6 @@ L.imageOverlay.rotated = function(imgSrc, topleft, topright, bottomleft, options
 	return new L.ImageOverlay.Rotated(imgSrc, topleft, topright, bottomleft, options);
 };
 
+
+
+          console.log("hareghegahr")

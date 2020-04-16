@@ -185,6 +185,10 @@ export default class MenuPanel extends Component {
             click to hide
           </div>
         </div>
+        /*
+        if(a > b){
+          
+        }*/
       );
     } else if(this.state.showing === true && this.state.tab === "upgrade"){
       //upgrade tab

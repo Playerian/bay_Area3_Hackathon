@@ -148,14 +148,16 @@ class App extends Component {
   distanceTwoPoints(latlon1, latlon2){
     return Math.sqrt( Math.pow(latlon1[0] - latlon2[0], 2) + Math.pow(latlon1[1] - latlon2[1], 2) );
   }
+  //clockwise, start from x-axis
   angleTwoPoints(latlon1, latlon2){
-    //zone 2
-    //if (latlon1[0] > latlon2[0] && latlon1[1] < latlon2[1]){
-      
-    //}else{
-      return Math.atan(Math.abs((latlon1[0] - latlon2[0]) / (latlon1[1] - latlon2[1]))) * 180 / Math.PI;
-    //}
-
+    let r = (Math.atan2((latlon2[1] - latlon1[1]), (latlon2[0] - latlon1[0])) * 180 / Math.PI) * -1;
+      if (r === NaN){
+          return 0;
+      }
+      if (r < 0){
+          r += 360;
+      }
+      return r;
   }
   //US Data formatting
   setUSData(){

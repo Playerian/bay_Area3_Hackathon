@@ -196,12 +196,8 @@ export default class Map extends Component {
                     [this.props.airportJSON[startport].Latitude,this.props.airportJSON[startport].Longitude],
                     [this.props.airportJSON[endport].Latitude,this.props.airportJSON[endport].Longitude]
                    ]
+        
     
-     let layer = L.imageOverlay(imgUrl, imgBounds);
-      layer.addTo(this.map)
-
-    //console.log()
-      //this.map.addLayer(img)
   }
   
   //render funciton
@@ -273,11 +269,13 @@ export default class Map extends Component {
         />
         {airportIcons}
         
-        <imageOverLay
-          bounds: 
-
-          
-          />
+        {/*<ImageOverlay
+          bounds ={ [
+                    [this.props.airportJSON["LAX"].Latitude,this.props.airportJSON["LAX"].Longitude],
+                    [this.props.airportJSON["JFK"].Latitude,this.props.airportJSON["JFK"].Longitude]
+                   ]}
+          url="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
+          />*/0}
 
         
       </LeafletMap>

@@ -136,6 +136,10 @@ class App extends Component {
     //fetch state info
     let state = this.state.stateData[stateName];
     let stateData = this.state.stateData;
+    //check dc first
+    if (stateName === "District of Columbia"){
+      
+    }
     console.log(
       `State: ${stateName} with a population of ${state.population}`
     );

@@ -1,5 +1,6 @@
 dependencies:
   create-react-app: 3.4.1
+  leaflet: 1.6.0
   react: 16.13.1
   react-dom: 16.13.1
   react-leaflet: 2.6.3
@@ -4120,6 +4121,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-MIrMr6C8SDo4Z7S28rlQYlHRuDU=
+  /leaflet/1.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-CPkhyqWUKZKFJ6K8umN5/D2wrJ2+/8UIpXppY7QDnUZW5bZL5+SEI2J7GBpwh4LIupOKqbNSQXgqmrEJopHVNQ==
   /levn/0.3.0:
     dependencies:
       prelude-ls: 1.1.2
@@ -7147,6 +7152,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   create-react-app: ^3.4.1
+  leaflet: ^1.6.0
   react: ^16.13.0
   react-dom: ^16.13.1
   react-leaflet: ^2.6.3

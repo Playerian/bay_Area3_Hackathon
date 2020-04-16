@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import L from 'leaflet';
-//import "https://unpkg.com/leaflet@1.4.0/dist/leaflet.css";
+import L from "leaflet";
 const {
   Map: LeafletMap,
   TileLayer,
@@ -80,9 +79,9 @@ export default class Map extends Component {
     var lat = coord.lat;
     var lng = coord.lng;
     //check propagation
-    if (this.handlerFired){
+    if (this.handlerFired) {
       this.handlerFired = false;
-    }else{
+    } else {
       this.props.onMapClicked(lat, lng);
     }
   }
@@ -109,16 +108,28 @@ export default class Map extends Component {
     this.handlerFired = true;
   }
   //update individual layer during render
-  updateLayer(feature, layer){
+  updateLayer(feature, layer) {
     // grab stateData
     let stateData = this.props.stateData;
     //set color base on stateData
     // array of fill colors in increasing order of severity
     let colors = [
-      "#3388ff", "#74adad", "#8abc8e", "#c5de46", "#fbff00",
-      "#fde800", "#fed200", "#ffb900", "#ff9300", "#ff6200",
-      "#ff4600", "#ff0000", "#de0000", "#aa0000", "#730000",
-    ]
+      "#3388ff",
+      "#74adad",
+      "#8abc8e",
+      "#c5de46",
+      "#fbff00",
+      "#fde800",
+      "#fed200",
+      "#ffb900",
+      "#ff9300",
+      "#ff6200",
+      "#ff4600",
+      "#ff0000",
+      "#de0000",
+      "#aa0000",
+      "#730000"
+    ];
     //set style base on stateData
     if (stateData[feature.properties.NAME]) {
       let state = stateData[feature.properties.NAME];
@@ -127,49 +138,49 @@ export default class Map extends Component {
       let color;
       //setting default style listed in stateData
       layer.setStyle(state.style);
-      if (infected === 0){
+      if (infected === 0) {
         color = colors[0];
-      } 
-      if (infected >= 1){
+      }
+      if (infected >= 1) {
         color = colors[1];
-      } 
-      if (infected >= 20){
+      }
+      if (infected >= 20) {
         color = colors[2];
-      } 
-      if (infected >= 50){
+      }
+      if (infected >= 50) {
         color = colors[3];
-      } 
-      if (infected >= 100){
+      }
+      if (infected >= 100) {
         color = colors[4];
-      } 
-      if (infected >= population * 0.01){
+      }
+      if (infected >= population * 0.01) {
         color = colors[5];
-      } 
-      if (infected >= population * 0.05){
+      }
+      if (infected >= population * 0.05) {
         color = colors[6];
-      } 
-      if (infected >= population * 0.1){
+      }
+      if (infected >= population * 0.1) {
         color = colors[7];
-      } 
-      if (infected >= population * 0.2){
+      }
+      if (infected >= population * 0.2) {
         color = colors[8];
-      } 
-      if (infected >= population * 0.3){
+      }
+      if (infected >= population * 0.3) {
         color = colors[9];
-      } 
-      if (infected >= population * 0.4){
+      }
+      if (infected >= population * 0.4) {
         color = colors[10];
-      } 
-      if (infected >= population * 0.5){
+      }
+      if (infected >= population * 0.5) {
         color = colors[11];
-      } 
-      if (infected >= population * 0.6){
+      }
+      if (infected >= population * 0.6) {
         color = colors[12];
-      } 
-      if (infected >= population * 0.7){
+      }
+      if (infected >= population * 0.7) {
         color = colors[13];
-      } 
-      if (infected >= population * 0.8){
+      }
+      if (infected >= population * 0.8) {
         color = colors[14];
       }
       layer.setStyle({
@@ -180,19 +191,24 @@ export default class Map extends Component {
   //render funciton
   render() {
     //render layers
-    if (Object.keys(this.state.stateLayers).length > 0){
-      for (let key in this.state.stateLayers){
-        this.updateLayer(this.state.stateFeatures[key], this.state.stateLayers[key]);
+    if (Object.keys(this.state.stateLayers).length > 0) {
+      for (let key in this.state.stateLayers) {
+        this.updateLayer(
+          this.state.stateFeatures[key],
+          this.state.stateLayers[key]
+        );
       }
     }
     //airport overlay collection
     //custom icon
     var myIcon = L.icon({
-      iconUrl: 'https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fairport.png?v=1587008448453',
+      iconUrl:
+        "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fairport.png?v=1587008448453",
       iconAnchor: [22, 94],
+      iconSize: [38, 95]
     });
     let airportIcons = [];
-    for (let key in this.props.airportJSON){
+    for (let key in this.props.airportJSON) {
       let airport = this.props.airportJSON[key];
       let lat = airport.Latitude;
       let lon = airport.Longitude;
@@ -222,9 +238,9 @@ export default class Map extends Component {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | Data from US Census Bureau'
         />
-        <GeoJSON 
+        <GeoJSON
           //border geoJSON
-          data={this.props.borderGeoJSON} 
+          data={this.props.borderGeoJSON}
           style={{ color: "cadetblue", opacity: 0.5 }}
         />
         <GeoJSON

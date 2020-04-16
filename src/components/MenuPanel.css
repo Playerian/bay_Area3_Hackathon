@@ -69,7 +69,7 @@
   box-sizing: border-box;
   padding-left: 10px;
   font-size: 14px;
-    height:100%;
+  height: 100%;
 
   /*padding-top: -5px;*/
 }
@@ -78,25 +78,25 @@
   width: 20%;
   box-sizing: border-box;
   text-align: center;
-  height:100%;
+  height: 100%;
 }
 
 .dayDiv {
   width: 15%;
   box-sizing: border-box;
   border: grey solid 5px;
-  text-align:center;
-  font-size:3vw;
-  color:white;
-  background:darkgrey;
+  text-align: center;
+  font-size: 3vw;
+  color: white;
+  background: darkgrey;
   height: 100%;
 }
 
-.dayDivText{
+.dayDivText {
   height: 80%;
 }
 
-.dayDivButtonWrapper{
+.dayDivButtonWrapper {
   height: 20%;
   display: flex;
   justify-content: space-around;
@@ -104,11 +104,10 @@
 
 .eventDiv {
   width: 20%;
-  height:100%;
+  height: 100%;
   box-sizing: border-box;
   border: grey solid 5px;
-  border-radius:2%;
-  
+  border-radius: 2%;
 }
 
 .numcontainer {
@@ -122,12 +121,12 @@
   color: white;
 }
 
-.view{
+.view {
   color: white;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.test{
+.test {
   background-color: red;
   height: auto;
 }
@@ -138,25 +137,24 @@
   color: white;
 }
 
-.upgradeContainer{
-  display:flex;
-  flex-wrap:wrap;
-  overflow-y:scroll;
-  height:70%;
-  margin-top:-10%;
+.upgradeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 70%;
+  margin-top: -10%;
 }
 
-.upgradeTag{
-  width:100%;
-  box-sizing:border-box;
-  border:1px solid lightgrey;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
-  color:white;
+.upgradeTag {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: white;
 }
 
-
-.upgradeTag:hover{
-  background-image:linear-gradient(to right, red , grey)
+.upgradeTag:hover {
+  background-image: linear-gradient(to right, red, grey);
 }

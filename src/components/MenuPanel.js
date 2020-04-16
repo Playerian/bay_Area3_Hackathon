@@ -159,7 +159,7 @@ export default class MenuPanel extends Component {
               
             </div>
              <div className="eventDiv">
-               <p className="view numcontainer">Resilience:</p>
+               <p className="view numcontainer">Resilience:{}</p>
                <p className="view numcontainer">Spread:</p>
                <p className="view numcontainer"></p>
             </div>

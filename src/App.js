@@ -40,9 +40,10 @@ class App extends Component {
       selecting: "US",
       day: 0,
       pplPoint: 0,
-      airlines: {
-        //remove after debugging finish
-      },
+      airlines: [
+        //remove after debugging finishes
+        new Plane("LAX", "JFK"),
+      ],
       gameStarted: false,
       //0 pause 1 regular
       gameSpeed: 0,
@@ -296,14 +297,18 @@ class State{
 }
 
 class Plane{
-  constructor(startState, endState, startlatlon, endlatlon){
+  constructor(startPortName, endPortName){
+    let startPort = airportJSON[startPortName];
+    let startlatlon = [startPort.Latitude, startPort.Longitude];
+    let endPort = airportJSON[endPortName];
+    let endlatlon = [endPort.Latitude, endPort.Longitude];
     //dynamic
     this.currentlat = startlatlon[0];
     this.currentlon = startlatlon[1];
     //static
     this.startlatlon = startlatlon;
     this.endlatlon = endlatlon;
-    this.startState = startState;
-    this.endState = endState;
+    this.startState = startPort.state;
+    this.endState = endPort.state;
   }
 }

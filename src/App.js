@@ -42,7 +42,7 @@ class App extends Component {
       pplPoint: 0,
       airlines: [
         //comment out after debugging finishes, template
-        new Plane("LAX", "JFK", "key",(c) => this.flightFinished(c)),
+        //new Plane("LAX", "JFK", "key",(c) => this.flightFinished(c)),
         
       ],
       gameStarted: false,
@@ -94,6 +94,16 @@ class App extends Component {
               if (Math.floor(Math.random() * 3) === 0){
                 let key = String(Math.random()).substring(2);
                 let plane = new Plane(airport.name, airport2Name, key, (c) => this.flightFinished(c));
+                //check if plane carries the virus
+                //same algorithm as neighbor transmission
+                let chance = state.infected / state.population;
+                //every million infected increase the chance by 1%
+                let extraChance = Math.floor(state.infected / 1000000) / 100;
+                chance += extraChance;
+                let random = Math.random();
+                if (chance > random){
+                  plane.hasVirus = true;
+                }
                 //push plane to start state
                 state.planeExit.push(plane);
                 //push plane to end state
@@ -219,8 +229,15 @@ class App extends Component {
   //airline Data formatting
   flightFinished(plane){
     console.log(`Flight finished`);
+    //grab states
     let startState = this.state.stateData[plane.startState];
     let endState = this.state.stateData[plane.endState];
+    //if plane is infected
+    if (plane.hasVirus){
+      if (endState.infected < endState.population){
+        endState.infected ++;
+      }
+    }
     //remove the plane from startState
     for (let i = 0; i < startState.planeExit.length; i ++){
       let currentPlane = startState.planeExit[i]

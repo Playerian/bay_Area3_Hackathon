@@ -37,7 +37,6 @@ export default class Map extends Component {
     //disable pan
     // map.dragging.disable();
     // let marker = Map.marker([37.7749,-122.4194]).addTo(map)
-      console.log(LeafletImageOverLay)
 
   }
     
@@ -210,6 +209,10 @@ export default class Map extends Component {
   
   //render funciton
   render() {
+          console.log("---------------------------------------")
+
+          console.log(LeafletImageOverLay)
+
     //render layers
     if (Object.keys(this.state.stateLayers).length > 0) {
       for (let key in this.state.stateLayers) {

@@ -197,8 +197,8 @@ export default class Map extends Component {
                     [this.props.airportJSON[endport].Latitude,this.props.airportJSON[endport].Longitude]
                    ]
     
-    // let layer = L.imageOverlay(imgUrl, imgBounds);
-    //layer.addTo(this.map)
+     let layer = L.imageOverlay(imgUrl, imgBounds);
+      layer.addTo(this.map)
 
     //console.log()
       //this.map.addLayer(img)
@@ -216,7 +216,8 @@ export default class Map extends Component {
       }
     }
     
-    this.sentAirplane("LAX","JFK")
+    
+
     
     //airport overlay collection
     //custom icon

@@ -1,8 +1,8 @@
 {
-  "Alabama": [],
+  "Alabama": ["Mississippi","Tennessee","Georgia","Florida"],
   "Alaska": [],
-  "Arizona": [],
-  "Arkansas": [],
+  "Arizona": ["California","Nevada","Utah","New Mexico"],
+  "Arkansas": [""],
   "California": [],
   "Colorado": [],
   "Connecticut": [],

@@ -196,8 +196,12 @@ export default class Map extends Component {
                     [this.props.airportJSON[endport].Latitude,this.props.airportJSON[endport].Longitude]
                    ]
     
-    L.ImageOverlay(imgUrl,imgBound).addTo(this.map)
-    //console.log(this.map)
+      let img = new L.ImageOverLay(imgUrl,imgBound,{
+      
+      })
+    //L.imageOverlay(imgUrl,imgBound).addTo(this.map)
+    //console.log(L.ImageOverlay())
+      this.map.addLayer(img)
   }
   
   //render funciton

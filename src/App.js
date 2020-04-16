@@ -40,7 +40,9 @@ class App extends Component {
       selecting: "US",
       day: 0,
       pplPoint: 0,
-      airlines: {},
+      airlines: {
+        //remove after debugging finish
+      },
       gameStarted: false,
       //0 pause 1 regular
       gameSpeed: 0,

@@ -203,6 +203,7 @@ class App extends Component {
     // how to access the name of each state; may have to use to change the styling of individual states
     stateGeoJSON.features.forEach((response) => console.log(response.properties.NAME))
     */
+    // alert("Welcome!");
     return (
       <div className="App">
         <div className="mapContainer">

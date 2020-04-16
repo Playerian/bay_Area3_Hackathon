@@ -158,11 +158,7 @@ export default class MenuPanel extends Component {
               </div>
               
             </div>
-             <div className="eventDiv">
-               <p className="view numcontainer">Resilience:{}</p>
-               <p className="view numcontainer">Spread:</p>
-               <p className="view numcontainer"></p>
-            </div>
+               
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>
                  Overview

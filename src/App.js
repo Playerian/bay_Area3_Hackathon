@@ -147,21 +147,6 @@ class App extends Component {
       }
     }
   }
-  //handy method
-  distanceTwoPoints(latlon1, latlon2){
-    return Math.sqrt( Math.pow(latlon1[0] - latlon2[0], 2) + Math.pow(latlon1[1] - latlon2[1], 2) );
-  }
-  //clockwise, start from x-axis
-  angleTwoPoints(latlon1, latlon2){
-    let r = (Math.atan2((latlon2[1] - latlon1[1]), (latlon2[0] - latlon1[0])) * 180 / Math.PI) * -1;
-      if (r === NaN){
-          return 0;
-      }
-      if (r < 0){
-          r += 360;
-      }
-      return r;
-  }
   //US Data formatting
   setUSData(){
     let stateData = this.state.stateData;
@@ -264,6 +249,7 @@ class App extends Component {
 
 export default App;
 
+//classes
 class State{
   constructor(name, population, geoJSON){
     //game data
@@ -310,5 +296,24 @@ class Plane{
     this.endlatlon = endlatlon;
     this.startState = startPort.state;
     this.endState = endPort.state;
+    //calculated
+    this.distance = distanceTwoPoints(startlatlon, endlatlon);
+    this.angle = angleTwoPoints(startlatlon, endlatlon);
   }
+}
+
+//handy method
+function distanceTwoPoints(latlon1, latlon2){
+  return Math.sqrt( Math.pow(latlon1[0] - latlon2[0], 2) + Math.pow(latlon1[1] - latlon2[1], 2) );
+}
+//clockwise, start from x-axis
+function angleTwoPoints(latlon1, latlon2){
+  let r = (Math.atan2((latlon2[1] - latlon1[1]), (latlon2[0] - latlon1[0])) * 180 / Math.PI) * -1;
+    if (r === NaN){
+        return 0;
+    }
+    if (r < 0){
+        r += 360;
+    }
+    return r;
 }

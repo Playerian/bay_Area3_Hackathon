@@ -46,6 +46,9 @@ class App extends Component {
       selecting: "US",
       day: 0,
       pplPoint: 0,
+      researchCompleted: 0,
+      researchRate: 0,
+      globalSeverity: 0,
       //game system state
       gameStarted: false,
       //0 pause 1 regular

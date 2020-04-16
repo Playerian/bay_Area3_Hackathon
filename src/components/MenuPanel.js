@@ -143,6 +143,10 @@ export default class MenuPanel extends Component {
 
 
     if (this.state.showing === true && this.state.tab === "overview") {
+      /*
+        if(infected < population){
+          console.log("not yet");
+        }*/
       //overview tab
       return (
         <div className="menuPanel">
@@ -185,10 +189,7 @@ export default class MenuPanel extends Component {
             click to hide
           </div>
         </div>
-        /*
-        if(a > b){
-          
-        }*/
+      
       );
     } else if(this.state.showing === true && this.state.tab === "upgrade"){
       //upgrade tab

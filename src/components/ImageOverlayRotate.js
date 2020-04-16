@@ -8,14 +8,12 @@ const {
 
 export default class ImageOverlayRotate extends ImageOverlay{
   createLeafletElement(props){
-    let topleft    = new L.latLng();
-    let topright   = new L.latLng();
-    let bottomleft = new L.latLng();
+    let topleft    = new L.latLng(this.props.topLeft[0],this.props.topLeft[1]);
+    let topright   = new L.latLng(this.props.topright[0],this.props.topright[0]);
+    let bottomleft = new L.latLng(this.props.bottomleft[0],);
    
-    var overlay = L.imageOverlay.rotated("./palacio.jpg", topleft, topright, bottomleft, {
-	    opacity: 0.4,
-	    interactive: true,
-	    attribution: "&copy; <a href='http://www.ign.es'>Instituto Geográfico Nacional de España</a>"
+    var overlay = L.imageOverlay.rotated(this.props.image, topleft, topright, bottomleft, {
+	    //attribution: ""
     }).addTo(Map);
     
   }

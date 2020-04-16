@@ -219,8 +219,8 @@ class App extends Component {
   //airline Data formatting
   flightFinished(plane){
     console.log(`Flight finished`);
-    let startState = stateData[plane.startState];
-    let endState = stateData[plane.endState];
+    let startState = this.state.stateData[plane.startState];
+    let endState = this.state.stateData[plane.endState];
     //remove the plane from startState
     for (let i = 0; i < startState.planeExit.length; i ++){
       let currentPlane = startState.planeExit[i]
@@ -394,13 +394,14 @@ class Plane{
     }
   }
   next(i){ //i is the plane's index in this.state.airlines
+    this.currentIndex ++;
     if(this.currentIndex >= this.intervalList.length){
       return this.callback(this);
+    }else{
+      this.currentlat = this.intervalList[this.currentIndex][0];
+      this.currentlon = this.intervalList[this.currentIndex][1];
+      this.bound = [[this.currentlat,this.currentlon], [this.currentlat+1,this.currentlon+1]];
     }
-    this.currentIndex ++;
-    this.currentlat = this.intervalList[this.currentIndex][0];
-    this.currentlon = this.intervalList[this.currentIndex][1];
-    this.bound = [[this.currentlat,this.currentlon], [this.currentlat+1,this.currentlon+1]];
   }
 }
 

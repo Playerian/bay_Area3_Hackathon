@@ -204,7 +204,6 @@ export default class Map extends Component {
           url={imgUrl}
           key={plane.planeKey}
       />
-    console.log(JsxPlane)
     return JsxPlane
      
   }
@@ -225,9 +224,7 @@ export default class Map extends Component {
     let planeArray = []
     this.props.airlines.forEach((v,i)=>{ 
         planeArray.push(this.sentAirplane(v))
-        console.log(v)
       })
-    console.log(planeArray)
     
     //airport overlay collection
     //custom icon

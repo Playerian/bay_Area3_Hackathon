@@ -9,6 +9,7 @@ import borderGeoJSON from "./2010USoutline.json";
 import stateGeoJSON from "./USStates.json";
 import populationJSON from "./population.json";
 import neighborJSON from "./neighbor.json";
+import airportJSON from "./airports.json";
 
 class App extends Component {
   constructor(props){
@@ -23,6 +24,11 @@ class App extends Component {
         totalPopulation += populationJSON[v.properties.NAME];
       }
     });
+    //set up airport data
+    for (let key in airportJSON){
+      let airport = airportJSON[key];
+      let stateName = airport.state;
+    }
     //set up the us data
     stateData.US = new State("US", totalPopulation);
     //initialize state
@@ -197,13 +203,6 @@ class App extends Component {
     });
   }
   render() {
-    /*
-    let test = stateGeoJSON.features[2].properties.NAME;
-    console.log(test);
-    // how to access the name of each state; may have to use to change the styling of individual states
-    stateGeoJSON.features.forEach((response) => console.log(response.properties.NAME))
-    */
-    // alert("Welcome!");
     return (
       <div className="App">
         <div className="mapContainer">
@@ -250,6 +249,8 @@ class State{
     this.death = 0;
     this.recovered = 0;
     this.pplPointMilestone = 1;
+    this.hasAirport = false;
+    this.airport = {};
     //event data
     this.landLocked = false;
     this.airportLocked = false;

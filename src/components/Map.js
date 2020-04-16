@@ -204,8 +204,10 @@ export default class Map extends Component {
     var myIcon = L.icon({
       iconUrl:
         "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fairport.png?v=1587008448453",
-      iconAnchor: [22, 94],
-      iconSize: [38, 95]
+      //shadowUrl: "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fairport.png?v=1587008448453",
+      
+      iconAnchor: [25, 50], // [22, 94]
+      iconSize: [50, 55]
     });
     let airportIcons = [];
     for (let key in this.props.airportJSON) {

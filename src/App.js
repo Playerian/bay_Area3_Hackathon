@@ -40,6 +40,7 @@ class App extends Component {
       selecting: "US",
       day: 0,
       pplPoint: 0,
+      airlines: {},
       gameStarted: false,
       //0 pause 1 regular
       gameSpeed: 0,
@@ -64,6 +65,8 @@ class App extends Component {
         debugger;
       }else{
         let state = stateData[key];
+        //airlines!
+        
         //avoid random spontaenous generation
         if (state.infected === 0){
           continue;

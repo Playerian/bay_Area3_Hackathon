@@ -158,7 +158,6 @@ export default class MenuPanel extends Component {
               </div>
               
             </div>
-               
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>
                  Overview

@@ -296,6 +296,7 @@ class Plane{
     this.endlatlon = endlatlon;
     this.startState = startPort.state;
     this.endState = endPort.state;
+    this.hasVirus = false;
     //calculated
     this.distance = distanceTwoPoints(startlatlon, endlatlon);
     this.angle = angleTwoPoints(startlatlon, endlatlon);

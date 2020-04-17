@@ -227,12 +227,11 @@ export default class MenuPanel extends Component {
               <div className="upgradeContainer">
                 
                 {upgradeDivArrayGov}
-                {upgradeDivArrayCure}
-
                 
+
               </div>
             </div>
-            <UpContainer 
+            {/*<UpContainer 
               resPts={this.state.resPts} 
               spreadPts={this.state.spreadPts} 
               lethalPts={this.state.lethalPts} 
@@ -242,7 +241,17 @@ export default class MenuPanel extends Component {
               leathChange={this.state.leathChange}
               
              
-              />
+              />*/}
+            <div className="subHolderDiv">
+              <h3 className="view numcontainer"> Research: </h3>
+              <div className="upgradeContainer">
+                
+                
+                {upgradeDivArrayCure}
+                
+              </div>
+            </div>
+            
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>
                  Overview
@@ -250,7 +259,9 @@ export default class MenuPanel extends Component {
               <button className="panelButton" onClick={() => this.upgradeTab()}>
                 Upgrades (ppl Points:{this.props.pplPoint})
               </button>
-              <button className="panelButton"></button>
+              <div className="panelButton">
+                <UpContainer/>
+              </div>
             </div>
           </div>
           <div className="menuHide" onClick={() => this.menuUp()}>

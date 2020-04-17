@@ -12,6 +12,7 @@ import populationJSON from "./population.json";
 import neighborJSON from "./neighbor.json";
 import airportJSON from "./airports.json";
 import upgradeJSON from "./upgrades.json";
+import eventJSON from "./event.json";
 
 class App extends Component {
   constructor(props){
@@ -54,9 +55,11 @@ class App extends Component {
       fatality: 0,
       researchCompleted: 0,
       researchRate: 0.0002,
-      //upgrade specific variables
+      //upgrade specific variables "keys"
       landBlockade: false,
       airRestriction: false,
+      reduceLethal1: false,
+      reduceLethal2: false,
       //game system state
       gameStarted: false,
       gameEnded:false,
@@ -265,7 +268,17 @@ class App extends Component {
       this.state.researchRate += upgrade.rateIncrease;
     }
     //key event
-    
+    if (upgrade.key){
+      if (upgrade.key === "airport"){
+        this.setState({airRestriction: true});
+      }else if (upgrade.key === "land"){
+        this.setState({landBlockade: true});
+      }else if (upgrade.key === "F1"){
+        this.setState({reduceLethal1: true});
+      }else if (upgrade.key === "F2"){
+        this.setState({reduceLethal2: true});
+      }
+    }
     this.setState({
       pplPoint: this.state.pplPoint - upgrade.cost,
       upgrades: this.state.upgrades,
@@ -390,6 +403,9 @@ class App extends Component {
       selecting: "US"
     });
   }
+  
+  
+  
   render() {
     return (
       <div className="App">

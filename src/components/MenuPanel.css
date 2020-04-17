@@ -82,7 +82,6 @@
   padding-left: 10px;
   font-size: 14px;
   height: 100%;
-  background-color: cadetblue;
   /*padding-top: -5px;*/
 }
 
@@ -120,6 +119,18 @@
   box-sizing: border-box;
   border: grey solid 5px;
   border-radius: 2%;
+  display: flex;
+  overflow: auto;
+}
+
+.eventDiv h3 {
+  color: salmon;
+  padding-left: 2px;
+}
+
+.eventDiv h2 {
+  color: crimson;
+  
 }
 
 .numcontainer, .statscontainer {

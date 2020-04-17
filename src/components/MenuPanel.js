@@ -126,7 +126,20 @@ export default class MenuPanel extends Component {
     let cureUpgrade = upgradeList.cureUpgrade;
     
     cureUpgrade.forEach((v,i)=>{
-     upgradeDivArrayCure.push(<UpgradeTag spendPoint={(upgrade) => this.onUpgradeClick(upgrade)} purchased={v.purchased} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal} upgrade={v}/>)
+     upgradeDivArrayCure.push(
+       <UpgradeTag spendPoint={(upgrade) => this.onUpgradeClick(upgrade)} 
+         purchased={v.purchased} 
+         text={v.text} 
+         ppp={v.cost} 
+         image={v.imgSrc} 
+         key={i} 
+         
+         
+         pplPoint={this.props.pplPoint} 
+         resPts={v.resPts} 
+         spreadPts={v.spread} 
+         lethalPts={v.lethal} 
+         upgrade={v}/>)
      
     })
     
@@ -139,9 +152,13 @@ export default class MenuPanel extends Component {
          ppp={v.cost} 
          image={v.imgSrc}
          key={i} pplPoint={this.props.pplPoint} 
-         resPts={v.resPts} spreadPts={v.spread} 
          
-         lethalPts={v.lethal} upgrade={v}
+         sendHover = {(bool) => this.onUpgradeHover()}
+         pplPoint={this.props.pplPoint} 
+         resPts={v.resPts} 
+         spreadPts={v.spread} 
+         lethalPts={v.lethal} 
+         upgrade={v}
          />)
      
     })
@@ -172,6 +189,7 @@ export default class MenuPanel extends Component {
             </div>{/**/}
 
             <div className="eventDiv">
+              <h3> In the news: <h2>Headlines</h2></h3>
               {/*<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>*/}
               {/*<marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>*/}
               <Popup />

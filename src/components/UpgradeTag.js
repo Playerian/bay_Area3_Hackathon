@@ -3,6 +3,8 @@ import React, { Component } from "react";
 export default class UpgradeTag extends Component {
   constructor(props) {
     super(props);
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    console.log(this.props.sendHover)
   }
 
   checkppp() {
@@ -11,6 +13,7 @@ export default class UpgradeTag extends Component {
     }
   }
   render() {
+    
     if (!this.props.purchased) {
       return (
         <div className="upgradeTag">

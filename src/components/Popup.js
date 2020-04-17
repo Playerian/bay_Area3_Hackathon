@@ -27,9 +27,10 @@ export default class Popup extends Component {
     // }
 
     if (this.props.gameEnd) {
+      console.log("game ended");
       //formatting
       let data = [];
-      for (let i = 0; i < this.props.infectedData.length; i ++){
+      for (let i = 1; i < this.props.infectedData.length; i ++){
         let infected = this.props.infectedData[i];
         let death = this.props.deathData[i];
         let day = i;

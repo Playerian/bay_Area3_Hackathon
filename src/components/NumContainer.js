@@ -6,10 +6,6 @@ export default class NumContainer extends Component{
     super(props)
     
     this.state = {
-      // death:0,
-      // recovered:0,
-      // infected:0,
-      // pplPoint:0,
       
     }
     

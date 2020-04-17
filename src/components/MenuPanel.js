@@ -19,6 +19,10 @@ export default class MenuPanel extends Component {
       spreadPts:0,
       lethalPts: 0,
       winShow: false,
+      
+      cureChange:0,
+      spreadChange:0,
+      leathChange:0,
     };
     
     
@@ -53,20 +57,16 @@ export default class MenuPanel extends Component {
     });
     
   }
-  onUpgradeClick(){
+  onUpgradeClick(upgrade){
     //callback setState points,
     //callback setState ppl
-    this.setState({
-      resPts: 0,
-      spreadPts:0,
-      lethalPts: 0
-    })
+    // this.setState({
+    //   resPts: 0,
+    //   spreadPts:0,
+    //   lethalPts: 0
+    // })
+    this.props.onUpgrade(upgrade);
   }
-  
-  spendPoint(point){
-    this.props.spendPoint(point);
-  }
-  
 
   render() {
     let selecting = this.props.selecting;
@@ -120,12 +120,23 @@ export default class MenuPanel extends Component {
     let cureUpgrade = upgradeList.cureUpgrade;
     
     cureUpgrade.forEach((v,i)=>{
-     upgradeDivArrayCure.push(<UpgradeTag spendPoint={(point, upgrade) => this.spendPoint(point, upgrade)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
+     upgradeDivArrayCure.push(<UpgradeTag spendPoint={(upgrade) => this.onUpgradeClick(upgrade)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal} upgrade={v}/>)
      
     })
     
     govUpgrade.forEach((v,i)=>{
-     upgradeDivArrayGov.push(<UpgradeTag spendPoint={(point, upgrade) => this.spendPoint(point, upgrade)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
+     upgradeDivArrayGov.push(
+       <UpgradeTag 
+         spendPoint={(point, upgrade) => this.onUpgradeClick(point, upgrade)} 
+         text={v.text} 
+         ppp={v.cost} 
+         image={v.imgSrc}
+         key={i} pplPoint={this.props.pplPoint} 
+         resPts={v.resPts} spreadPts={v.spread} 
+         lethalPts={v.lethal} upgrade={v}
+         
+         
+         />)
      
     })
     
@@ -155,7 +166,7 @@ export default class MenuPanel extends Component {
             </div>{/**/}
 
             <div className="eventDiv">
-              <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>
+              {/*<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>*/}
               <marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}
@@ -195,7 +206,15 @@ export default class MenuPanel extends Component {
                 
               </div>
             </div>
-            <UpContainer resPts={this.state.resPts} spreadPts={this.state.spreadPts} lethalPts={this.state.lethalPts}/>
+            <UpContainer 
+              resPts={this.state.resPts} 
+              spreadPts={this.state.spreadPts} 
+              lethalPts={this.state.lethalPts} 
+              showChange={false} 
+              cureChange={this.state.cureChange}
+              spreadChange={this.state.spreadChange}
+              leathChange={this.state.leathChange}
+              />
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>
                  Overview

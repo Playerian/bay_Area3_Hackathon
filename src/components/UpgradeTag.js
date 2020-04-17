@@ -18,7 +18,7 @@ export default class UpgradeTag extends Component{
      this.setState({
        "purchased":true,
      });
-     this.props.spendPoint(this.props.ppp);
+     this.props.spendPoint(this.props.upgrade);
    }
  }
   render(){

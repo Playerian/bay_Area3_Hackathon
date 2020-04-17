@@ -24,10 +24,10 @@ export default class Popup extends Component {
       "Breaking: Cases May Have Reached All States",
       "Governors Across the Country Calling For Citizens to Stay Home"
     ];
-    
-//     for (let i=0; i<headlines.length; i++) {
-      
-//     }
+    let lines = "";
+    for (let i=0; i<headlines.length; i++) {
+      lines+=headlines[i]+" \n ";
+    }
     
     if (this.props.gameEnd) {
       return (
@@ -37,7 +37,7 @@ export default class Popup extends Component {
       );
     } else {
       return (
-        <div>{headlines}</div>
+        <div>{lines} </div>
       );
     }
   }

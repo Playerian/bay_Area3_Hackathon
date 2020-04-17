@@ -13,18 +13,6 @@ export default class Popup extends Component {
   }
 
   render() {
-    // news headlines
-    //let headlines = this.props.eventsData
-
-    // let lines = [];
-    // for (let i = 0; i < headlines.length; i++) {
-    //   lines.push(
-    //     <marquee className="marqueeTag" key={i}>
-    //       {" "}
-    //       {headlines[i]}{" "}
-    //     </marquee>
-    //   );
-    // }
 
     if (this.props.gameEnd) {
       console.log("game ended");
@@ -43,7 +31,7 @@ export default class Popup extends Component {
       return (
         <div className="endScreen">
           <h1 className="endScreenh1">you finished the game</h1>
-          <LineChart width={730} height={250} data={this.state.data}
+          <LineChart width={730} height={250} data={data}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="day" />

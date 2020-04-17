@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import L from "leaflet";
 // import "https://raw.githubusercontent.com/IvanSanchez/Leaflet.ImageOverlay.Rotated/gh-pages/Leaflet.ImageOverlay.Rotated.js"
-import LeafletImageOverLay from "../plugin/LeafletImageOverlay.js"
+//import LeafletImageOverLay from "../plugin/LeafletImageOverlay.js"
 //import ImageOverlayRotate from "./ImageOverlayRotate.js";
 
 const {

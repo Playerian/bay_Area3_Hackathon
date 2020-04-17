@@ -56,25 +56,14 @@
       "name":"research2",
       "image":null,
       "headline":[
-        "Hospitals and Research Centers Scrambling to Identify the New Virus",
         "Congress Approves Additional Funding for CDC to Research the New Virus"
         ],
       "tiggerDate":200      
     },
+   
+    
+    
     {
-      "name":"research2+",
-      "image":null,
-      "headline":[
-        "Hospitals and Research Centers Scrambling to Identify the New Virus",
-        "Congress Approves Additional Funding for CDC to Research the New Virus"
-        ],
-      "tiggerDate":200      
-    },
-    
-    
-    
-    
-     {
       "name":"mask",
       "image":null,
       "headline":["CDC Calls For Citizens to Wear Face Coverings to Slow Spread"],

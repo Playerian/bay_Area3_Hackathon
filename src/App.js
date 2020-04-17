@@ -252,7 +252,7 @@ class App extends Component {
     
     //check if 180 days had pass or 
     //commented for debugging purpose
-    if(this.state.day >= 180 || this.state.researchCompleted >= 1){
+    if(this.state.day >= 10 || this.state.researchCompleted >= 1){
       this.setState({"gameEnded":true});
       clearInterval(this.timer)
     }

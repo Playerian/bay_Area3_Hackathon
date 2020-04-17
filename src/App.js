@@ -11,6 +11,7 @@ import stateGeoJSON from "./USStates.json";
 import populationJSON from "./population.json";
 import neighborJSON from "./neighbor.json";
 import airportJSON from "./airports.json";
+import upgrades from "./upgrades.json";
 
 class App extends Component {
   constructor(props){
@@ -358,6 +359,7 @@ class App extends Component {
         {/*<div className="pplPointContiner"></div>
         <div className="researchProgress"></div>*/}
         
+        <Popup gameEnd={this.state.gameEnded}/>
         
         
       </div>
@@ -461,39 +463,3 @@ function angleTwoPoints(latlon1, latlon2){
 function slope(latlon1, latlon2){
   return [latlon2[0] - latlon1[0], latlon2[1] - latlon1[1]];
 }
-
-const upgrades = [
-      {
-        purchased:false,
-        cost:0,
-        text:"some text here",
-        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-        resilience:1,
-        spread:0,
-        lethal:0,
-        
-      },
-      
-      {
-        purchased:false,
-        cost:5,
-        text:"some text here",
-        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-        resilience:999,
-        spread:999,
-        lethal:999,
-        
-      },
-      
-      {
-        purchased:false,
-        cost:999,
-        text:"test test text",
-        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-        resilience:999,
-        spread:999,
-        lethal:999,
-        
-      },
-      
-    ]

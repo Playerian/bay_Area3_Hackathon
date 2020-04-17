@@ -74,42 +74,6 @@ export default class MenuPanel extends Component {
     let recovered = provinceData[selecting].recovered || 0;
     let upgradeInfo = this.props.upgradeInfo;
     
-    //making an array of upgrade DIVs
-//     const upgrades = [
-//       {
-//         purchased:false,
-//         cost:0,
-//         text:"some text here",
-//         imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-//         resilience:1,
-//         spread:0,
-//         lethal:0,
-        
-//       },
-      
-//       {
-//         purchased:false,
-//         cost:5,
-//         text:"some text here",
-//         imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-//         resilience:999,
-//         spread:999,
-//         lethal:999,
-        
-//       },
-      
-//       {
-//         purchased:false,
-//         cost:999,
-//         text:"test test text",
-//         imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-//         resilience:999,
-//         spread:999,
-//         lethal:999,
-        
-//       },
-      
-//     ]
     
     const events = [
       {
@@ -141,10 +105,14 @@ export default class MenuPanel extends Component {
     let randomEvent = Math.floor(Math.random() * (events.length + 1));
   //  console.log(events[randomEvent].text);
     
-    let upgradeDivArray = {}.map((v,i)=>{
+//     let upgradeDivArray = this.props.upgradeInfo.map((v,i)=>{
       
-          return <UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
-        });
+//           return <UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
+//         });
+    
+    let upgradeDivArray=[];
+    
+    
 
 
     if (this.state.showing === true && this.state.tab === "overview") {

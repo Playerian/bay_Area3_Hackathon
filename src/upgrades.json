@@ -3,26 +3,65 @@
   [
     {
       "purchased":false,
-      "cost":0,
-      "text":"some text here",
-      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
+      "cost": 0,
+      "text": "Government declares shelter in place - StAy hOmE",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "rateDrop": 0.02
+    },
+    {
+      "comment": "yes",
+      "purchased": false,
+      "cost": 5,
+      "text": "CDC advise citizen to wash their hands - at least 20 secs!",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "rateDrop": 0.01
+    },
+    {
+      "purchased" :false,
+      "cost": 0,
+      "text": "Government declares social distancing - Spend your time home alone",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "rateDrop": 0.01
+    },
+    {
+      "purchased": false,
+      "cost": 0,
+      "text": " - S",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "rateDrop": 0.01
     },
     
-    {
-      "purchased":false,
-      "cost":0,
-      "text":"some text here",
-      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
-    }
   ],
   
   "cureUpgrade": 
   [
     {
-      "purchased":false,
-      "cost":0,
-      "text":"some text here",
-      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
-    }
+      "purchased": false,
+      "cost": 5,
+      "text":"Speed Up Cure 1",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "rateIncrease": 0.5
+    }, 
+    {
+      "purchased": false,
+      "cost": 20,
+      "text":"Speed Up Cure 2",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "rateIncrease": 0.5
+    },
+    {
+      "purchased": false,
+      "cost": 80,
+      "text":"Speed Up Cure 3",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "rateIncrease": 0.5
+    },
+    {
+      "purchased": false,
+      "cost": 320,
+      "text":"Speed Up Cure 4",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "rateIncrease": 0.5
+    },
   ]
 }

@@ -8,6 +8,10 @@ export default class Popup extends Component {
       purchased: false
     };
 
+    
+  }
+
+  render() {
     const headlines = [
       "Group of Individals Diagnosed With Pneumonia Due To Unknown Causes",
       "Unknown SARS-like Pneumonia Spreads Across Seattle",
@@ -19,9 +23,11 @@ export default class Popup extends Component {
       "Breaking: Cases May Have Reached All States",
       "Governors Across the Country Calling For Citizens to Stay Home"
     ];
-  }
-
-  render() {
+    
+//     for (let i=0; i<headlines.length; i++) {
+      
+//     }
+    
     if (this.props.gameEnd) {
       return (
         <div className="endScreen">
@@ -30,7 +36,7 @@ export default class Popup extends Component {
       );
     } else {
       return (
-        <div></div>
+        <div>{headlines}</div>
       );
     }
   }

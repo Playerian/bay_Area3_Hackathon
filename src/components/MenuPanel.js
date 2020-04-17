@@ -19,8 +19,10 @@ export default class MenuPanel extends Component {
       spreadPts:0,
       lethalPts: 0,
       winShow: false,
-      showCureUpgrade: false
+      showUpgradeList: null
     };
+    
+    
   }
 
   //click handlers
@@ -64,6 +66,11 @@ export default class MenuPanel extends Component {
   
   spendPoint(point){
     this.props.spendPoint(point);
+  }
+  
+  renderList(){
+    
+    
   }
 
   render() {
@@ -124,6 +131,9 @@ export default class MenuPanel extends Component {
      upgradeDivArrayGov.push(<UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
      
     })
+    console.log(upgradeDivArrayGov)
+    this.setState({"showUpgradeList":upgradeDivArrayGov})
+    
 
     if (this.state.showing === true && this.state.tab === "overview") {
       
@@ -183,7 +193,9 @@ export default class MenuPanel extends Component {
             <div className="subHolderDiv">
               <h3 className="view numcontainer"> Upgrades: </h3>
               <div className="upgradeContainer">
-                {upgradeDivArrayCure}
+                
+                {this.state.showUpgradeList}
+                
               </div>
             </div>
             <UpContainer resPts={this.state.resPts} spreadPts={this.state.spreadPts} lethalPts={this.state.lethalPts}/>

@@ -71,6 +71,7 @@ export default class MenuPanel extends Component {
 
   onUpgradeHover(bool){
     this.setState({"showChange":bool})
+    console.log(this.state.showChange)
   }
   
   render() {
@@ -140,8 +141,8 @@ export default class MenuPanel extends Component {
          key={i} pplPoint={this.props.pplPoint} 
          resPts={v.resPts} spreadPts={v.spread} 
          lethalPts={v.lethal} upgrade={v}
-         onMouseEnter = {()=>this.onUpgradeHover(true)}
-         onMouseLeave = {()=>this.onUpgradeHover(false)}
+         onMouseEnter = {()=>{this.onUpgradeHover(true)}}
+         onMouseLeave = {{()=>this.onUpgradeHover(false)}
          />)
      
     })

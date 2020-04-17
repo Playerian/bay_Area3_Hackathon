@@ -53,6 +53,8 @@ class App extends Component {
       fatality: 0,
       researchCompleted: 0,
       researchRate: 0.0002,
+      //upgrade specific variables
+      
       //game system state
       gameStarted: false,
       gameEnded:false,
@@ -241,6 +243,32 @@ class App extends Component {
         });
       }
     }
+  }
+  //spend ppl point
+  onUpgrade(upgrade){
+    let stateData = this.state.stateData;
+    upgrade.purchased = true;
+    if (upgrade.type === "govUpgrade"){
+      //gov upgrade reduce transmission
+      for (let stateName in stateData){
+        if (stateName !== "US"){
+          let state = stateData[stateName];
+          state.infectionRate -= upgrade.rateDrop;
+        }
+      }
+    }else{
+      //cure upgrade increase cure progress rate
+      this.state.researchRate += upgrade.rateIncrease;
+    }
+    //key event
+    
+    this.setState({
+      pplPoint: this.state.pplPoint - upgrade.cost,
+      upgrades: this.state.upgrades,
+      researchRate: this.state.researchRate,
+      stateData: stateData
+    });
+    console.log(upgrade);
   }
   //US Data formatting
   setUSData(){

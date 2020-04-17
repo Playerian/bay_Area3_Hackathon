@@ -6,7 +6,6 @@ export default class UpgradeTag extends Component {
   }
 
   checkppp() {
-    console.log("clicked");
     if (this.props.pplPoint >= this.props.ppp) {
       this.props.spendPoint(this.props.upgrade);
     }

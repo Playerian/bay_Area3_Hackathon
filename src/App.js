@@ -226,7 +226,9 @@ class App extends Component {
       day: day,
       stateData: stateData,
       airlines: this.state.airlines,
-      fatality: this.state.fatality
+      fatality: this.state.fatality,
+      //cure
+      researchCompleted: this.state.researchComplete + this.state.researchRate,
     }, () => {
       //final set US Data
       this.setUSData();
@@ -234,7 +236,7 @@ class App extends Component {
     
     //check if 180 days had pass or 
     //commented for debugging purpose
-    if(this.state.day === 180 || this.state.researchCompleted){
+    if(this.state.day === 180 || this.state.researchCompleted === 1){
       this.setState({"gameEnded":true});
       clearInterval(this.timer)
     }

@@ -163,7 +163,7 @@ class App extends Component {
         }
         //if new infected amount exceeds population
         if (newInfected + state.infected + state.death > state.population){
-          newInfected = state.population - state.infected;
+          newInfected = state.population - state.infected - state.death;
         }
         //add newInfected to state infected population
         state.infected += Math.round(newInfected);

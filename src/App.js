@@ -54,7 +54,7 @@ class App extends Component {
       deathPointAccu: 0,
       fatality: 0,
       researchCompleted: 0,
-      researchRate: 0.0002,
+      researchRate: 0,
       //upgrade specific variables "keys"
       landBlockade: false,
       airRestriction: false,

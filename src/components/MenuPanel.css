@@ -36,6 +36,7 @@
 }
 
 .menuHide:hover {
+  color: white;
   background-color: #3388ff;
 }
 
@@ -49,10 +50,13 @@
   border: 5px grey solid;
   border-radius: 2%;
   text-align: center;
+  opacity: 0.5;
 }
 
 .menuShow:hover {
-  background-color: 
+  color: white;
+  background-color: #3388ff;
+  opacity: 1;
 }
 
 .panelButton:hover {
@@ -78,7 +82,7 @@
   padding-left: 10px;
   font-size: 14px;
   height: 100%;
-
+  background-color: cadetblue;
   /*padding-top: -5px;*/
 }
 

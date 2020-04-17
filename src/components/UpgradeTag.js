@@ -13,7 +13,7 @@ export default class UpgradeTag extends Component {
   render() {
     if (!this.props.purchased) {
       return (
-        <div className="upgradeTag" onEnter={()=>{console.log("aaaaaafa")}}>
+        <div className="upgradeTag">
           <img className="upgradeTagImg" src={this.props.image}></img>
           <p className="upgradeTagP">{this.props.text}</p>
           <button className="upgradeButton" onClick={() => this.checkppp()}>

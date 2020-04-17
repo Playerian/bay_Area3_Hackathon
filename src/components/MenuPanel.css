@@ -182,6 +182,18 @@
   background-image: linear-gradient(to right, aqua, grey); /*aqua aqua aqua aqua aqua aqua aqua aqua aqua aqua aqua aqua*/
 }
 
+.upgradeTagImg{
+  width: 20%;
+}
+
+.upgradeTagP{
+  width: 60%;
+}
+
+.upgradeButton{
+  width: 20%;
+}
+
 .statsDiv{
   width:100%;
   display:block;

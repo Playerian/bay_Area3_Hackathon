@@ -434,6 +434,7 @@ class App extends Component {
   eventActivate(eventName){
     let json = eventJSON
     let eventIndex
+    let message = ""
     for(let i = 0;i<json.event.length;i++){
       //console.log(json.event[i])
       if(eventName===json.event[i].name){ //looks for the event by name 
@@ -444,7 +445,7 @@ class App extends Component {
     }
     //console.log(typeof json[eventIndex])
     if (typeof json.event[eventIndex].name !== "undefine"){
-      let message = json.event[eventIndex].headline[Math.floor(Math.random()*json.event[eventIndex].headline.length)]//randomly pick headline from array
+      message = json.event[eventIndex].headline[Math.floor(Math.random()*json.event[eventIndex].headline.length)]//randomly pick headline from array
       switch(json.event[eventIndex]){
         case "patientZero0":
         break;
@@ -476,8 +477,8 @@ class App extends Component {
       }
       //things pass into pop: mrssage, new props related to leath etc...
       
-      
     }else{
+      
       return "event not found"
     }
   }
@@ -528,6 +529,7 @@ class App extends Component {
                        }
           upgradeInfo = {this.state.upgrades}
           researchCompleted = {this.state.researchCompleted}
+          
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>

@@ -1,25 +1,33 @@
 import React, { Component } from "react";
 import L from "leaflet";
-import LeafletImageOverLay from "../plugin/LeafletImageOverlay.js"
+import LeafletImageOverLay from "../plugin/LeafletImageOverlay.js";
 
-const {
-  ImageOverlay,
-} = window.ReactLeaflet;
+const { ImageOverlay } = window.ReactLeaflet;
 
-export default class ImageOverlayRotate extends ImageOverlay{
- 
-  
-  
+export default class ImageOverlayRotate extends ImageOverlay {
+  createLeafletElement(props) {
+    let LeafletMapElement = super.createLeafletElement(props);
+
+    let topleft = new L.latLng(this.props.topLeft[0], this.props.topLeft[1]);
+    let topright = new L.latLng(this.props.topright[0], this.props.topright[1]);
+    let bottomleft = new L.latLng(
+      this.props.bottomleft[0],
+      this.props.bottomleft[1]
+    );
+
+    let overlay = new L.imageOverlay.rotated(
+      "https://cdn.hyperdev.com/drag-in-files.svg?v=1477153069954",
+      topleft,
+      topright,
+      bottomleft,
+      {
+        opacity: 0.7,
+        interactive: true
+      }
+    ).addTo(LeafletMapElement);
+    return LeafletMapElement;
+  }
 }
-
-
-
-
-
-
-
-
-
 
 /*
  createLeafletElement(props){
@@ -34,4 +42,4 @@ export default class ImageOverlayRotate extends ImageOverlay{
     }).addTo(this.props.map);
     return overlay;
   }
-*/ 
+*/

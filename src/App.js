@@ -295,13 +295,16 @@ class App extends Component {
     stateData.US.recovered = totalRecovered;
     stateData.US.death = totalDeath;
     //give ppl point on death
-    let deathPointAward = Math.cbrt(2.9 * totalDeath) / 4;
+    let deathPointAward = Math.floor(Math.cbrt(2.9 * totalDeath) / 4);
     if (deathPointAward > this.state.deathPointAccu){
       let award = deathPointAward - this.state.deathPointAccu;
-      
+      this.state.pplPoint += award;
+      this.state.deathPointAccu = deathPointAward;
     }
     this.setState({
-      stateData: stateData
+      stateData: stateData,
+      pplPoint: this.state.pplPoint,
+      deathPointAccu: this.state.deathPointAccu
     });
   }
   //airline Data formatting

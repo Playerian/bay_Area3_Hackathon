@@ -3,6 +3,7 @@ import NumContainer from "./NumContainer.js";
 import UpContainer from "./UpContainer.js";
 import UpgradeTag from "./UpgradeTag.js";
 
+
 import "./MenuPanel.css";
 
 export default class MenuPanel extends Component {
@@ -71,7 +72,7 @@ export default class MenuPanel extends Component {
     let infected = provinceData[selecting].infected || 0;
     let death = provinceData[selecting].death || 0;
     let recovered = provinceData[selecting].recovered || 0;
-   
+    let upgradeInfo = this.props.upgradeInfo;
     
     //making an array of upgrade DIVs
 //     const upgrades = [
@@ -140,7 +141,7 @@ export default class MenuPanel extends Component {
     let randomEvent = Math.floor(Math.random() * (events.length + 1));
   //  console.log(events[randomEvent].text);
     
-    let upgradeDivArray = upgrades.map((v,i)=>{
+    let upgradeDivArray = {upgradeInfo}.map((v,i)=>{
       
           return <UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
         });

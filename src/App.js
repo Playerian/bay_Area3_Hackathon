@@ -4,6 +4,7 @@ import "./App.css";
 import Map from "./components/Map.js";
 import MenuPanel from "./components/MenuPanel.js"
 import NumContainer from "./components/NumContainer.js"
+import Popup from "./components/Popup.js"
 
 import borderGeoJSON from "./2010USoutline.json";
 import stateGeoJSON from "./USStates.json";
@@ -47,7 +48,7 @@ class App extends Component {
       day: 0,
       pplPoint: 0,
       researchCompleted: 0,
-      researchRate: 0,
+      researchRate: 0.0002,
       usSeverity: 0,
       purchasedUpgrades:[],
       //game system state
@@ -349,11 +350,15 @@ class App extends Component {
           provinceData = {this.state.stateData}
           setSpeed = {(s) => this.setSpeed(s)}
           pplPoint = {this.state.pplPoint}
-          spendPoint = {(num) => this.spendpplpoint(num)}
+          spendPoint = {(num) => this.spendpplpoint(num)
+                       }
+          upgradeInfo = {upgrades}
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>
         <div className="researchProgress"></div>*/}
+        
+        
         
       </div>
     );

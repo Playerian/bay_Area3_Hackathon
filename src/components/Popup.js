@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 export default class Popup extends Component{
   constructor(props){
     super(props)
@@ -15,11 +14,8 @@ export default class Popup extends Component{
   
   render(){
   return(
-    <div className="upgradeTag">
-      
-      <img className="upgradeTagImg" src={this.props.image}></img>
-      <p className="upgradeTagP">{this.props.text}</p>
-      <button className="upgradeButton" onClick={()=>this.checkppp()}>{this.state.purchased? "mutated.": "PPL point required to mutate: "+this.props.ppp }</button>
+    <div className="endScreen">
+      <h1 className="endScreenH1">you finished the game</h1>
     </div>
     
     );

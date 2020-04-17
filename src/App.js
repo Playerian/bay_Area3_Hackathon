@@ -420,8 +420,19 @@ class App extends Component {
     });
   }
   
+  //event, check for condition to activate a centain event
+  eventActivate(eventToActive){
+    let json = this.upgradeJSON
+    json[eventToActive]
+    
+  }
+  
+  eventCheck(){
+    
+  }
   
   render() {
+    console.log(upgradeJSON)
     return (
       <div className="App">
         <div className="mapContainer">

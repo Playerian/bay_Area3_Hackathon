@@ -232,12 +232,12 @@ class App extends Component {
       this.setUSData();
     })
     
-    //check if 180 days had pass
+    //check if 180 days had pass or 
     //commented for debugging purpose
-    // if(this.state.day === 180){
-    //   this.setState({"gameEnded":true});
-    //   clearInterval(this.timer)
-    // }
+    if(this.state.day === 180 || this.state.researchCompleted){
+      this.setState({"gameEnded":true});
+      clearInterval(this.timer)
+    }
   }
   //
   setSpeed(speed){

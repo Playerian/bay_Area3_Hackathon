@@ -228,7 +228,7 @@ class App extends Component {
       airlines: this.state.airlines,
       fatality: this.state.fatality,
       //cure
-      researchCompleted: this.state.researchComplete + this.state.researchRate,
+      researchCompleted: this.state.researchCompleted + this.state.researchRate,
     }, () => {
       //final set US Data
       this.setUSData();

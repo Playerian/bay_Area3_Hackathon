@@ -261,8 +261,8 @@ export default class MenuPanel extends Component {
               </button>
               <div className="panelButton">
                 <UpContainer
-                  
-                   resPts={this.state.resPts} 
+                  resPts={this.props.researchCompleted}
+                   //resPts={this.state.resPts} 
               spreadPts={this.state.spreadPts} 
               lethalPts={this.state.lethalPts} 
                   />

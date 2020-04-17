@@ -519,6 +519,7 @@ class App extends Component {
           onUpgrade = {(upgrade) => this.onUpgrade(upgrade)
                        }
           upgradeInfo = {this.state.upgrades}
+          researchCompleted = {this.state.researchCompleted}
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>

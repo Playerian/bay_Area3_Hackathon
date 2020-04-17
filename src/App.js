@@ -427,7 +427,7 @@ class App extends Component {
     for(let i = 0;i<json.event.length;i++){
       //console.log(json.event[i])
       if(eventName===json.event[i].name){ //looks for the event by name 
-        event = 
+        event = json.event[i].name
        break;
       } 
     }
@@ -442,6 +442,7 @@ class App extends Component {
         
         case "lockDown":
           console.log("lock down da yo~")
+          //do set state, then past that to pop
         break;
           
         case "explosion":
@@ -461,14 +462,27 @@ class App extends Component {
           
         default:   
       }
+      //things pass into pop
+      
+      
     }else{
       return "event not found"
     }
-    
   }
   
-  eventCheck(){
-    
+  dailyEventCheck(){ //plug into onedaypast()? 
+    let json = eventJSON
+    let event
+    for(let i = 0;i<json.event.length;i++){
+      //console.log(json.event[i])
+      if(this.state.day===json.event[i].tiggerDate){ //looks for the event by day 
+        event = json.event[i].name //one day have at most one event that tigger automatically, so break should be fine
+       break;
+      } //else no event
+      if (typeof event !== "undefine"){ //if there is an event set for that day
+        this.eventActivate(event) //tigger it
+      }
+    }
   }
   
   render() {

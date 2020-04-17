@@ -23,7 +23,7 @@ export default class UpgradeTag extends Component {
       );
     } else {
       return (
-        <div className="upgradeTag">
+        <div className="upgradeTag" onClick={()=>{console.log("aaaaaafa")}}>
           <img className="upgradeTagImg" src={this.props.image}></img>
           <p className="upgradeTagP">{this.props.text}</p>
           <button className="upgradeButton">Purchased</button>

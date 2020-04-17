@@ -140,9 +140,8 @@ export default class MenuPanel extends Component {
          image={v.imgSrc}
          key={i} pplPoint={this.props.pplPoint} 
          resPts={v.resPts} spreadPts={v.spread} 
+         
          lethalPts={v.lethal} upgrade={v}
-         onMouseEnter = {()=>{this.onUpgradeHover(true)}}
-         onMouseLeave = {{()=>this.onUpgradeHover(false)}
          />)
      
     })

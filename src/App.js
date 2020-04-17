@@ -79,7 +79,7 @@ class App extends Component {
     let day = this.state.day + 1;
     //increasing global fatality
     if (day > 90){
-      this.state.fatality += 0.0025;
+      this.state.fatality += 0.002;
     }
     //infecting people
     let stateData = this.state.stateData;
@@ -107,8 +107,9 @@ class App extends Component {
             let airport2Name = keyList[Math.floor(Math.random() * keyList.length)];
             //check if flying to urself
             if (airport.name !== airport2Name){
-              //send a plane out 50% chance
-              if (Math.floor(Math.random() * 2) === 0){
+              //send a plane out with a chance
+              let sendOutPlaneChance = Math.random();
+              if (Math.floor(sendOutPlaneChance * 2) === 0){
                 let key = String(Math.random()).substring(2);
                 let plane = new Plane(airport.name, airport2Name, key, (c) => this.flightFinished(c));
                 //check if plane carries the virus
@@ -165,12 +166,16 @@ class App extends Component {
         //increase lethality in state
         if (state.infected / state.population > 0.2){
           state.lethality = state.lethality || 0
-          state.lethality += 0.0025;
+          state.lethality += 0.002;
         }
         //people die
         let combinedFatality = state.lethality + this.state.fatality;
         if (combinedFatality > 0){
           let peopleDie = Math.floor(state.infected * combinedFatality);
+          //capped
+          if (peopleDie > state.infected){
+            peopleDie = state.infected;
+          }
           state.death += peopleDie;
           state.infected -= peopleDie;
         }
@@ -270,7 +275,7 @@ class App extends Component {
     let endState = this.state.stateData[plane.endState];
     //if plane is infected
     if (plane.hasVirus){
-      if (endState.infected < endState.population){
+      if (endState.infected < endState.population && endState.infected + endState.death < endState.population){
         endState.infected ++;
       }
     }

@@ -260,7 +260,12 @@ export default class MenuPanel extends Component {
                 Upgrades (ppl Points:{this.props.pplPoint})
               </button>
               <div className="panelButton">
-                <UpContainer/>
+                <UpContainer
+                  
+                   resPts={this.state.resPts} 
+              spreadPts={this.state.spreadPts} 
+              lethalPts={this.state.lethalPts} 
+                  />
               </div>
             </div>
           </div>

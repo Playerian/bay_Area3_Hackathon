@@ -9,7 +9,8 @@
         "spreadChange":0,
         "leathChange":0,
         "pppChange":0
-      }      
+      },
+      "tiggerDate":0
     },
     
     {
@@ -21,7 +22,8 @@
         "leathChange":0,
         "pppChange":0
         
-      }      
+      },
+      "tiggerDate":5
     },
     
     {
@@ -37,7 +39,8 @@
         "spreadChange":0,
         "leathChange":0,
         "pppChange":0
-      }      
+      },
+      "tiggerDate":200
     },
     
      {
@@ -53,7 +56,8 @@
         "spreadChange":0,
         "leathChange":0,
         "pppChange":0
-      }      
+      }   ,
+      "tiggerDate":200   
     },
     
     {

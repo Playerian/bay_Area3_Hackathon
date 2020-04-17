@@ -116,6 +116,11 @@ class App extends Component {
             if (airport.name !== airport2Name){
               //send a plane out with a chance
               let sendOutPlaneChance = Math.random() * (1 - (state.death / state.population));
+              //air Blockade?
+              if (this.state.airRestriction){
+                //drastically reduce the chance of even flying a plane
+                sendOutPlaneChance -= 0.99;
+              }
               if (Math.floor(sendOutPlaneChance * 2) === 0){
                 let key = String(Math.random()).substring(2);
                 let plane = new Plane(airport.name, airport2Name, key, (c) => this.flightFinished(c));
@@ -177,6 +182,12 @@ class App extends Component {
         }
         //people die
         let combinedFatality = state.lethality + this.state.fatality;
+        if (this.state.reduceLethal1){
+          combinedFatality -= 0.1;
+        }
+        if (this.state.reduceLethal2){
+          combinedFatality -= 0.1;
+        }
         if (combinedFatality > 0){
           let peopleDie = Math.floor(state.infected * combinedFatality);
           //capped
@@ -192,6 +203,11 @@ class App extends Component {
         //every million infected increase the chance by 1%
         let extraChance = Math.floor(state.infected / 1000000) / 100;
         chance += extraChance;
+        //land blockade?
+        if (this.state.landBlockade){
+          //drastically reduce the chance of cross state infection
+          chance -= 0.99;
+        }
         let neighbors = neighborJSON[key];
         for (let v of neighbors){
           if (stateData[v].infected === 0){
@@ -403,7 +419,6 @@ class App extends Component {
       selecting: "US"
     });
   }
-  
   
   
   render() {

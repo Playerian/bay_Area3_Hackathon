@@ -36,7 +36,7 @@
     },
     {
       "purchased": false,
-      "cost": 60,
+      "cost": 100,
       "text": "Airport shuts down except for transportation of essentials",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
@@ -45,7 +45,7 @@
     },
     {
       "purchased": false,
-      "cost": 80,
+      "cost": 150,
       "text": "Force quarantine for patients",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
@@ -53,7 +53,7 @@
     },
     {
       "purchased": false,
-      "cost": 100,
+      "cost": 200,
       "text": "Creating land blockade on the border of the state",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",

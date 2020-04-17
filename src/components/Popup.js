@@ -7,8 +7,6 @@ export default class Popup extends Component {
     this.state = {
       purchased: false
     };
-
-    
   }
 
   render() {
@@ -25,10 +23,15 @@ export default class Popup extends Component {
       "Governors Across the Country Calling For Citizens to Stay Home"
     ];
     let lines = [];
-    for (let i=0; i<headlines.length; i++) {
-      lines.push(<marquee className="marqueeTag" key={i}> {headlines[i]} </marquee>);
+    for (let i = 0; i < headlines.length; i++) {
+      lines.push(
+        <marquee className="marqueeTag" key={i}>
+          {" "}
+          {headlines[i]}{" "}
+        </marquee>
+      );
     }
-    
+
     if (this.props.gameEnd) {
       return (
         <div className="endScreen">
@@ -36,9 +39,7 @@ export default class Popup extends Component {
         </div>
       );
     } else {
-      return (
-        <div>{lines}</div>
-      );
+      return <div>{lines}</div>;
     }
   }
 }

@@ -55,7 +55,7 @@ class App extends Component {
       researchRate: 0.0002,
       //upgrade specific variables
       landBlockade: false,
-      airB
+      airRestriction: false,
       //game system state
       gameStarted: false,
       gameEnded:false,

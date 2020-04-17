@@ -51,6 +51,10 @@
   text-align: center;
 }
 
+.menuShow:hover {
+  background-color: 
+}
+
 .panelButton:hover {
   background-color: #8abc8e;
   font-weight: bold;

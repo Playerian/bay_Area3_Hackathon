@@ -421,9 +421,20 @@ class App extends Component {
   }
   
   //event, check for condition to activate a centain event
-  eventActivate(eventToActive){
-    let json = this.upgradeJSON
-    json[eventToActive]
+  eventActivate(eventName){
+    let json = eventJSON
+    for(let i = 0;i<json.event.length;i++){
+      //console.log(json.event[i])
+      if(eventName===json.event[i].name){ //looks for the event by name 
+        let afterEventstats = {
+          
+          
+        }
+        return afterEventstats;
+      }else{
+        return {}
+      }
+    }
     
   }
   
@@ -432,7 +443,7 @@ class App extends Component {
   }
   
   render() {
-    console.log(upgradeJSON)
+    this.eventActivate("lockDown")
     return (
       <div className="App">
         <div className="mapContainer">

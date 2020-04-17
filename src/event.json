@@ -1,7 +1,7 @@
 {
   "event":[
     {
-      "name":"patient Zero?",
+      "name":"patientZero",
       "image":null,
       "headline":["Individal Diagnosed With Pneumonia of Unknown Causes"],
       "effect":{
@@ -27,7 +27,7 @@
     },
     
     {
-      "name":"lock Down",
+      "name":"lockDown",
       "headline":[
         "Unknown SARS-like Pneumonia Spreads Across Seattle", 
         "Washington State Declares State Of Emergency",

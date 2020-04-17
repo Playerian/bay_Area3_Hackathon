@@ -4,38 +4,18 @@
       "name":"patientZero",
       "image":null,
       "headline":["Individal Diagnosed With Pneumonia of Unknown Causes"],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":0
-      },
       "tiggerDate":1
     },
     
     {
       "name":"gathering",
       "headline":["Group of Individals Diagnosed With Pneumonia of Unknown Causes Following Patient Zero"],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":0
-        
-      },
       "tiggerDate":15
     },
     
     {
       "name":"newSARS",
       "headline":[" Breaking: the New SARS-like Coronavirus"],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":0
-        
-      },
       "tiggerDate":25
     },
     
@@ -47,12 +27,6 @@
         "California Implements statewide 'Shelter In Place' Policy",
         "Governors Across the Country Calling For Citizens to Stay Home"
       ],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":0
-      },
       "tiggerDate":200
     },
     
@@ -64,41 +38,46 @@
         "New Jersey Sees A Surge In Cases After New York",
         "Breaking: Cases May Have Reached All States"
       ],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":0
-      }   ,
       "tiggerDate":200   
     },
     
+    
+    
     {
-      "name":"research",
+      "name":"research1",
       "image":null,
       "headline":[
         "Hospitals and Research Centers Scrambling to Identify the New Virus",
         "Congress Approves Additional Funding for CDC to Research the New Virus"
         ],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":0
-      },
       "tiggerDate":200      
     },
+    {
+      "name":"research2",
+      "image":null,
+      "headline":[
+        "Hospitals and Research Centers Scrambling to Identify the New Virus",
+        "Congress Approves Additional Funding for CDC to Research the New Virus"
+        ],
+      "tiggerDate":200      
+    },
+    {
+      "name":"research2+",
+      "image":null,
+      "headline":[
+        "Hospitals and Research Centers Scrambling to Identify the New Virus",
+        "Congress Approves Additional Funding for CDC to Research the New Virus"
+        ],
+      "tiggerDate":200      
+    },
+    
+    
+    
     
      {
       "name":"mask",
       "image":null,
       "headline":["CDC Calls For Citizens to Wear Face Coverings to Slow Spread"],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":0
-      },
       "tiggerDate":200      
     },
     
@@ -110,12 +89,6 @@
         "The Scramble for Daily Necessities Stockup",
         "Professionals Fear Panic-Buying May Help Spread the Virus Due To Large Crowds"
         ],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":0
-      },
       "tiggerDate":50      
     },
     
@@ -125,12 +98,6 @@
       "headline":[
         "Airports Across the country closed down In Light of the COVID19 Pandemic"
         ],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":0
-      } ,
       "tiggerDate":200     
     },
     
@@ -138,12 +105,6 @@
       "name":"pplPointFuLi",
       "image":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "headline":["debug use only"],
-      "effect":{
-        "cureChange":0,
-        "spreadChange":0,
-        "leathChange":0,
-        "pppChange":10000
-      },
       "tiggerDate":300,
       "comment":"This is for debug use only, you see day 3 temp."
     }

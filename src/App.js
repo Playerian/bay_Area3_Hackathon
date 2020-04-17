@@ -252,7 +252,7 @@ class App extends Component {
     
     //check if 180 days had pass or 
     //commented for debugging purpose
-    if(this.state.day === 180 || this.state.researchCompleted >= 1){
+    if(this.state.day >= 180 || this.state.researchCompleted >= 1){
       this.setState({"gameEnded":true});
       clearInterval(this.timer)
     }
@@ -267,15 +267,18 @@ class App extends Component {
       });
     }else if (speed >= 1){
       let ms = 1000 / 30 / speed;
+      let oneDay = 1000;
       clearInterval(this.timer);
+      this.timer = setInterval(() => {
+          this.onTick();
+      }, ms)
       this.setState({
         gameSpeed: speed,
         gameTimerSpeed: ms,
-        timer: setInterval(() => {
-        this.onTick();
-      }, ms)
+        gameOneDay: oneDay / speed,
       });
     }
+    console.log("setting speed to: " + speed);
   }
   //time handler
   onTick(){
@@ -379,7 +382,6 @@ class App extends Component {
   }
   //airline Data formatting
   flightFinished(plane){
-    console.log(`Flight finished`);
     //grab states
     let startState = this.state.stateData[plane.startState];
     let endState = this.state.stateData[plane.endState];

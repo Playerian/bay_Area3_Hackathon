@@ -14,9 +14,7 @@ export default class Popup extends Component {
 
   render() {
     // news headlines
-    const headlines = [
-  
-    ];
+    //let headlines = this.props.eventsData
 
     // let lines = [];
     // for (let i = 0; i < headlines.length; i++) {

@@ -377,7 +377,7 @@ class App extends Component {
           pplPoint = {this.state.pplPoint}
           spendPoint = {(num) => this.spendpplpoint(num)
                        }
-          upgradeInfo = {upgradeJSON}
+          upgradeInfo = {this.state.govUpgrade}
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>

@@ -8,7 +8,8 @@
       "text": "CDC advise citizen to wash their hands - at least 20 secs!",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.1
+      "rateDrop": 0.1,
+      "event":null
     },
     {
       "purchased":false,
@@ -16,7 +17,8 @@
       "text": "Voluntary quarantine on patients",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.15
+      "rateDrop": 0.15,
+      "event":null
     },
     {
       "purchased" :false,
@@ -24,7 +26,8 @@
       "text": "Government declares social distancing - Spend your time home alone",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.15
+      "rateDrop": 0.15,
+      "event":null
     },
     {
       "purchased":false,
@@ -32,7 +35,8 @@
       "text": "Government declares shelter in place - StAy hOmE",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.2
+      "rateDrop": 0.2,
+      "event":null
     },
     {
       "purchased": false,
@@ -41,7 +45,8 @@
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
       "rateDrop": 0,
-      "key": "airport"
+      "key": "airport",
+      "event":null
     },
     {
       "purchased": false,
@@ -49,7 +54,8 @@
       "text": "Force quarantine for patients",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.5
+      "rateDrop": 0.5,
+      "event":null
     },
     {
       "purchased": false,
@@ -58,7 +64,8 @@
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
       "rateDrop": 0,
-      "key": "land"
+      "key": "land",
+      "event":null
     }
   ],
   
@@ -70,7 +77,8 @@
       "text":"Speed Up Cure Research 1",
       "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.0025,
+      "event":null
     }, 
     {
       "purchased": false,
@@ -78,7 +86,8 @@
       "text":"Speed Up Cure Research 2",
       "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.0025,
+      "event":null
     },
     {
       "purchased": false,
@@ -86,7 +95,8 @@
       "text":"Speed Up Cure Research 3",
       "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.0025,
+      "event":null
     },
     {
       "purchased": false,
@@ -94,7 +104,8 @@
       "text":"Speed Up Cure Research 4",
       "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.0025,
+      "event":null
     },
     {
       "purchased": false,
@@ -102,7 +113,8 @@
       "text":"Speed Up Cure Research 5",
       "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.0025,
+      "event":null
     },
     {
       "purchased": false,
@@ -110,7 +122,8 @@
       "text":"Speed Up Cure Research 6",
       "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.0025,
+      "event":null
     },
     {
       "purchased": false,
@@ -119,7 +132,8 @@
       "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "cureUpgrade",
       "rateIncrease": 0,
-      "key": "F1"
+      "key": "F1",
+      "event":null
     },
     {
       "purchased": false,
@@ -128,7 +142,8 @@
       "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "cureUpgrade",
       "rateIncrease": 0,
-      "key": "F2"
+      "key": "F2",
+      "event":null
     }
   ]
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend} from 'recharts';
+//
 
 export default class Popup extends Component {
   constructor(props) {
@@ -14,88 +15,18 @@ export default class Popup extends Component {
   render() {
     // news headlines
     const headlines = [
-      {
-        "text": "Group of Individals Diagnosed With Pneumonia of Unknown Causes",
-        "type": "",
-        "spreadEffect": 0, 
-      },
-      {
-        "text": "Unknown SARS-like Pneumonia Spreads Across Seattle",
-        "type": "",
-        "spreadEffect": 0, 
-      },
-      {
-        "text": "Washington State Declares State Of Emergency",
-        "type": "",
-        "spreadEffect": 0, 
-      },
-      {
-        "text": "Following Washington, Multiple States Declares State of Emergency",
-        "type": "",
-        "spreadEffect": 0, 
-      },
-      {
-        "text": "California Implements statewide 'Shelter In Place'",
-        "type": "",
-        "spreadEffect": 0, 
-      },
-      {
-        "text": "New Jersey Sees A Surge In Cases After New York",
-        "type": "",
-        "spreadEffect": 0, 
-      },
-      
-      {
-        "text": Breaking: Cases May Have Reached All States",
-        "type": "",
-        "spreadEffect": 0, 
-      },
-      {
-        "text": ,
-        "type": "",
-        "spreadEffect": 0, 
-      },
-      
-      ",
-      "Governors Across the Country Calling For Citizens to Stay Home"
+  
     ];
-    
-    /*   const events = [
-      {
-        text: "New medication is in progress",
-        type: "resilience",
-        upgrade: 0,
-        downgrade: 200
-      },
-      {
-        text: "Government orders a shelter in place",
-        type: "spread",
-        upgrade: 0,
-        downgrade: 300
-      },
-      {
-        text: "New mutation: those infected now have severe cough",
-        type: "lethality",
-        upgrade: 100,
-        downgrade: 0
-      },
-       {
-        text: "Government requires all people to wear masks",
-        type: "spread",
-        upgrade: 0,
-        downgrade: 200
-      },
-    ]*/
-    
-    let lines = [];
-    for (let i = 0; i < headlines.length; i++) {
-      lines.push(
-        <marquee className="marqueeTag" key={i}>
-          {" "}
-          {headlines[i]}{" "}
-        </marquee>
-      );
-    }
+
+    // let lines = [];
+    // for (let i = 0; i < headlines.length; i++) {
+    //   lines.push(
+    //     <marquee className="marqueeTag" key={i}>
+    //       {" "}
+    //       {headlines[i]}{" "}
+    //     </marquee>
+    //   );
+    // }
 
     if (this.props.gameEnd) {
       //formatting

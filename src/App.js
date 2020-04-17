@@ -64,7 +64,7 @@ class App extends Component {
       //game system state
       gameStarted: false,
       gameEnded:false,
-      //0 pause 1 regular
+      //0 pause 1 regular 2 fast 3 extreme fast
       gameSpeed: 0,
       //just the speed of the timer
       gameTimerSpeed: 1000 / 30,
@@ -261,9 +261,21 @@ class App extends Component {
   }
   //
   setSpeed(speed){
-    this.setState({
-      gameSpeed: speed
-    });
+    if (speed === 0){
+      this.setState({
+        gameSpeed: speed
+      });
+    }else if (speed >= 1){
+      let ms = 1000 / 30 / speed;
+      clearInterval(this.timer);
+      this.setState({
+        gameSpeed: speed,
+        gameTimerSpeed: ms,
+        timer: setInterval(() => {
+        this.onTick();
+      }, ms)
+      });
+    }
   }
   //time handler
   onTick(){
@@ -271,7 +283,7 @@ class App extends Component {
     if (this.state.gameStarted){
       if (this.state.gameSpeed === 0){
         
-      }else if (this.state.gameSpeed === 1){
+      }else if (this.state.gameSpeed >= 1){
         this.state.gameTimerAccumulation += this.state.gameTimerSpeed;
         if (this.state.gameTimerAccumulation >= this.state.gameOneDay){
           this.oneDayPassed();
@@ -302,8 +314,6 @@ class App extends Component {
     }else{
       //cure upgrade increase cure progress rate
       this.state.researchRate += upgrade.rateIncrease;
-      this.eventActivate("research") //change head line
-      console.log("aaaaaaaaaaaaaa")
     }
     //key event
     if (upgrade.key){
@@ -562,6 +572,7 @@ class App extends Component {
           gameEnd={this.state.gameEnded}
           infectedData={this.state.gameInfectedData}
           deathData={this.state.gameDeathData}
+          //{this.state.upgrades}
           />
         
         

@@ -24,6 +24,9 @@ export default class MenuPanel extends Component {
       cureChange:0,
       spreadChange:0,
       leathChange:0,
+      
+      //speed up!
+      speed: 2,
     };
     
     
@@ -32,9 +35,21 @@ export default class MenuPanel extends Component {
   //click handlers
   onPauseClick(){
     this.props.setSpeed(0);
+    this.setState({speed: 0});
   }
   onPlayClick(){
     this.props.setSpeed(1);
+    this.setState({speed: 1});
+  }
+  onBoostClick(){
+    let speed = this.state.speed;
+    if (speed < 2){
+      speed = 2;
+    }else{
+      speed ++;
+    }
+    this.props.setSpeed(speed);
+    this.setState({speed: speed});
   }
   
   //changing menu
@@ -159,13 +174,12 @@ export default class MenuPanel extends Component {
               <div className="dayDivButtonWrapper">
                 <button className="pauseButton" onClick={(e) => this.onPauseClick(e)}>||</button>
                 <button className="playButton" onClick={(e) => this.onPlayClick(e)}>&#9658;</button>
+                <button className="boostButton" onClick={(e) => this.onBoostClick(e)}>&#9658;&#9658;&#9658;</button>
               </div>
             </div>{/**/}
 
             <div className="eventDiv">
               <div> In the Headlines</div>
-              {/*<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>*/}
-              {/*<marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>*/}
               <Popup message = {this.props.message}/>
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}

@@ -108,7 +108,7 @@ class App extends Component {
             //check if flying to urself
             if (airport.name !== airport2Name){
               //send a plane out with a chance
-              let sendOutPlaneChance = Math.random();
+              let sendOutPlaneChance = Math.random() * (1 - (state.death / state.population));
               if (Math.floor(sendOutPlaneChance * 2) === 0){
                 let key = String(Math.random()).substring(2);
                 let plane = new Plane(airport.name, airport2Name, key, (c) => this.flightFinished(c));

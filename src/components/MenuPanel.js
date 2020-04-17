@@ -179,6 +179,7 @@ export default class MenuPanel extends Component {
               <h3 className="view numcontainer"> Upgrades: </h3>
               <div className="upgradeContainer">
                 {/*upgradeDivArrayCure*/}
+                {upgrade}
               </div>
             </div>
             <UpContainer resPts={this.state.resPts} spreadPts={this.state.spreadPts} lethalPts={this.state.lethalPts}/>

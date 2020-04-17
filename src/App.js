@@ -214,10 +214,11 @@ class App extends Component {
     })
     
     //check if 180 days had pass
-    if(this.state.day === 180){
-      this.setState({"gameEnded":true});
-      clearInterval(this.timer)
-    }
+    //commented for debugging purpose
+    // if(this.state.day === 180){
+    //   this.setState({"gameEnded":true});
+    //   clearInterval(this.timer)
+    // }
   }
   //
   setSpeed(speed){

@@ -40,7 +40,7 @@ export default class Popup extends Component {
         </div>
       );
     } else {
-      return <div>{lines}</div>;
+      return <div>{this.props.message}</div>;
     }
   }
 }

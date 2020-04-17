@@ -55,6 +55,7 @@ class App extends Component {
       fatality: 0,
       researchCompleted: 0,
       researchRate: 0,
+      headlineMessage:"",
       //upgrade specific variables "keys"
       landBlockade: false,
       airRestriction: false,
@@ -529,7 +530,7 @@ class App extends Component {
                        }
           upgradeInfo = {this.state.upgrades}
           researchCompleted = {this.state.researchCompleted}
-          
+          message = {this.state.headlineMessage}
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>

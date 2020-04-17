@@ -193,7 +193,7 @@ export default class MenuPanel extends Component {
               <h3> In the Headlines</h3>
               {/*<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>*/}
               {/*<marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>*/}
-              <Popup />
+              <Popup message = {this.props.message}/>
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}
             <div className="buttonDiv">
@@ -209,6 +209,13 @@ export default class MenuPanel extends Component {
               <button className="panelButton"></button>
             </div>
           </div>
+          <UpContainer
+                  resPts={Math.round(this.props.researchCompleted * 10000) / 100 + "%"}
+                   //resPts={this.state.resPts} 
+              spreadPts={this.state.spreadPts} 
+              lethalPts={this.state.lethalPts}
+                  
+                  />
           <div className="menuHide" onClick={() => this.menuUp()}>
             click to hide
           </div>
@@ -264,7 +271,8 @@ export default class MenuPanel extends Component {
                   resPts={Math.round(this.props.researchCompleted * 10000) / 100 + "%"}
                    //resPts={this.state.resPts} 
               spreadPts={this.state.spreadPts} 
-              lethalPts={this.state.lethalPts} 
+              lethalPts={this.state.lethalPts}
+                  
                   />
               </div>
             </div>

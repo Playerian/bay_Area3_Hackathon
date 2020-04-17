@@ -36,7 +36,7 @@ export default class Popup extends Component {
       
       return (
         <div className="endScreen">
-          <h1 className="endScreenH1">you finished the game</h1>
+          <h1 className="endScreenh1">you finished the game</h1>
         </div>
       );
     } else {

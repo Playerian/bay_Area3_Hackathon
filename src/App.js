@@ -214,8 +214,9 @@ class App extends Component {
     })
     
     //check if 180 days had pass
-    if(this.state.day === 3){
+    if(this.state.day === 180){
       this.setState({"gameEnded":true});
+      clearInterval(this.timer)
     }
   }
   //
@@ -293,6 +294,12 @@ class App extends Component {
     stateData.US.infected = totalInfected;
     stateData.US.recovered = totalRecovered;
     stateData.US.death = totalDeath;
+    //give ppl point on death
+    let deathPointAward = Math.cbrt(2.9 * totalDeath) / 4;
+    if (deathPointAward > this.state.deathPointAccu){
+      let award = deathPointAward - this.state.deathPointAccu;
+      
+    }
     this.setState({
       stateData: stateData
     });

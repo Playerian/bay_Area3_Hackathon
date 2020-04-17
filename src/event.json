@@ -101,6 +101,20 @@
     },
     
     {
+      "name":"airportClosure",
+      "image":null,
+      "headline":[
+        ""
+        ],
+      "effect":{
+        "cureChange":0,
+        "spreadChange":0,
+        "leathChange":0,
+        "pppChange":0
+      }      
+    },
+    
+    {
       "name":"pplPointFuLi",
       "image":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "headline":["debug use only"],

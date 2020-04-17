@@ -58,7 +58,10 @@ export default class MenuPanel extends Component {
       spreadPts:0,
       lethalPts: 0
     })
-    
+  }
+  
+  spendPoint(point){
+    this.props.spendPoint(point);
   }
 
   render() {

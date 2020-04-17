@@ -316,6 +316,12 @@ class App extends Component {
       selecting: "US"
     });
   }
+  //spend ppl point
+  spendpplpoint(num){
+    this.setState({
+      pplPoint: this.state.pplPoint - num
+    });
+  }
   render() {
     return (
       <div className="App">
@@ -342,6 +348,7 @@ class App extends Component {
           provinceData = {this.state.stateData}
           setSpeed = {(s) => this.setSpeed(s)}
           pplPoint = {this.state.pplPoint}
+          spendPoint = {(num) => this.state.spendpplpoint(num)}
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>

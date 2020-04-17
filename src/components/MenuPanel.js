@@ -111,8 +111,11 @@ export default class MenuPanel extends Component {
 //         });
     
     let upgradeDivArray=[];
-    
-    
+    let upgradeList = this.props.upgradeInfo
+    for(const property in upgradeList){
+      upgradeList[property]
+      console.log(upgradeList[property])
+    }
 
 
     if (this.state.showing === true && this.state.tab === "overview") {

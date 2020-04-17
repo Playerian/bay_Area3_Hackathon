@@ -2,13 +2,13 @@
   "govUpgrade": 
   [
     {
-      "comment": "Regular transmission rate 1.2, minimum is 1, maximum decrease to: 1.1",
+      "comment": "Regular transmission rate 1.2, minimum is 0, maximum decrease to: ?",
       "purchased": false,
       "cost": 5,
       "text": "CDC advise citizen to wash their hands - at least 20 secs!",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.005
+      "rateDrop": 0.1
     },
     {
       "purchased":false,
@@ -16,7 +16,7 @@
       "text": "Voluntary quarantine on patients",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.015
+      "rateDrop": 0.15
     },
     {
       "purchased" :false,
@@ -24,7 +24,7 @@
       "text": "Government declares social distancing - Spend your time home alone",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.025
+      "rateDrop": 0.15
     },
     {
       "purchased":false,
@@ -32,7 +32,7 @@
       "text": "Government declares shelter in place - StAy hOmE",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.025
+      "rateDrop": 0.2
     },
     {
       "purchased": false,
@@ -49,7 +49,7 @@
       "text": "Force quarantine for patients",
       "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
       "type": "govUpgrade",
-      "rateDrop": 0.03
+      "rateDrop": 0.5
     },
     {
       "purchased": false,

@@ -220,7 +220,11 @@ class App extends Component {
         }
       }
     }
-    //calling setUSData
+    //increment in research for cure
+    let rate = this.state.researchRate;
+    let research = this.state.researchCompleted;
+    //adding research, base on population
+    research += rate * (1 - stateData.US.death / stateData.US.population);
     //final setState
     this.setState({
       day: day,
@@ -228,7 +232,7 @@ class App extends Component {
       airlines: this.state.airlines,
       fatality: this.state.fatality,
       //cure
-      researchCompleted: this.state.researchCompleted + this.state.researchRate,
+      researchCompleted: research
     }, () => {
       //final set US Data
       this.setUSData();
@@ -541,7 +545,7 @@ class State{
     //game data
     this.name = name;
     this.population = population;
-    this.infectionRate = 0.2;
+    this.infectionRate = 1.2;
     this.infected = 0;
     this.infectedDecimal = 0.0;
     this.death = 0;

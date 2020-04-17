@@ -190,7 +190,7 @@ export default class MenuPanel extends Component {
             </div>{/**/}
 
             <div className="eventDiv">
-              <h3> In the Headlines</h3>
+              <div> In the Headlines</div>
               {/*<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>*/}
               {/*<marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>*/}
               <Popup message = {this.props.message}/>
@@ -269,9 +269,9 @@ export default class MenuPanel extends Component {
                 <UpContainer
                   resPts={Math.round(this.props.researchCompleted * 10000) / 100 + "%"}
                    //resPts={this.state.resPts} 
-              spreadPts={this.state.spreadPts} 
-              lethalPts={this.state.lethalPts}
-                  
+                  spreadPts={this.state.spreadPts} 
+                  lethalPts={this.state.lethalPts}
+                    
                   />
               </div>
             </div>

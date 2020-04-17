@@ -121,12 +121,17 @@
   border-radius: 2%;
   display: flex;
   overflow: auto;
+  flex-wrap:wrap;
 }
 
-.eventDiv h3 {
+.eventDiv div {
+  font-size: 36px;
+  height:50%;
+  width:100%;
   color: salmon;
   padding-left: 2px;
 }
+
 
 .numcontainer, .statscontainer {
   height: 20%;
@@ -207,9 +212,4 @@
 .statsDiv{
   width:100%;
   display:block;
-}
-
-.eventDiv{
-  flex-wrap:wrap;
-  
 }

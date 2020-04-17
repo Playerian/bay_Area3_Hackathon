@@ -194,6 +194,16 @@
   width: 20%;
 }
 
+.upgradeButtonPurchased {
+  width: 20%;
+  background: gray;
+  font-size: medium;
+}
+
+.upgradeButtonPurchased:hover {
+  cursor: not-allowed;
+}
+
 .statsDiv{
   width:100%;
   display:block;

@@ -28,7 +28,7 @@ export default class UpgradeTag extends Component {
         <div className="upgradeTag" >
           <img className="upgradeTagImg" src={this.props.image}></img>
           <p className="upgradeTagP">{this.props.text}</p>
-          <button className="upgradeButtonP">Purchased</button>
+          <button className="upgradeButtonPurchased">Purchased</button>
         </div>
       );
     }

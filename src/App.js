@@ -72,6 +72,10 @@ class App extends Component {
       gameTimerAccumulation: 0,
       //accumulation >= oneday then run oneDayPassed()
       gameOneDay: 1000,
+      //datas for graphing
+      gameInfectedData: [],
+      gameDeathData: [],
+      gameResearchData: [],
     }
     //upgrade JSON quick access
     this.state.govUpgrade = this.state.upgrades.govUpgrade;
@@ -145,7 +149,7 @@ class App extends Component {
             }
           }
           //check for event
-           this.dailyEventCheck()
+          this.dailyEventCheck()
         }
         //avoid random spontaenous generation
         if (state.infected === 0){
@@ -427,7 +431,6 @@ class App extends Component {
     console.log(
       "You clicked the map at latitude: " + lat + " and longitude: " + lng
     );
-    this.setUSData();
     this.setState({
       selecting: "US"
     });
@@ -447,43 +450,47 @@ class App extends Component {
       } 
     }
     //console.log(typeof json[eventIndex])
-    if (typeof json.event[eventIndex].name !== "undefine"){
-      message = json.event[eventIndex].headline[Math.floor(Math.random()*json.event[eventIndex].headline.length)]//randomly pick headline from array
-      switch(json.event[eventIndex]){
-        case "patientZero0":
-        break;
-          
-        case "gathering":
-        break;
-        
-        case "lockDown":
-          console.log("lock down da yo~")
-          //do set state
-        break;
-          
-        case "explosion":
-        break;
-          
-        case "research":
-        break;  
-          
-        case "mask":
-        break;
-          
-        case "panicShop":
-        break;
-          
-        case "airportClosure":
-        break;
-          
-        default:   
+    //console.log(typeof eventIndex)
+    //console.log(eventIndex)
+    if (typeof eventIndex !== "undefine"){
+      
+      if (typeof json.event[eventIndex].name !== "undefine"){
+        message = json.event[eventIndex].headline[Math.floor(Math.random()*json.event[eventIndex].headline.length)]//randomly pick headline from array
+        switch(json.event[eventIndex]){
+          case "patientZero0":
+          break;
+
+          case "gathering":
+          break;
+
+          case "lockDown":
+            console.log("lock down da yo~")
+            //do set state
+          break;
+
+          case "explosion":
+          break;
+
+          case "research":
+          break;  
+
+          case "mask":
+          break;
+
+          case "panicShop":
+          break;
+
+          case "airportClosure":
+          break;
+
+          default:   
+        }
+        //things pass into pop: mrssage, new props related to leath etc...  
       }
-      //things pass into pop: mrssage, new props related to leath etc...  
+      this.setState({"headlineMessage":message})
+
     }
-    this.setState({"headlineMessage":message})
-    
   }
-  
   dailyEventCheck(){ //plug into onedaypast()? 
     let json = eventJSON
     let event
@@ -494,7 +501,8 @@ class App extends Component {
        break;
       } //else no event
       if (typeof event !== "undefine"){ //if there is an event set for that day
-        this.eventActivate(event) //tigger it
+        console.log(event)
+        //this.eventActivate(event) //tigger it
       }
     }
   }

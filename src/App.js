@@ -151,7 +151,7 @@ class App extends Component {
         //increasing self state infect count ------------------------------
         let newInfected = state.infected + state.infectedDecimal;
         //multiply by infection rate
-        newInfected *= (1 + state.infectionRate);
+        newInfected *= state.infectionRate;
         //get a 20% random flow in the increase
         let randomNumber = (Math.random() * 2 - 1) / 5;
         newInfected += randomNumber;

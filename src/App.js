@@ -383,7 +383,7 @@ class App extends Component {
           pplPoint = {this.state.pplPoint}
           onUpgrade = {(upgrade) => this.onUpgrade(upgrade)
                        }
-          upgradeInfo = {[this.state.govUpgrade,this.state.cureUpgrade]}
+          upgradeInfo = {this.state.upgrades}
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>

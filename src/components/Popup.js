@@ -12,8 +12,9 @@ export default class Popup extends Component {
   }
 
   render() {
+    // news headlines
     const headlines = [
-      "Group of Individals Diagnosed With Pneumonia Due To Unknown Causes",
+      "Group of Individals Diagnosed With Pneumonia of Unknown Causes",
       "Unknown SARS-like Pneumonia Spreads Across Seattle",
       "Washington State Declares State Of Emergency",
       "Following Washington, Multiple States Declares State of Emergency",

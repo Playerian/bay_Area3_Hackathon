@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NumContainer from "./NumContainer.js";
 import UpContainer from "./UpContainer.js";
 import UpgradeTag from "./UpgradeTag.js";
-
+import Popup from "./Popup.js";
 
 import "./MenuPanel.css";
 
@@ -19,7 +19,6 @@ export default class MenuPanel extends Component {
       spreadPts:0,
       lethalPts: 0,
       winShow: false,
-      showUpgradeList: null
     };
     
     
@@ -68,10 +67,6 @@ export default class MenuPanel extends Component {
     this.props.spendPoint(point);
   }
   
-  renderList(){
-    
-    
-  }
 
   render() {
     let selecting = this.props.selecting;
@@ -121,18 +116,18 @@ export default class MenuPanel extends Component {
     let upgradeDivArrayGov=[];
     let upgradeDivArrayCure=[]
     let upgradeList = this.props.upgradeInfo
+    let govUpgrade = upgradeList.govUpgrade;
+    let cureUpgrade = upgradeList.cureUpgrade;
     
-    upgradeList[1].forEach((v,i)=>{
-     upgradeDivArrayCure.push(<UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
+    cureUpgrade.forEach((v,i)=>{
+     upgradeDivArrayCure.push(<UpgradeTag spendPoint={(point, upgrade) => this.spendPoint(point, upgrade)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
      
     })
     
-    upgradeList[0].forEach((v,i)=>{
-     upgradeDivArrayGov.push(<UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
+    govUpgrade.forEach((v,i)=>{
+     upgradeDivArrayGov.push(<UpgradeTag spendPoint={(point, upgrade) => this.spendPoint(point, upgrade)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
      
     })
-    console.log(upgradeDivArrayGov)
-    this.setState({"showUpgradeList":upgradeDivArrayGov})
     
 
     if (this.state.showing === true && this.state.tab === "overview") {
@@ -161,7 +156,7 @@ export default class MenuPanel extends Component {
 
             <div className="eventDiv">
               <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>
-              <marquee className="marqueeTag">, LOCAL DIV TAG (终于)成精啦！<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
+              <marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}
             <div className="buttonDiv">
@@ -194,7 +189,9 @@ export default class MenuPanel extends Component {
               <h3 className="view numcontainer"> Upgrades: </h3>
               <div className="upgradeContainer">
                 
-                {this.state.showUpgradeList}
+                {upgradeDivArrayGov}
+                {upgradeDivArrayCure}
+
                 
               </div>
             </div>

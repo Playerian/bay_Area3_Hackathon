@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import L from "leaflet";
 // import "https://raw.githubusercontent.com/IvanSanchez/Leaflet.ImageOverlay.Rotated/gh-pages/Leaflet.ImageOverlay.Rotated.js"
 import LeafletImageOverLay from "../plugin/LeafletImageOverlay.js"
-import ImageOverlayRotate from "./ImageOverlayRotate.js";
+//import ImageOverlayRotate from "./ImageOverlayRotate.js";
 
 const {
   Map: LeafletMap,
@@ -303,14 +303,14 @@ export default class Map extends Component {
           />*/}
         
         
-          <ImageOverlayRotate
+          {/*<ImageOverlayRotate
             topLeft={[40.2, -95.7129 ]}
             topRight={[20.2, -95.7129 ]}
             bottomleft={[40.2, -100.7129 ]}
-            image="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
+            //image="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"
           
           />
-        {/**/}
+        */}
 
         
       </LeafletMap>

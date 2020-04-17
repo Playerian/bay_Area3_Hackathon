@@ -125,7 +125,7 @@ export default class MenuPanel extends Component {
     let cureUpgrade = upgradeList.cureUpgrade;
     
     cureUpgrade.forEach((v,i)=>{
-     upgradeDivArrayCure.push(<UpgradeTag spendPoint={(upgrade) => this.onUpgradeClick(upgrade)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal} upgrade={v}/>)
+     upgradeDivArrayCure.push(<UpgradeTag spendPoint={(upgrade) => this.onUpgradeClick(upgrade)} purchased={v.purchased} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal} upgrade={v}/>)
      
     })
     
@@ -133,13 +133,13 @@ export default class MenuPanel extends Component {
      upgradeDivArrayGov.push(
        <UpgradeTag 
          spendPoint={(upgrade) => this.onUpgradeClick(upgrade)} 
+         purchased={v.purchased} 
          text={v.text} 
          ppp={v.cost} 
          image={v.imgSrc}
          key={i} pplPoint={this.props.pplPoint} 
          resPts={v.resPts} spreadPts={v.spread} 
          lethalPts={v.lethal} upgrade={v}
-         
          onMouseEnter = {()=>this.onUpgradeHover(true)}
          onMouseLeave = {()=>this.onUpgradeHover(false)}
          />)

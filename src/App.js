@@ -349,15 +349,6 @@ class App extends Component {
       selecting: "US"
     });
   }
-  //spend ppl point
-  onUpgrade(upgrade){
-    upgrade.purchased = true;
-    this.setState({
-      pplPoint: this.state.pplPoint - upgrade.cost,
-      upgrades: this.state.upgrades
-    });
-    console.log(upgrade);
-  }
   render() {
     return (
       <div className="App">

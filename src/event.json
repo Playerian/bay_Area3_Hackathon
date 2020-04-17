@@ -1,11 +1,46 @@
 {
-  "goodEvent": 
-  [
+  "event":[
+    {
+      "name":"Patient Zero?",
+      "image":null,
+      "headline":"Individal Diagnosed With Pneumonia of Unknown Causes",
+      "effect":{
+        "cureChange":0,
+        "spreadChange":0,
+        "leathChange":0
+      }      
+    },
     
-  ],
-  
-  "virusEvent": 
-  [
+    {
+      "name":"Gathering",
+      "headline":"Group of Individals Diagnosed With Pneumonia of Unknown Causes Following Patient Zero",
+      "effect":{
+        "cureChange":0,
+        "spreadChange":0,
+        "leathChange":0
+      }      
+    },
+    
+    {
+      "name":"Lock Down",
+      "headline":"",
+      "effect":{
+        "cureChange":0,
+        "spreadChange":0,
+        "leathChange":0
+      }      
+    },
+    
+     {
+      "name":"Patient Zero?",
+      "image":null,
+      "headline":"Individal Diagnosed With Pneumonia of Unknown Causes",
+      "effect":{
+        "cureChange":0,
+        "spreadChange":0,
+        "leathChange":0
+      }      
+    }
     
   ]
 }

@@ -423,17 +423,46 @@ class App extends Component {
   //event, check for condition to activate a centain event
   eventActivate(eventName){
     let json = eventJSON
+    let event
     for(let i = 0;i<json.event.length;i++){
       //console.log(json.event[i])
       if(eventName===json.event[i].name){ //looks for the event by name 
-        let afterEventstats = {
+        event = 
+       break;
+      } 
+    }
+    console.log(typeof event)
+    if (typeof event !== "undefine"){
+      switch(event){
+        case "patientZero0":
+        break;
           
+        case "gathering":
+        break;
+        
+        case "lockDown":
+          console.log("lock down da yo~")
+        break;
           
-        }
-        return afterEventstats;
-      }else{
-        return {}
+        case "explosion":
+        break;
+          
+        case "research":
+        break;  
+          
+        case "mask":
+        break;
+          
+        case "panicShop":
+        break;
+          
+        case "airportClosure":
+        break;
+          
+        default:   
       }
+    }else{
+      return "event not found"
     }
     
   }

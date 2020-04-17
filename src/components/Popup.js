@@ -16,7 +16,8 @@ export default class Popup extends Component {
       "California Implements statewide 'Shelter In Place'",
       "New York: An Explosion of Cases",
       "New Jersey Sees A Surge In Cases After New York",
-      
+      "Breaking: Cases May Have Reached All States",
+      "Governors Across the Country Calling For Citizens to Stay Home"
     ];
   }
 

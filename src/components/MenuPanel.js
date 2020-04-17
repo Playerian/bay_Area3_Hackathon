@@ -115,7 +115,7 @@ export default class MenuPanel extends Component {
     let upgradeList = this.props.upgradeInfo
     
     this.upgradelist.govUpgrade.forEach((v,i)=>{
-      <UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
+      upgradeDivArrayCure.push(<UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
     })
 
 
@@ -177,7 +177,7 @@ export default class MenuPanel extends Component {
             <div className="subHolderDiv">
               <h3 className="view numcontainer"> Upgrades: </h3>
               <div className="upgradeContainer">
-                {upgradeDivArray}
+                {/*upgradeDivArrayCure*/}
               </div>
             </div>
             <UpContainer resPts={this.state.resPts} spreadPts={this.state.spreadPts} lethalPts={this.state.lethalPts}/>

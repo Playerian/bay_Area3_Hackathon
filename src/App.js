@@ -77,6 +77,10 @@ class App extends Component {
   oneDayPassed(){
     //increase the day
     let day = this.state.day + 1;
+    //increasing global fatality
+    if (day > 90){
+      this.state.fatality += 0.0025;
+    }
     //infecting people
     let stateData = this.state.stateData;
     for (let key in stateData){
@@ -158,6 +162,17 @@ class App extends Component {
           //increase miletone by *10
           state.pplPointMilestone *= 10;
         }
+        //increase lethality in state
+        if (state.infected / state.population > 0.2){
+          state.lethality += 0.0025;
+        }
+        //people die
+        let combinedFatality = state.lethality + this.state.fatality;
+        if (combinedFatality > 0){
+          let peopleDie = Math.floor(state.infected * combinedFatality);
+          state.death += peopleDie;
+          state.infected -= peopleDie;
+        }
         //separation--------------------------------------------------------
         //spreading to neighbor probability
         let chance = state.infected / state.population;
@@ -173,10 +188,6 @@ class App extends Component {
               stateData[v].infected ++;
             }
           }
-        }
-        //increasing global fatality
-        if (day > 90){
-          this.state.fatality += 0.005;
         }
       }
     }

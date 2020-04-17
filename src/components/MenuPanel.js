@@ -20,6 +20,7 @@ export default class MenuPanel extends Component {
       lethalPts: 0,
       winShow: false,
       
+      showChange: false,
       cureChange:0,
       spreadChange:0,
       leathChange:0,
@@ -68,6 +69,10 @@ export default class MenuPanel extends Component {
     this.props.onUpgrade(upgrade);
   }
 
+  onUpgradeHover(bool){
+    this.setState({"showChange":bool})
+  }
+  
   render() {
     let selecting = this.props.selecting;
     let provinceData = this.props.provinceData;
@@ -127,7 +132,7 @@ export default class MenuPanel extends Component {
     govUpgrade.forEach((v,i)=>{
      upgradeDivArrayGov.push(
        <UpgradeTag 
-         spendPoint={(point, upgrade) => this.onUpgradeClick(point, upgrade)} 
+         spendPoint={(upgrade) => this.onUpgradeClick(upgrade)} 
          text={v.text} 
          ppp={v.cost} 
          image={v.imgSrc}
@@ -135,7 +140,8 @@ export default class MenuPanel extends Component {
          resPts={v.resPts} spreadPts={v.spread} 
          lethalPts={v.lethal} upgrade={v}
          
-         
+         onMouseEnter = {()=>this.onUpgradeHover(true)}
+         onMouseLeave = {()=>this.onUpgradeHover(false)}
          />)
      
     })
@@ -167,7 +173,8 @@ export default class MenuPanel extends Component {
 
             <div className="eventDiv">
               {/*<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>*/}
-              <marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>
+              {/*<marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>*/}
+              <Popup />
             </div>
   {/*-------------------------------------------------------------------------------------------------------------*/}
             <div className="buttonDiv">
@@ -210,10 +217,12 @@ export default class MenuPanel extends Component {
               resPts={this.state.resPts} 
               spreadPts={this.state.spreadPts} 
               lethalPts={this.state.lethalPts} 
-              showChange={false} 
+              showChange={this.state.showChange} 
               cureChange={this.state.cureChange}
               spreadChange={this.state.spreadChange}
               leathChange={this.state.leathChange}
+              
+             
               />
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>

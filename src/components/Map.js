@@ -218,8 +218,8 @@ export default class Map extends Component {
   
   //render funciton
   render() {
-          console.log("---------------------------------------")
-          console.log(L)//.ImageOverlay.Rotated)
+     //     console.log("---------------------------------------")
+      //    console.log(L)//.ImageOverlay.Rotated)
 
 
 

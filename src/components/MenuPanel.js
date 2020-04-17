@@ -18,7 +18,8 @@ export default class MenuPanel extends Component {
       resPts: 0,
       spreadPts:0,
       lethalPts: 0,
-      winShow: false
+      winShow: false,
+      showCureUpgrade: false
     };
   }
 
@@ -114,11 +115,15 @@ export default class MenuPanel extends Component {
     let upgradeDivArrayCure=[]
     let upgradeList = this.props.upgradeInfo
     
-    upgradeList.forEach((v,i)=>{
+    upgradeList[1].forEach((v,i)=>{
      upgradeDivArrayCure.push(<UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
-     console.log(v)
+     
     })
-
+    
+    upgradeList[0].forEach((v,i)=>{
+     upgradeDivArrayGov.push(<UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
+     
+    })
 
     if (this.state.showing === true && this.state.tab === "overview") {
       
@@ -178,8 +183,7 @@ export default class MenuPanel extends Component {
             <div className="subHolderDiv">
               <h3 className="view numcontainer"> Upgrades: </h3>
               <div className="upgradeContainer">
-                {/*upgradeDivArrayCure*/}
-                {upgrade}
+                {upgradeDivArrayCure}
               </div>
             </div>
             <UpContainer resPts={this.state.resPts} spreadPts={this.state.spreadPts} lethalPts={this.state.lethalPts}/>

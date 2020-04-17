@@ -350,9 +350,9 @@ class App extends Component {
     });
   }
   //spend ppl point
-  spendpplpoint(num){
+  onUpgrade(upgrade){
     this.setState({
-      pplPoint: this.state.pplPoint - num
+      pplPoint: this.state.pplPoint - upgrade.cost
     });
   }
   render() {
@@ -381,9 +381,9 @@ class App extends Component {
           provinceData = {this.state.stateData}
           setSpeed = {(s) => this.setSpeed(s)}
           pplPoint = {this.state.pplPoint}
-          spendPoint = {(num) => this.spendpplpoint(num)
+          onUpgrade = {(upgrade) => this.onUpgrade(upgrade)
                        }
-          upgradeInfo = {this.state.govUpgrade}
+          upgradeInfo = {[this.state.govUpgrade,this.state.cureUpgrade]}
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>

@@ -427,14 +427,15 @@ class App extends Component {
     for(let i = 0;i<json.event.length;i++){
       //console.log(json.event[i])
       if(eventName===json.event[i].name){ //looks for the event by name 
+        //console.log(i)
         eventIndex = i
        break;
       } 
     }
-    console.log(typeof json[eventIndex])
-    if (typeof json[eventIndex].name !== "undefine"){
-      let message = json[eventIndex].headline[Math.floor(Math.random())]//change then pass in
-      switch(json[eventIndex]){
+    //console.log(typeof json[eventIndex])
+    if (typeof json.event[eventIndex].name !== "undefine"){
+      let message = json.event[eventIndex].headline[Math.floor(Math.random()*json.event[eventIndex].headline.length)]//randomly pick headline from array
+      switch(json.event[eventIndex]){
         case "patientZero0":
         break;
           
@@ -463,7 +464,7 @@ class App extends Component {
           
         default:   
       }
-      //things pass into pop
+      //things pass into pop: mrssage, new props related to leath etc...
       
       
     }else{

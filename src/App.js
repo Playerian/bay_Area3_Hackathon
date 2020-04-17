@@ -11,7 +11,7 @@ import stateGeoJSON from "./USStates.json";
 import populationJSON from "./population.json";
 import neighborJSON from "./neighbor.json";
 import airportJSON from "./airports.json";
-import upgrades from "./upgrades.json";
+import upgradeJSON from "./upgrades.json";
 
 class App extends Component {
   constructor(props){
@@ -36,6 +36,7 @@ class App extends Component {
     }
     //set up the us data
     stateData.US = new State("US", totalPopulation);
+    //set up upgradeJSON
     //initialize state
     this.state = {
       //datas
@@ -44,6 +45,7 @@ class App extends Component {
         //comment out after debugging finishes, template
         //new Plane("LAX", "JFK", "key",(c) => this.flightFinished(c)),
       ],
+      upgrades: upgradeJSON,
       //in game variables
       selecting: "US",
       day: 0,
@@ -51,7 +53,6 @@ class App extends Component {
       researchCompleted: 0,
       researchRate: 0.0002,
       usSeverity: 0,
-      purchasedUpgrades:[],
       //game system state
       gameStarted: false,
       gameEnded:false,
@@ -63,9 +64,10 @@ class App extends Component {
       gameTimerAccumulation: 0,
       //accumulation >= oneday then run oneDayPassed()
       gameOneDay: 1000,
-      
-      
     }
+    //upgrade JSON quick access
+    this.state.govUpgrade = this.state.upgrades.govUpgrade;
+    this.state.cureUpgrade = this.state.upgrades.cureUpgrade;
     //initialize timer
     this.timer = setInterval(() => {
       this.onTick();
@@ -184,7 +186,13 @@ class App extends Component {
       //final set US Data
       this.setUSData();
     })
+    
+    //check if 180 days had pass
+    if(this.state.day === 180){
+      this.setState({"gameEnded":true});
+    }
   }
+  //
   setSpeed(speed){
     this.setState({
       gameSpeed: speed
@@ -353,7 +361,7 @@ class App extends Component {
           pplPoint = {this.state.pplPoint}
           spendPoint = {(num) => this.spendpplpoint(num)
                        }
-          upgradeInfo = {upgrades}
+          upgradeInfo = {upgradeJSON}
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>

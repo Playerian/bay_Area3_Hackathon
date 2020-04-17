@@ -9,10 +9,14 @@ export default class Popup extends Component {
     };
 
     const headlines = [
-      "New York: An Explosion of Cases",
+      "Group of Individals Diagnosed With Pneumonia Due To Unknown Causes",
+      "Unknown SARS-like Pneumonia Spreads Across Seattle",
+      "Washington State Declares State Of Emergency",
+      "Following Washington, Multiple States Declares State of Emergency",
       "California Implements statewide 'Shelter In Place'",
+      "New York: An Explosion of Cases",
       "New Jersey Sees A Surge In Cases After New York",
-      "New "
+      
     ];
   }
 

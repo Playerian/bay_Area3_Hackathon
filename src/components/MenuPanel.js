@@ -141,7 +141,7 @@ export default class MenuPanel extends Component {
     let randomEvent = Math.floor(Math.random() * (events.length + 1));
   //  console.log(events[randomEvent].text);
     
-    let upgradeDivArray = {upgradeInfo}.map((v,i)=>{
+    let upgradeDivArray = {}.map((v,i)=>{
       
           return <UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
         });

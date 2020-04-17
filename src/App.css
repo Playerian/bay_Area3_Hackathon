@@ -11,79 +11,14 @@
   z-index:1;
 }
 
-/* .menuPanel{
+.endScreen{
+  z-index:10; /*10 is very high so its probably*/
   position:absolute;
-  z-index:3;
-  top:-0.5vh;
-  height:25vh;
   width:100%;
-  background:darkgrey;
-  border:5px grey solid;
-  border-radius:2%;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  
-}
-
-.divHolder{
-  position:relative;
-  height:93%;
-  width:100%;
-  background:#454647;
-  z-index:5;
-  display:flex;
-  flex-wrap:wrap;
-  
-}
-
-.menuHide{
-  position:relative;
-  height:7%;
-  width:100%;
-  background:darkgrey;
-  border:5px grey solid;
-  z-index:5;
-  text-align:center;
-  margin:-5px;
-  
-}
-
-.menuShow{
-  position:absolute;
-  z-index:3;
-  top:-0.5vh;
-  height:3vh;
-  width:100%;
-  background:darkgrey;
-  border:5px grey solid;
-  border-radius:2%;
-  text-align:center;
-} */
-
-/* .subHolderDiv{
-  display:flex;
-  flex-wrap:wrap;
-  width:90%;
-  box-sizing:border-box;
-}
-
-.buttonDiv{
-  width:10%;
-  box-sizing:border-box;
-}
-
-.panelButton{
-  width:100%;
-  height:33%;
-}
-
-.numcontainer{
-  height:25%;
-  width:100%;
+  height:100%;
+  background:black;
   color:white;
-
-} */
+}
 
 .researchProgress{
   position:absolute;

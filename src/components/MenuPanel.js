@@ -268,7 +268,6 @@ export default class MenuPanel extends Component {
               <div className="panelButton">
                 <UpContainer
                   resPts={Math.round(this.props.researchCompleted * 10000) / 100 + "%"}
-                   //resPts={this.state.resPts} 
                   spreadPts={this.state.spreadPts} 
                   lethalPts={this.state.lethalPts}
                     

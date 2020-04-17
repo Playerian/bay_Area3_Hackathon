@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { LineChart, Line } from 'recharts';
 
 export default class Popup extends Component {
   constructor(props) {
@@ -42,8 +43,8 @@ export default class Popup extends Component {
     } else {
       return(
          <div>
-        <marquee className="marqueeTag">
-          zesxdcfvghbj{this.props.message}
+        <marquee className="marqueeTag" scrollamount="25">
+          {this.props.message}
         </marquee>
       </div>
         );

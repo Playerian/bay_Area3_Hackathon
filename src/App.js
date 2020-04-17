@@ -303,6 +303,7 @@ class App extends Component {
     if (upgrade.key){
       if (upgrade.key === "airport"){
         this.setState({airRestriction: true});
+        this.eventActivate("airportClosure") //change head line
       }else if (upgrade.key === "land"){
         this.setState({landBlockade: true});
       }else if (upgrade.key === "F1"){
@@ -487,6 +488,7 @@ class App extends Component {
           break;
 
           case "airportClosure":
+            //nothing
           break;
             
           default:   
@@ -550,7 +552,11 @@ class App extends Component {
         {/*<div className="pplPointContiner"></div>
         <div className="researchProgress"></div>*/}
         
-        <Popup gameEnd={this.state.gameEnded}/>
+        <Popup 
+          gameEnd={this.state.gameEnded}
+          infectedData={this.state.gameInfectedData}
+          gameDeathData={this.state.gameDeathData}
+          />
         
         
       </div>

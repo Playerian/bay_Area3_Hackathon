@@ -8,6 +8,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.1",
     "react-leaflet": "^2.6.3",
+    "recharts": "^1.8.5",
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {

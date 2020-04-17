@@ -7,7 +7,22 @@ const {
 } = window.ReactLeaflet;
 
 export default class ImageOverlayRotate extends ImageOverlay{
-  createLeafletElement(props){
+ 
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+/*
+ createLeafletElement(props){
     let LeafletMapElement = super.createLeafletElement(props);
     
     let topleft    = new L.latLng(this.props.topLeft[0],this.props.topLeft[1]);
@@ -19,5 +34,4 @@ export default class ImageOverlayRotate extends ImageOverlay{
     }).addTo(this.props.map);
     return overlay;
   }
-}
-
+*/ 

@@ -83,35 +83,8 @@ export default class MenuPanel extends Component {
     let recovered = provinceData[selecting].recovered || 0;
     let upgradeInfo = this.props.upgradeInfo;
     
-    
-    const events = [
-      {
-        text: "New medication is in progress",
-        type: "resilience",
-        upgrade: 0,
-        downgrade: 200
-      },
-      {
-        text: "Government orders a shelter in place",
-        type: "spread",
-        upgrade: 0,
-        downgrade: 300
-      },
-      {
-        text: "New mutation: those infected now have severe cough",
-        type: "lethality",
-        upgrade: 100,
-        downgrade: 0
-      },
-       {
-        text: "Government requires all people to wear masks",
-        type: "spread",
-        upgrade: 0,
-        downgrade: 200
-      },
-    ]
   
-    let randomEvent = Math.floor(Math.random() * (events.length + 1));
+  //  let randomEvent = Math.floor(Math.random() * (events.length + 1));
   //  console.log(events[randomEvent].text);
     
 //     let upgradeDivArray = this.props.upgradeInfo.map((v,i)=>{

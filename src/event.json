@@ -10,7 +10,7 @@
         "leathChange":0,
         "pppChange":0
       },
-      "tiggerDate":0
+      "tiggerDate":1
     },
     
     {
@@ -23,7 +23,20 @@
         "pppChange":0
         
       },
-      "tiggerDate":5
+      "tiggerDate":15
+    },
+    
+    {
+      "name":"newSARS",
+      "headline":[" Breaking: the New SARS-like Coronavirus"],
+      "effect":{
+        "cureChange":0,
+        "spreadChange":0,
+        "leathChange":0,
+        "pppChange":0
+        
+      },
+      "tiggerDate":25
     },
     
     {
@@ -65,8 +78,7 @@
       "image":null,
       "headline":[
         "Hospitals and Research Centers Scrambling to Identify the New Virus",
-        "Congress Approves Additional Funding for CDC to Research the New Virus",
-        "Breaking: the New SARS-like Coronavirus"
+        "Congress Approves Additional Funding for CDC to Research the New Virus"
         ],
       "effect":{
         "cureChange":0,
@@ -104,7 +116,7 @@
         "leathChange":0,
         "pppChange":0
       },
-      "tiggerDate":20      
+      "tiggerDate":50      
     },
     
     {
@@ -132,7 +144,7 @@
         "leathChange":0,
         "pppChange":10000
       },
-      "tiggerDate":3,
+      "tiggerDate":300,
       "comment":"This is for debug use only, you see day 3 temp."
     }
     

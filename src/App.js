@@ -233,6 +233,10 @@ class App extends Component {
       progress = 0;
     }
     research += progress;
+    //don't over research
+    if (research > 1){
+      research = 1;
+    }
     //final setState
     this.setState({
       day: day,
@@ -248,7 +252,7 @@ class App extends Component {
     
     //check if 180 days had pass or 
     //commented for debugging purpose
-    if(this.state.day === 180 || this.state.researchCompleted === 1){
+    if(this.state.day === 180 || this.state.researchCompleted >= 1){
       this.setState({"gameEnded":true});
       clearInterval(this.timer)
     }
@@ -298,6 +302,8 @@ class App extends Component {
     }else{
       //cure upgrade increase cure progress rate
       this.state.researchRate += upgrade.rateIncrease;
+      this.eventActivate("research") //change head line
+      console.log("aaaaaaaaaaaaaa")
     }
     //key event
     if (upgrade.key){
@@ -555,7 +561,7 @@ class App extends Component {
         <Popup 
           gameEnd={this.state.gameEnded}
           infectedData={this.state.gameInfectedData}
-          gameDeathData={this.state.gameDeathData}
+          deathData={this.state.gameDeathData}
           />
         
         

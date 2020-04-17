@@ -69,10 +69,10 @@ export default class MenuPanel extends Component {
     this.props.onUpgrade(upgrade);
   }
 
-  onUpgradeHover(bool){
-    this.setState({"showChange":bool})
-    console.log(this)
-  }
+  // onUpgradeHover(bool){
+  //   this.setState({"showChange":bool})
+  //   console.log(this)
+  // }
   
   render() {
     let selecting = this.props.selecting;
@@ -153,7 +153,7 @@ export default class MenuPanel extends Component {
          image={v.imgSrc}
          key={i} pplPoint={this.props.pplPoint} 
          
-         mouseEnter={this.onUpgradeHover.bind(this)}
+         /*mouseEnter={this.onUpgradeHover.bind(this)}*/
          
          pplPoint={this.props.pplPoint} 
          resPts={v.resPts} 
@@ -190,7 +190,7 @@ export default class MenuPanel extends Component {
             </div>{/**/}
 
             <div className="eventDiv">
-              <h3> In the news: Headlines</h3>
+              <h3> In the Headlines</h3>
               {/*<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>*/}
               {/*<marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>*/}
               <Popup />

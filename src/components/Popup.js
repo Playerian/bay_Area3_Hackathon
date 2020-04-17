@@ -33,6 +33,7 @@ export default class Popup extends Component {
     }
 
     if (this.props.gameEnd) {
+      
       return (
         <div className="endScreen">
           <h1 className="endScreenH1">you finished the game</h1>

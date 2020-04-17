@@ -18,7 +18,7 @@ export default class ImageOverlayRotate extends ImageOverlay{
     var overlay = L.imageOverlay.rotated(this.props.image, topleft, topright, bottomleft, {
 	    //attribution: ""
     }).addTo(Map);
-    
+    return overlay;
   }
 }
 

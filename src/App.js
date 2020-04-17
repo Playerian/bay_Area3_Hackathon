@@ -49,11 +49,10 @@ class App extends Component {
       researchCompleted: 0,
       researchRate: 0,
       usSeverity: 0,
-      usAction: {
-        
-      },
+      purchasedUpgrades:[],
       //game system state
       gameStarted: false,
+      gameEnded:false,
       //0 pause 1 regular
       gameSpeed: 0,
       //just the speed of the timer
@@ -62,6 +61,8 @@ class App extends Component {
       gameTimerAccumulation: 0,
       //accumulation >= oneday then run oneDayPassed()
       gameOneDay: 1000,
+      
+      
     }
     //initialize timer
     this.timer = setInterval(() => {
@@ -348,7 +349,7 @@ class App extends Component {
           provinceData = {this.state.stateData}
           setSpeed = {(s) => this.setSpeed(s)}
           pplPoint = {this.state.pplPoint}
-          spendPoint = {(num) => this.state.spendpplpoint(num)}
+          spendPoint = {(num) => this.spendpplpoint(num)}
         />{/*buttons and counters goes in here?*/}
         
         {/*<div className="pplPointContiner"></div>
@@ -455,3 +456,39 @@ function angleTwoPoints(latlon1, latlon2){
 function slope(latlon1, latlon2){
   return [latlon2[0] - latlon1[0], latlon2[1] - latlon1[1]];
 }
+
+const upgrades = [
+      {
+        purchased:false,
+        cost:0,
+        text:"some text here",
+        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+        resilience:1,
+        spread:0,
+        lethal:0,
+        
+      },
+      
+      {
+        purchased:false,
+        cost:5,
+        text:"some text here",
+        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+        resilience:999,
+        spread:999,
+        lethal:999,
+        
+      },
+      
+      {
+        purchased:false,
+        cost:999,
+        text:"test test text",
+        imgSrc:"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+        resilience:999,
+        spread:999,
+        lethal:999,
+        
+      },
+      
+    ]

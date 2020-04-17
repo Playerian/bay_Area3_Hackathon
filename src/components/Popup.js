@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-export default class UpgradeTag extends Component{
+export default class Popup extends Component{
   constructor(props){
     super(props)
     
@@ -13,14 +13,6 @@ export default class UpgradeTag extends Component{
     
   }
   
- checkppp(){
-   if(this.props.pplPoint >= this.props.ppp && this.state.purchased){
-     this.setState({
-       "purchased":true,
-     });
-     this.props.spendPoint(this.props.ppp);
-   }
- }
   render(){
   return(
     <div className="upgradeTag">

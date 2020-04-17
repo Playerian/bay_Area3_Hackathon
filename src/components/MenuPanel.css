@@ -1,0 +1,188 @@
+.menuPanel {
+  position: absolute;
+  z-index: 3;
+  top: -0.5vh;
+  height: 25vh;
+  width: 100%;
+  background: darkgrey;
+  border: 5px grey solid;
+  border-radius: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.divHolder {
+  position: relative;
+  height: 93%;
+  width: 100%;
+  background: #454647;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.menuHide {
+  position: relative;
+  height: 7%;
+  width: 100%;
+  background: darkgrey;
+  border: 5px grey solid;
+  z-index: 5;
+  text-align: center;
+  padding: 5px;
+  margin: -5px;
+}
+
+.menuHide:hover {
+  color: white;
+  background-color: #3388ff;
+}
+
+.menuShow {
+  position: absolute;
+  z-index: 3;
+  top: -0.5vh;
+  height: 3vh;
+  width: 100%;
+  background: darkgrey;
+  border: 5px grey solid;
+  border-radius: 2%;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.menuShow:hover {
+  color: white;
+  background-color: #3388ff;
+  opacity: 1;
+}
+
+.panelButton:hover {
+  background-color: #8abc8e;
+  font-weight: bold;
+  color: crimson;
+}
+
+.panelButton {
+  width: 100%;
+  height: 33%;
+  background-color: darkgrey;
+  color: black;
+  font-size: large;
+  text-align: center;
+}
+
+.subHolderDiv {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 14px;
+  height: 100%;
+  /*padding-top: -5px;*/
+}
+
+.buttonDiv {
+  width: 20%;
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+}
+
+.dayDiv {
+  width: 15%;
+  box-sizing: border-box;
+  border: grey solid 5px;
+  text-align: center;
+  font-size: 3vw;
+  color: white;
+  background: darkgrey;
+  height: 100%;
+}
+
+.dayDivText {
+  height: 80%;
+}
+
+.dayDivButtonWrapper {
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.eventDiv , .statsDiv{
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  border: grey solid 5px;
+  border-radius: 2%;
+  display: flex;
+  overflow: auto;
+}
+
+.eventDiv h3 {
+  color: salmon;
+  padding-left: 2px;
+}
+
+.numcontainer, .statscontainer {
+  height: 20%;
+  width: 100%;
+  color: white;
+}
+
+.marqueeTag {
+  font-size: 25px;
+  color: white;
+}
+
+.marqueeTag: hover {
+  font-size: large;
+  color: crimson;
+}
+
+.view {
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.test {
+  background-color: red;
+  height: auto;
+}
+
+.upcontainer {
+/*   height: 20%; */
+/*   width: 100%; */
+  color: white;
+}
+
+.upgradeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 70%;
+  margin-top: -10%;
+}
+
+.upgradeTag {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: white;
+}
+
+.upgradeTag:hover {
+  background-image: linear-gradient(to right, aqua, grey); /*aqua aqua aqua aqua aqua aqua aqua aqua aqua aqua aqua aqua*/
+}
+
+.statsDiv{
+  width:100%;
+  display:block;
+}

@@ -23,7 +23,10 @@
 
 }
 
-
+.endScreen h1 {
+  text-align: center;
+  font-size: 64px;
+}
 
 .researchProgress{
   position:absolute;

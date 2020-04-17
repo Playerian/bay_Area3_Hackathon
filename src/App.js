@@ -75,7 +75,6 @@ class App extends Component {
       //datas for graphing
       gameInfectedData: [],
       gameDeathData: [],
-      gameResearchData: [],
     }
     //upgrade JSON quick access
     this.state.govUpgrade = this.state.upgrades.govUpgrade;
@@ -148,8 +147,6 @@ class App extends Component {
               }
             }
           }
-          //check for event
-          this.dailyEventCheck()
         }
         //avoid random spontaenous generation
         if (state.infected === 0){
@@ -246,7 +243,7 @@ class App extends Component {
       researchCompleted: research
     }, () => {
       //final set US Data
-      this.setUSData();
+      this.setUSData(day);
     })
     
     //check if 180 days had pass or 
@@ -255,6 +252,8 @@ class App extends Component {
       this.setState({"gameEnded":true});
       clearInterval(this.timer)
     }
+     //check for event
+        this.dailyEventCheck()
   }
   //
   setSpeed(speed){
@@ -321,7 +320,7 @@ class App extends Component {
     console.log(upgrade);
   }
   //US Data formatting
-  setUSData(){
+  setUSData(day){
     let stateData = this.state.stateData;
     let totalPopulation = 0;
     let totalInfected = 0;
@@ -348,10 +347,17 @@ class App extends Component {
       this.state.pplPoint += award;
       this.state.deathPointAccu = deathPointAward;
     }
+    let gameInfectedData = this.state.gameInfectedData;
+    let gameDeathData = this.state.gameDeathData;
+    gameInfectedData[day] = totalInfected;
+    gameDeathData[day] = totalDeath;
     this.setState({
       stateData: stateData,
       pplPoint: this.state.pplPoint,
-      deathPointAccu: this.state.deathPointAccu
+      deathPointAccu: this.state.deathPointAccu,
+      //data gathering
+      gameInfectedData: gameInfectedData,
+      gameDeathData: gameDeathData,
     });
   }
   //airline Data formatting
@@ -452,9 +458,9 @@ class App extends Component {
     //console.log(typeof json[eventIndex])
     //console.log(typeof eventIndex)
     //console.log(eventIndex)
-    if (typeof eventIndex !== "undefine"){
+    if (typeof eventIndex !== "undefined"){
       
-      if (typeof json.event[eventIndex].name !== "undefine"){
+      if (typeof json.event[eventIndex].name !== "undefined"){
         message = json.event[eventIndex].headline[Math.floor(Math.random()*json.event[eventIndex].headline.length)]//randomly pick headline from array
         switch(json.event[eventIndex]){
           case "patientZero0":
@@ -482,7 +488,7 @@ class App extends Component {
 
           case "airportClosure":
           break;
-
+            
           default:   
         }
         //things pass into pop: mrssage, new props related to leath etc...  
@@ -497,13 +503,14 @@ class App extends Component {
     for(let i = 0;i<json.event.length;i++){
       //console.log(json.event[i])
       if(this.state.day===json.event[i].tiggerDate){ //looks for the event by day 
+        console.log(this.state.day + "<---day")
         event = json.event[i].name //one day have at most one event that tigger automatically, so break should be fine
+        console.log(event + "<--------event")
        break;
       } //else no event
-      if (typeof event !== "undefine"){ //if there is an event set for that day
-        console.log(event)
-        //this.eventActivate(event) //tigger it
-      }
+    }
+    if (typeof event !== "undefined"){ //if there is an event set for that day
+      this.eventActivate(event) //tigger it
     }
   }
   

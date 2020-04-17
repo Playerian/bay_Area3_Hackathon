@@ -62,21 +62,21 @@ export default class Map extends Component {
     console.log(
       "Center of the map at latitude: " + lat + " and longitude: " + lng
     );
-    //longtitude can't be less than -120
-    if (lng < -120) {
-      lng = -120;
+    //longtitude can't be less than -170
+    if (lng < -170) {
+      lng = -170;
     }
     //longtitude can't be greater than -65
     if (lng > -65) {
       lng = -65;
     }
-    //latitude can't be greater than 50
-    if (lat > 50) {
-      lat = 50;
+    //latitude can't be greater than 70
+    if (lat > 70) {
+      lat = 70;
     }
-    //latitude can't be less than 25
-    if (lat < 25) {
-      lat = 25;
+    //latitude can't be less than 20
+    if (lat < 20) {
+      lat = 20;
     }
     this.setState({ coord: [lat, lng] });
   }

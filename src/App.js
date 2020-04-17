@@ -162,7 +162,7 @@ class App extends Component {
           newInfected = state.population * 0.1;
         }
         //if new infected amount exceeds population
-        if (newInfected + state.infected > state.population){
+        if (newInfected + state.infected + state.death > state.population){
           newInfected = state.population - state.infected;
         }
         //add newInfected to state infected population
@@ -224,7 +224,11 @@ class App extends Component {
     let rate = this.state.researchRate;
     let research = this.state.researchCompleted;
     //adding research, base on population
-    research += rate * (1 - stateData.US.death / stateData.US.population);
+    let progress = rate * (1 - stateData.US.death / stateData.US.population);
+    if (progress < 0){
+      progress = 0;
+    }
+    research += progress;
     //final setState
     this.setState({
       day: day,

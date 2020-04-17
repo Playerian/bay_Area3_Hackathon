@@ -114,9 +114,9 @@ export default class MenuPanel extends Component {
     let upgradeDivArrayCure=[]
     let upgradeList = this.props.upgradeInfo
     
-    this.upgradeList.forEach((v,i)=>{
-    //  upgradeDivArrayCure.push(<UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
-    //  console.log(v)
+    upgradeList.forEach((v,i)=>{
+     upgradeDivArrayCure.push(<UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>)
+     console.log(v)
     })
 
 

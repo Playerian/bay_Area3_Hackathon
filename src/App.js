@@ -164,6 +164,7 @@ class App extends Component {
         }
         //increase lethality in state
         if (state.infected / state.population > 0.2){
+          state.lethality = state.lethality || 0
           state.lethality += 0.0025;
         }
         //people die
@@ -405,6 +406,7 @@ class State{
     this.death = 0;
     this.recovered = 0;
     this.pplPointMilestone = 1;
+    this.lethality = 0;
     this.hasAirport = false;
     this.airport = {};
     //airline info
@@ -439,7 +441,6 @@ class Plane{
     this.currentlon = startlatlon[1];
     this.currentIndex = 0;
     this.bound = [[this.currentlat,this.currentlon], [this.currentlat+1,this.currentlon+1]];
-    this.lethality = 0;
     //static
     this.startlatlon = startlatlon;
     this.endlatlon = endlatlon;

@@ -423,17 +423,18 @@ class App extends Component {
   //event, check for condition to activate a centain event
   eventActivate(eventName){
     let json = eventJSON
-    let event
+    let eventIndex
     for(let i = 0;i<json.event.length;i++){
       //console.log(json.event[i])
       if(eventName===json.event[i].name){ //looks for the event by name 
-        event = json.event[i].name
+        eventIndex = i
        break;
       } 
     }
-    console.log(typeof event)
-    if (typeof event !== "undefine"){
-      switch(event){
+    console.log(typeof json[eventIndex])
+    if (typeof json[eventIndex].name !== "undefine"){
+      let message = json[eventIndex].headline[Math.floor(Math.random())]//change then pass in
+      switch(json[eventIndex]){
         case "patientZero0":
         break;
           
@@ -442,7 +443,7 @@ class App extends Component {
         
         case "lockDown":
           console.log("lock down da yo~")
-          //do set state, then past that to pop
+          //do set state
         break;
           
         case "explosion":

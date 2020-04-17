@@ -128,11 +128,6 @@
   padding-left: 2px;
 }
 
-.eventDiv h2 {
-  color: crimson;
-  
-}
-
 .numcontainer, .statscontainer {
   height: 20%;
   width: 100%;
@@ -142,6 +137,11 @@
 .marqueeTag {
   font-size: 25px;
   color: white;
+}
+
+.marqueeTag: hover {
+  font-size: large;
+  color: crimson;
 }
 
 .view {

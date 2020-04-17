@@ -50,6 +50,7 @@ class App extends Component {
       selecting: "US",
       day: 0,
       pplPoint: 0,
+      deathPointAccu: 0,
       fatality: 0,
       researchCompleted: 0,
       researchRate: 0.0002,

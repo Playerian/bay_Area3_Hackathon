@@ -110,12 +110,13 @@ export default class MenuPanel extends Component {
 //           return <UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
 //         });
     
-    let upgradeDivArray=[];
+    let upgradeDivArrayGov=[];
+    let upgradeDivArrayCure=[]
     let upgradeList = this.props.upgradeInfo
-    for(const property in upgradeList){
-      upgradeList[property]
-      console.log(upgradeList[property])
-    }
+    
+    this.upgradelist.govUpgrade.forEach((v,i)=>{
+      <UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
+    })
 
 
     if (this.state.showing === true && this.state.tab === "overview") {

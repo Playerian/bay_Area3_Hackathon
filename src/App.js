@@ -50,9 +50,9 @@ class App extends Component {
       selecting: "US",
       day: 0,
       pplPoint: 0,
+      fatality: 0,
       researchCompleted: 0,
       researchRate: 0.0002,
-      usSeverity: 0,
       //game system state
       gameStarted: false,
       gameEnded:false,
@@ -174,6 +174,10 @@ class App extends Component {
             }
           }
         }
+        //increasing global fatality
+        if (day > 90){
+          this.state.fatality += 0.005;
+        }
       }
     }
     //calling setUSData
@@ -181,7 +185,8 @@ class App extends Component {
     this.setState({
       day: day,
       stateData: stateData,
-      airlines: this.state.airlines
+      airlines: this.state.airlines,
+      fatality: this.state.fatality
     }, () => {
       //final set US Data
       this.setUSData();
@@ -423,6 +428,7 @@ class Plane{
     this.currentlon = startlatlon[1];
     this.currentIndex = 0;
     this.bound = [[this.currentlat,this.currentlon], [this.currentlat+1,this.currentlon+1]];
+    this.lethality = 0;
     //static
     this.startlatlon = startlatlon;
     this.endlatlon = endlatlon;

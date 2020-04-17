@@ -132,7 +132,8 @@
         "leathChange":0,
         "pppChange":10000
       },
-      "tiggerDate":200      
+      "tiggerDate":3,
+      "comment":"This is for debug use only, you see day 3 temp."
     }
     
   ]

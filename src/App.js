@@ -144,6 +144,8 @@ class App extends Component {
               }
             }
           }
+          //check for event
+           this.dailyEventCheck()
         }
         //avoid random spontaenous generation
         if (state.infected === 0){
@@ -476,12 +478,10 @@ class App extends Component {
           
         default:   
       }
-      //things pass into pop: mrssage, new props related to leath etc...
-      
-    }else{
-      
-      return "event not found"
+      //things pass into pop: mrssage, new props related to leath etc...  
     }
+    this.setState({"headlineMessage":message})
+    
   }
   
   dailyEventCheck(){ //plug into onedaypast()? 
@@ -500,7 +500,6 @@ class App extends Component {
   }
   
   render() {
-    this.eventActivate("lockDown")
     return (
       <div className="App">
         <div className="mapContainer">

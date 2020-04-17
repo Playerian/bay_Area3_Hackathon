@@ -198,3 +198,8 @@
   width:100%;
   display:block;
 }
+
+.eventDiv{
+  flex-wrap:wrap;
+  
+}

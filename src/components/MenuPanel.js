@@ -206,21 +206,20 @@ export default class MenuPanel extends Component {
               <button className="panelButton" onClick={() => this.upgradeTab()}>
                 Upgrades (ppl Points:{this.props.pplPoint})
               </button>
-              <button className="panelButton"></button>
-            </div>
-          </div>
-          <UpContainer
+              <div className="panelButton">
+                 <UpContainer
                   resPts={Math.round(this.props.researchCompleted * 10000) / 100 + "%"}
                    //resPts={this.state.resPts} 
               spreadPts={this.state.spreadPts} 
               lethalPts={this.state.lethalPts}
                   
                   />
+              </div>
+            </div>
+          </div>
           <div className="menuHide" onClick={() => this.menuUp()}>
             click to hide
           </div>
-          
-          
         </div>
       
       );

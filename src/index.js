@@ -9,7 +9,7 @@ import swal from "sweetalert";
 function welcome() {
   swal({
     title: "Welcome!",
-    text: "Help save the country from the virus! Click on any state to start playing.", 
+    text: "Help save the country from the virus! Click on any state to start playing. You have 180 days to FLATTEN THE CURVE!!", 
     button: "Let's Go!"
   });
 }

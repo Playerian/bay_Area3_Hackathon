@@ -23,9 +23,10 @@
 
 }
 
-.endScreen h1 {
+.endScreenh1 {
   text-align: center;
   font-size: 64px;
+  height: 20vh;
 }
 
 .researchProgress{

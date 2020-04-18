@@ -31,16 +31,18 @@ export default class Popup extends Component {
       return (
         <div className="endScreen">
           <h1 className="endScreenh1">you finished the game</h1>
-          <LineChart width={730} height={250} data={data}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="day" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="infected" stroke="#8884d8" />
-            <Line type="monotone" dataKey="death" stroke="#82ca9d" />
-          </LineChart>
+          <div className="chartContainer">
+            <LineChart width={window.innerWidth * 0.9} height={window.innerHeight * 0.6} data={data}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="day" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="infected" stroke="#8884d8" />
+              <Line type="monotone" dataKey="death" stroke="#82ca9d" />
+            </LineChart>
+          </div>
         </div>
       );
     } else {

@@ -133,7 +133,7 @@
       "type": "cureUpgrade",
       "rateIncrease": 0,
       "key": "F1",
-      "event":null
+      "event":"mask"
     },
     {
       "purchased": false,
@@ -143,7 +143,7 @@
       "type": "cureUpgrade",
       "rateIncrease": 0,
       "key": "F2",
-      "event":null
+      "event":"mask"
     }
   ]
 }

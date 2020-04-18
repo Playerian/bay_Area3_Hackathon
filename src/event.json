@@ -22,7 +22,6 @@
     {
       "name":"lockDown",
       "headline":[
-        "Unknown SARS-like Pneumonia Spreads Across Seattle", 
         "Washington State Declares State Of Emergency",
         "California Implements statewide 'Shelter In Place' Policy",
         "Governors Across the Country Calling For Citizens to Stay Home"
@@ -93,7 +92,7 @@
     {
       "name":"pplPointFuLi",
       "image":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-      "headline":["debug use only"],
+      "headline":["debug use only;",        "Unknown SARS-like Pneumonia Spreads Across Seattle"],
       "tiggerDate":300,
       "comment":"This is for debug use only, you see day 3 temp."
     }

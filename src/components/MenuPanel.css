@@ -143,7 +143,7 @@
   color: white;
 }
 
-.marqueeTag: hover {
+.marqueeTag:hover{
   font-size: large;
   color: crimson;
 }

@@ -14,3 +14,5 @@ So, we made this game to _actually_ do things differently.
 _Our challenge to you is to **finish the game before day 180**! Can you do it?_
 
 _**check the chart at the end to see how you did!**_
+
+### <a href="https://asec-2-5.glitch.me/" target="_blank">Link</a>

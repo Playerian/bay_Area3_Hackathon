@@ -2,63 +2,70 @@
   "govUpgrade": 
   [
     {
-      "comment": "Regular transmission rate 1.2, minimum is 1, maximum decrease to: 1.1",
+      "comment": "Regular transmission rate 1.2, minimum is 0, maximum decrease to: ?",
       "purchased": false,
       "cost": 5,
-      "text": "CDC advise citizen to wash their hands - at least 20 secs!",
-      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "text": "CDC advise citizen to wash their hands - at least 20 seconds!",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2FhandWash.png?v=1587169820905",
       "type": "govUpgrade",
-      "rateDrop": 0.005
-    },
-    {
-      "purchased":false,
-      "cost": 25,
-      "text": "Voluntary quarantine on patients",
-      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-      "type": "govUpgrade",
-      "rateDrop": 0.015
-    },
-    {
-      "purchased" :false,
-      "cost": 30,
-      "text": "Government declares social distancing - Spend your time home alone",
-      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
-      "type": "govUpgrade",
-      "rateDrop": 0.025
+      "rateDrop": 0.1,
+      "event":"wash"
     },
     {
       "purchased":false,
       "cost": 50,
-      "text": "Government declares shelter in place - StAy hOmE",
-      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "text": "Voluntary quarantine on patients",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2FvolQuarantine.png?v=1587169116170",
       "type": "govUpgrade",
-      "rateDrop": 0.025
+      "rateDrop": 0.15,
+      "event":null
+    },
+    {
+      "purchased" :false,
+      "cost": 50,
+      "text": "Government declares social distancing - Spend your time home alone",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2FsocialDistance.png?v=1587169992089",
+      "type": "govUpgrade",
+      "rateDrop": 0.15,
+      "event":"lockDown"
+    },
+    {
+      "purchased":false,
+      "cost": 75,
+      "text": "Government declares shelter in place - StAy hOmE",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2FstayHomeColor.png?v=1587169760917",
+      "type": "govUpgrade",
+      "rateDrop": 0.2,
+      "event":"lockDown"
     },
     {
       "purchased": false,
-      "cost": 100,
+      "cost": 150,
       "text": "Airport shuts down except for transportation of essentials",
-      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2FnoFlight.png?v=1587170472924",
       "type": "govUpgrade",
       "rateDrop": 0,
-      "key": "airport"
+      "key": "airport",
+      "event":null
     },
     {
       "purchased": false,
       "cost": 150,
       "text": "Force quarantine for patients",
-      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fhospital.png?v=1587170535488",
       "type": "govUpgrade",
-      "rateDrop": 0.03
+      "rateDrop": 0.5,
+      "event":null
     },
     {
       "purchased": false,
       "cost": 200,
       "text": "Creating land blockade on the border of the state",
-      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "imgSrc": "https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fblockade.png?v=1587169685725",
       "type": "govUpgrade",
       "rateDrop": 0,
-      "key": "land"
+      "key": "land",
+      "event":"lockDown"
     }
   ],
   
@@ -68,51 +75,75 @@
       "purchased": false,
       "cost": 5,
       "text":"Speed Up Cure Research 1",
-      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fstart.png?v=1587171122134",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.002,
+      "event":"research1"
     }, 
     {
       "purchased": false,
-      "cost": 20,
+      "cost": 40,
       "text":"Speed Up Cure Research 2",
-      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fchemistry.png?v=1587174657116",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.004,
+      "event":"research2"
     },
     {
       "purchased": false,
       "cost": 80,
       "text":"Speed Up Cure Research 3",
-      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fdish.png?v=1587174780303",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.006,
+      "event":"research2"
     },
     {
       "purchased": false,
       "cost": 160,
       "text":"Speed Up Cure Research 4",
-      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fvirus.png?v=1587175259215",
       "type": "cureUpgrade",
-      "rateIncrease": 0.0025
+      "rateIncrease": 0.008,
+      "event":"research2"
     },
     {
       "purchased": false,
-      "cost": 25,
-      "text":"Federal issues health equipment aid to different states helps reduce fatality rate",
-      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "cost": 250,
+      "text":"Speed Up Cure Research 5",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fdna.png?v=1587175347386",
       "type": "cureUpgrade",
-      "rateIncrease": 0,
-      "key": "F1"
+      "rateIncrease": 0.01,
+      "event":"research2"
+    },
+    {
+      "purchased": false,
+      "cost": 350,
+      "text":"Speed Up Cure Research 6",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fvaccine.png?v=1587175772788",
+      "type": "cureUpgrade",
+      "rateIncrease": 0.02,
+      "event":"research2"
     },
     {
       "purchased": false,
       "cost": 75,
-      "text":"Federal issues health equipment upgrades to different states helps reduce fatality rate",
-      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281",
+      "text":"Federal issues health equipment aid to different states helps reduce fatality rate",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2FmedicalMask.png?v=1587171416102",
       "type": "cureUpgrade",
       "rateIncrease": 0,
-      "key": "F2"
+      "key": "F1",
+      "event":"mask"
+    },
+    {
+      "purchased": false,
+      "cost": 100,
+      "text":"Federal issues health equipment upgrades to different states helps reduce fatality rate",
+      "imgSrc":"https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fheart-monitor.png?v=1587176259394",
+      "type": "cureUpgrade",
+      "rateIncrease": 0,
+      "key": "F2",
+      "event":"mask"
     }
   ]
 }

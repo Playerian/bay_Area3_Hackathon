@@ -70,7 +70,7 @@
   height: 33%;
   background-color: darkgrey;
   color: black;
-  font-size: large;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -82,7 +82,6 @@
   padding-left: 10px;
   font-size: 14px;
   height: 100%;
-  /*padding-top: -5px;*/
 }
 
 .buttonDiv {
@@ -113,7 +112,8 @@
   justify-content: space-around;
 }
 
-.eventDiv , .statsDiv{
+.eventDiv,
+.statsDiv {
   width: 20%;
   height: 100%;
   box-sizing: border-box;
@@ -121,9 +121,13 @@
   border-radius: 2%;
   display: flex;
   overflow: auto;
+  flex-wrap: wrap;
 }
 
-.eventDiv h3 {
+.eventDiv div {
+  font-size: 2.5vw;
+  height: 50%;
+  width: 100%;
   color: salmon;
   padding-left: 2px;
 }
@@ -139,7 +143,7 @@
   color: white;
 }
 
-.marqueeTag: hover {
+.marqueetag:hover {
   font-size: large;
   color: crimson;
 }
@@ -155,8 +159,6 @@
 }
 
 .upcontainer {
-/*   height: 20%; */
-/*   width: 100%; */
   color: white;
 }
 
@@ -176,13 +178,54 @@
   flex-wrap: wrap;
   justify-content: space-between;
   color: white;
+  font-size: 1vw;
 }
 
 .upgradeTag:hover {
   background-image: linear-gradient(to right, aqua, grey); /*aqua aqua aqua aqua aqua aqua aqua aqua aqua aqua aqua aqua*/
 }
 
-.statsDiv{
-  width:100%;
-  display:block;
+.upgradeTagImg,
+.upgradeButton {
+  width: 20%;
+}
+
+.upgradeTagP {
+  width: 60%;
+  font-size: 1vw;
+}
+
+.upgradeButton,
+.upgradeButtonPurchased {
+  font-size: 1vw;
+}
+
+.upgradeButtonPurchased {
+  width: 20%;
+  background: gray;
+  /*   font-size: medium; */
+}
+
+.upgradeButtonPurchased:hover {
+  cursor: not-allowed;
+}
+
+.statsDiv {
+  width: 100%;
+  display: flex;
+}
+
+.statscontainer {
+  margin: 0px;
+  font-size: 1.5vw;
+}
+
+.pauseButton,
+.playButton,
+.boostButton {
+  width: 30%;
+}
+
+.numcontainer{
+  font-size:1.5vw;
 }

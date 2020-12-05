@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "core-js": "^3.6.5",
     "create-react-app": "^3.4.1",
     "leaflet": "^1.6.0",
+    "leaflet-distortableimage": "^0.16.6",
+    "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.1",
     "react-leaflet": "^2.6.3",
+    "react-leaflet-distortable-imageoverlay": "^1.0.0",
+    "rechart": "0.0.1",
+    "recharts": "^1.8.5",
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {
@@ -20,7 +26,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "http://playerian.github.io/bay_Area3_Hackathon"
 }

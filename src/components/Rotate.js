@@ -1,9 +1,3 @@
-import L from "leaflet";
- 
-
-//IvanSanchez
-//Leaflet.ImageOverlay.Rotated
-
 
 /*
  * 🍂class ImageOverlay.Rotated
@@ -27,6 +21,8 @@ import L from "leaflet";
  * ```
  *
  */
+import L from "leaflet";
+
 L.ImageOverlay.Rotated = L.ImageOverlay.extend({
 
 	initialize: function (image, topleft, topright, bottomleft, options) {
@@ -193,6 +189,4 @@ L.imageOverlay.rotated = function(imgSrc, topleft, topright, bottomleft, options
 	return new L.ImageOverlay.Rotated(imgSrc, topleft, topright, bottomleft, options);
 };
 
-
-
-          console.log("overlayRotated")
+export {L};

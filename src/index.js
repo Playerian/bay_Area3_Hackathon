@@ -9,9 +9,10 @@ import swal from "sweetalert";
 function welcome() {
   swal({
     title: "Welcome!",
-    text: "Help save the country from the virus! Click on any state to start playing.", 
+    text: "Click on any state to start playing. You have 180 days to FLATTEN THE CURVE!! Help save the country from the virus!", 
     button: "Let's Go!"
   });
+  console.log("TIGGERED");
 }
 
 ReactDOM.render(<App />, document.getElementById("root"), welcome());

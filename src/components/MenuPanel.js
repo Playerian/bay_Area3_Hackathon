@@ -9,42 +9,53 @@ import "./MenuPanel.css";
 export default class MenuPanel extends Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       showing: true,
       day: "NaN",
       tab: "overview",
       pplPoint: this.props.pplPoint,
-      resPts: 0,
-      spreadPts:0,
-      lethalPts: 0,
       winShow: false,
-      
       showChange: false,
-      cureChange:0,
+      //cureChange:0,
       spreadChange:0,
       leathChange:0,
+      
+      // speed up!
+      speed: 2,
     };
-    
-    
   }
 
-  //click handlers
+  // click handlers
   onPauseClick(){
     this.props.setSpeed(0);
+    this.setState({speed: 0});
   }
   onPlayClick(){
     this.props.setSpeed(1);
+    this.setState({speed: 1});
+  }
+  onBoostClick(){
+    let speed = this.state.speed;
+    if (speed < 2){
+      speed = 2;
+    }else{
+      speed ++;
+    }
+    this.props.setSpeed(speed);
+    this.setState({speed: speed});
+  }
+   onUpgradeClick(upgrade){
+    this.props.onUpgrade(upgrade);
   }
   
-  //changing menu
+  // changing tab menu
   menuUp() {
     if (this.state.showing === true) {
       this.setState({ showing: false });
     } else {
       this.setState({ showing: true });
     }
-    //console.log(this.state.showing)
   }
   overviewTab() {
     this.setState({
@@ -56,24 +67,8 @@ export default class MenuPanel extends Component {
     this.setState({
       tab: "upgrade",
     });
-    
   }
-  onUpgradeClick(upgrade){
-    //callback setState points,
-    //callback setState ppl
-    // this.setState({
-    //   resPts: 0,
-    //   spreadPts:0,
-    //   lethalPts: 0
-    // })
-    this.props.onUpgrade(upgrade);
-  }
-
-  // onUpgradeHover(bool){
-  //   this.setState({"showChange":bool})
-  //   console.log(this)
-  // }
-  
+ 
   render() {
     let selecting = this.props.selecting;
     let provinceData = this.props.provinceData;
@@ -82,49 +77,13 @@ export default class MenuPanel extends Component {
     let death = provinceData[selecting].death || 0;
     let recovered = provinceData[selecting].recovered || 0;
     let upgradeInfo = this.props.upgradeInfo;
-    
-    
-    const events = [
-      {
-        text: "New medication is in progress",
-        type: "resilience",
-        upgrade: 0,
-        downgrade: 200
-      },
-      {
-        text: "Government orders a shelter in place",
-        type: "spread",
-        upgrade: 0,
-        downgrade: 300
-      },
-      {
-        text: "New mutation: those infected now have severe cough",
-        type: "lethality",
-        upgrade: 100,
-        downgrade: 0
-      },
-       {
-        text: "Government requires all people to wear masks",
-        type: "spread",
-        upgrade: 0,
-        downgrade: 200
-      },
-    ]
-  
-    let randomEvent = Math.floor(Math.random() * (events.length + 1));
-  //  console.log(events[randomEvent].text);
-    
-//     let upgradeDivArray = this.props.upgradeInfo.map((v,i)=>{
-      
-//           return <UpgradeTag spendPoint={(point) => this.spendPoint(point)} text={v.text} ppp={v.cost} image={v.imgSrc} key={i} pplPoint={this.props.pplPoint} resPts={v.resPts} spreadPts={v.spread} lethalPts={v.lethal}/>
-//         });
-    
     let upgradeDivArrayGov=[];
     let upgradeDivArrayCure=[]
     let upgradeList = this.props.upgradeInfo
     let govUpgrade = upgradeList.govUpgrade;
     let cureUpgrade = upgradeList.cureUpgrade;
     
+    // prints ugrades on page
     cureUpgrade.forEach((v,i)=>{
      upgradeDivArrayCure.push(
        <UpgradeTag spendPoint={(upgrade) => this.onUpgradeClick(upgrade)} 
@@ -133,14 +92,13 @@ export default class MenuPanel extends Component {
          ppp={v.cost} 
          image={v.imgSrc} 
          key={i} 
-         
-         
          pplPoint={this.props.pplPoint} 
          resPts={v.resPts} 
          spreadPts={v.spread} 
          lethalPts={v.lethal} 
-         upgrade={v}/>)
-     
+         upgrade={v}
+        />
+     )
     })
     
     govUpgrade.forEach((v,i)=>{
@@ -152,106 +110,108 @@ export default class MenuPanel extends Component {
          ppp={v.cost} 
          image={v.imgSrc}
          key={i} pplPoint={this.props.pplPoint} 
-         
-         /*mouseEnter={this.onUpgradeHover.bind(this)}*/
-         
          pplPoint={this.props.pplPoint} 
          resPts={v.resPts} 
          spreadPts={v.spread} 
          lethalPts={v.lethal} 
          upgrade={v}
-         />)
-     
+        />
+     )
     })
-    
 
     if (this.state.showing === true && this.state.tab === "overview") {
       
-          
-      //overview tab
-     // {this.state.winShow ? : null }
+      // overview tab menu
       return (
         <div className="menuPanel">
           <div className="divHolder">
+            
+            {/* state and us div */}
             <div className="subHolderDiv">
               <h3 className="view numcontainer"> Currently Viewing: {this.props.selecting}</h3>
               <NumContainer text="Infected:" number={infected}/>
               <NumContainer text="Death:" number={death}/>
-              <NumContainer text="Recovered:" number={recovered}/>
               <NumContainer text="Population:" number={population} />
             </div>
-
+            
+            {/* date and speed div */}
             <div className="dayDiv">
               <div className="dayDivText">Today is day {this.props.day}</div>
               <div className="dayDivButtonWrapper">
                 <button className="pauseButton" onClick={(e) => this.onPauseClick(e)}>||</button>
                 <button className="playButton" onClick={(e) => this.onPlayClick(e)}>&#9658;</button>
+                <button className="boostButton" onClick={(e) => this.onBoostClick(e)}>&#9658;&#9658;&#9658;</button>
               </div>
-            </div>{/**/}
-
-            <div className="eventDiv">
-              <h3> In the Headlines</h3>
-              {/*<img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img>*/}
-              {/*<marquee className="marqueeTag"> <Popup /> <img src="https://cdn.glitch.com/992e732d-da56-4621-b6e4-be7c8aa0c026%2Fpic.jpg?v=1586928635281"></img></marquee>*/}
-              <Popup />
             </div>
-  {/*-------------------------------------------------------------------------------------------------------------*/}
+            
+            {/* event headline div */}
+            <div className="eventDiv">
+              <div> In the Headlines</div>
+              <Popup message = {this.props.message}/>
+            </div>
+            
+            {/* tab menu div */}
             <div className="buttonDiv">
-              <button
-                className="panelButton"
-                onClick={() => this.overviewTab()}
-              >
+              <button className="panelButton" onClick={() => this.overviewTab()}>
                 Overview
               </button>
               <button className="panelButton" onClick={() => this.upgradeTab()}>
                 Upgrades (ppl Points:{this.props.pplPoint})
               </button>
-              <button className="panelButton"></button>
+              
+              {/* cure and lethality div */}
+              <div className="panelButton">
+                 <UpContainer
+                  resPts={Math.round(this.props.researchCompleted * 10000) / 100 + "%"}
+                  lethalPts={(() => {
+                    let percent = Math.round(this.props.lethalPts * 10000) / 100;
+                    if (this.props.lethalStatus[0]){
+                      percent /= 5;
+                    }
+                    if (this.props.lethalStatus[1]){
+                      percent /= 5;
+                    }
+                    if (percent < 0){
+                      percent = 0;
+                    }
+                    return Math.round(percent * 100) / 100 + "%";
+                   })()}
+                  />
+              </div>
             </div>
           </div>
+          
+          {/* hide menu button */}
           <div className="menuHide" onClick={() => this.menuUp()}>
-            click to hide
+            Click to Hide
           </div>
-          
-          
         </div>
       
       );
     } else if(this.state.showing === true && this.state.tab === "upgrade"){
-      //upgrade tab
+      
+      // upgrade tab
       return(
         <div className="menuPanel">
           <div className="divHolder">
+            
+            {/* upgrades div */}
             <div className="subHolderDiv">
-              <h3 className="view numcontainer"> Upgrades: </h3>
+              <h3 className="view numcontainer"> Upgrades:</h3>
               <div className="upgradeContainer">
-                
                 {upgradeDivArrayGov}
-                
-
-              </div>
-            </div>
-            {/*<UpContainer 
-              resPts={this.state.resPts} 
-              spreadPts={this.state.spreadPts} 
-              lethalPts={this.state.lethalPts} 
-              showChange={this.state.showChange} 
-              cureChange={this.state.cureChange}
-              spreadChange={this.state.spreadChange}
-              leathChange={this.state.leathChange}
-              
-             
-              />*/}
-            <div className="subHolderDiv">
-              <h3 className="view numcontainer"> Research: </h3>
-              <div className="upgradeContainer">
-                
-                
-                {upgradeDivArrayCure}
-                
               </div>
             </div>
             
+            {/* research div */}
+            <div className="subHolderDiv">
+              <h3 className="view numcontainer"> Research: </h3>
+              <div className="upgradeContainer">
+                {upgradeDivArrayCure}
+              </div>
+            </div>
+            
+            {/* tab menu div */}
             <div className="buttonDiv">
               <button className="panelButton" onClick={() => this.overviewTab()}>
                  Overview
@@ -259,23 +219,38 @@ export default class MenuPanel extends Component {
               <button className="panelButton" onClick={() => this.upgradeTab()}>
                 Upgrades (ppl Points:{this.props.pplPoint})
               </button>
+              
+              {/* cure and lethality div */}
               <div className="panelButton">
                 <UpContainer
-                  resPts={this.props.researchCompleted}
-                   //resPts={this.state.resPts} 
-              spreadPts={this.state.spreadPts} 
-              lethalPts={this.state.lethalPts} 
+                  resPts={Math.round(this.props.researchCompleted * 10000) / 100 + "%"}
+                  lethalPts={(() => {
+                    let percent = Math.round(this.props.lethalPts * 10000) / 100;
+                    if (this.props.lethalStatus[0]){
+                      percent /= 5;
+                    }
+                    if (this.props.lethalStatus[1]){
+                      percent /= 5;
+                    }
+                    if (percent < 0){
+                      percent = 0;
+                    }
+                    return Math.round(percent * 100) / 100 + "%";
+                  })()}
                   />
               </div>
             </div>
           </div>
+          
+          {/* hide menu button */}
           <div className="menuHide" onClick={() => this.menuUp()}>
             click to hide
           </div>
         </div>
       );
     } else {
-      // hides menu
+      
+      // hides menu + show menu button
       return (
         <div className="menuShow" onClick={() => this.menuUp()}>
           click to show

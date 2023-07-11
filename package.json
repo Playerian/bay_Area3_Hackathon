@@ -17,7 +17,7 @@
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "5.0.1"
   },
   "engines": {
     "node": "8.x"
